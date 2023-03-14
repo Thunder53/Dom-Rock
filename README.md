@@ -23,3 +23,82 @@ Utilizando modelos matemáticos e algoritmos baseados em aprendizado de máquina
 ## Contexto do projeto
 
 A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo que padronizar todos os arquivos antes do uso, sendo assim sentiu necessidade de uma aplicação web que facilitaria a entrada destes dados em um padrão definido diminuindo o tempo gasto com a padronização.
+
+## Requisitos do projeto
+* Sistema WEB
+* Sistema CRUD
+* Cadastro de clientes e carteira de vendedores
+* Aplicação de dados pelo clientes em sua carteira
+* Extração de relatórios
+* Dashboard para análise de dados
+
+
+
+# Backlog 1ª Sprint
+
+<table align="center">
+  <tr>
+   <td>Tasks</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Admin cadastra carteira de clientes</td>
+   <td>Alta</td>
+  </tr>
+
+  <tr>
+   <td>Admin cadastra vendedores</td>
+   <td>Alta</td>
+  </tr>
+
+  <tr>
+   <td>Tela do administrador</td>
+   <td>Média</td>
+  </tr>
+ 
+  <tr>
+    <td>Tela de Login</td>
+    <td>Baixa</td>
+  </tr>
+    
+</table>
+
+# Story cards
+
+## Sprint 01
+* Cadastrar vendedores
+* Cadastrar carteira de clientes
+* Tela administrador
+* Tela Login 
+
+## User stories
+
+<table align="center">
+  <tr>
+   <td>User stories</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Administrador deve ser capaz de cadastrar vendedores</td>
+   <td>01</td>
+  </tr>
+
+  <tr>
+   <td>Administrador deve ser capaz de criar a carteira com os clientes</td>
+   <td>02</td>
+  </tr>
+  
+  <tr>
+   <td>Como administrador quero fazer logim no sistema</td>
+   <td>03</td>
+  </tr>
+  
+</table>
+
+
+## Wireframe
+
+> **Tela de login**
+![Tela_login](https://user-images.githubusercontent.com/102214439/224860770-630d6773-b3e2-4448-83ec-255bc6701461.jpg)

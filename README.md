@@ -7,9 +7,9 @@
 
 > *Product Owner* - [Luiz Henrique Berti](https://www.linkedin.com/in/luiz-henrique-berti-235a7a19b/)
 
-> *Scrum Master* - [Ariane Cristine](https://www.linkedin.com/in/ariane-sousa77)
+> *Scrum Master* - [Ariane Cristine Alves de Sousa](https://www.linkedin.com/in/ariane-sousa77)
 
-> *Dev. Team* - [Ludmila Chagas](https://www.linkedin.com/in/ludmila-mariana-chagas-273548187/)
+> *Dev. Team* - [Ludmila Mariana Chagas](https://www.linkedin.com/in/ludmila-mariana-chagas-273548187/)
 
 > *Dev. Team* - [Elizabeth Cristina Alves Leite](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
 
@@ -91,7 +91,7 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
   
   <tr>
-   <td>Como administrador quero fazer logim no sistema</td>
+   <td>Como administrador quero fazer login no sistema</td>
    <td>03</td>
   </tr>
   

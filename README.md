@@ -98,23 +98,6 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
 </table>
 
 
-## Wireframe
-
-> **Tela de login**
-
-![Tela_login](https://user-images.githubusercontent.com/102214439/226492401-214bc667-99a8-465b-90d3-d30169bcecb7.png)
-
-> **Tela de cadastro de vendedor**
-
-![Tela_Cadastro_VEndedor](https://user-images.githubusercontent.com/102214439/226492513-cf491cf8-9b23-4b65-a314-109e09f590a3.png)
-
-> **Tela de cadastro da carteira**
-
-![Tela_Cadastro_Carteira](https://user-images.githubusercontent.com/102214439/226492638-408c6ef3-ca2b-49c4-aad9-348ab80a0bf1.png)
-
-> **Tela de cadastro dos produtos**
-
-![Tela_Cadastro_produtos](https://user-images.githubusercontent.com/102214439/226492739-f8fe50dd-4d60-4701-b205-6d2ed4257eec.png)
 
 
 

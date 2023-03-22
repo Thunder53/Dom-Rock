@@ -1,0 +1,35 @@
+Doc_wireframe_inicial
+
+Tela Login.2 
+
+Primeira tela de login desenhada para aplicação. A tela validada com o cliente foi a TELA 1.
+
+
+Doc_wireframe 
+
+TELA 1 
+
+Tela inicial, na qual os usuários do sistema irão acessar a aplicação.
+
+
+TELA 2
+
+Tela para que o Admin possa cadastrar cada vendedor. Ela contém todas as informações pessoais do vendedor.
+
+
+TELA 3
+
+Tela para selecionar um vendedor já cadastrado para posteriormente associá-lo a sua carteira na TELA 4.
+
+
+TELA 4
+
+Tela para que o Admin possa cadastrar cliente e produtos que serão associados ao vendedor que ele flagou na tela 3.
+
+
+TELA 5
+
+Tela onde o vendedor vai cadastrar sua "Força de vendas", ou seja, ele vai selecionar cada cliente que já estará associado à sua carteira, selecionar o produto que também já estará associado, imputando no sistema apenas quantidade que ele prevê vender e selecionando a data (que estará com mês e ano e de acordo com o período de avaliação dos dados, colocado como 3 meses nesse caso. Ex: JAN/2023, MAR/2023).
+
+
+

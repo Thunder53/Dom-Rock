@@ -38,7 +38,7 @@ public class VendedorDAO {
 	    }
 	    
 	    public void insereVendedor(Vendedor v) {
-	    	 String sql = "INSERT INTO vendedor (nome, email, contato, senha) VALUES (?, ?, ?, ?)";
+	    	 String sql = "INSERT INTO vendedor (nome, email, contato, senha, cpf) VALUES (?, ?, ?, ?, ?)";
 	         try {
 	             con = ConexaoDAO.getConnection();
 	             PreparedStatement stmt = con.prepareStatement(sql);
@@ -46,6 +46,7 @@ public class VendedorDAO {
 	             stmt.setString(2, v.getEmail());
 	             stmt.setString(3, v.getContato());
 	             stmt.setString(4, v.getSenha());
+	             stmt.setString(5, v.getCpf());
 	             stmt.execute();
 	             System.out.println("\nVendedor adicionado\n");
 	         } catch (SQLException ex) {
@@ -67,6 +68,7 @@ public class VendedorDAO {
 	                 v.setNome(rs.getString("nome"));
 	                 v.setContato(rs.getString("contato"));
 	                 v.setEmail(rs.getString("email"));
+	                 v.setCpf(rs.getString("cpf"));
 	             }
 	             return v;
 	         } catch (SQLException ex) {

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,100&display=swap')
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Lato';
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+	color: #FFFFFF;
+}
+body{
+	background-color: #000000;
+}
+nav.logo{
+	position: absolute;
+	width: 459px;
+	height: 111px;
+	left: 22px;
+	top: 20px;
+}
+div.text-tx{
+	
+	
+}

@@ -1,27 +1,120 @@
-@charset "UTF-8";
+body {
+    background: #000000;
+    color: #FFFFFF;
+    font-family: 'Carter One', cursive;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,100&display=swap')
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Lato';
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 24px;
-	color: #FFFFFF;
+
+.logo_domrock {
+    width: 20vw;
 }
-body{
-	background-color: #000000;
+
+.linha_horizontal {
+    width: 100vw;
+    border: 1px solid #00B1ED;
 }
-nav.logo{
-	position: absolute;
-	width: 459px;
-	height: 111px;
-	left: 22px;
-	top: 20px;
+
+.divisao_principal {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    margin: 1em;
 }
-div.text-tx{
-	
-	
+
+.main-login{
+    width: 90vw;
+    height: 90vh;
+    background-color: var(--cor-primaria);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+.login {
+    width: 70%;
+    height: 500px;
+    text-align: center;
+    display: block; 
+    font-size: 20px;      
+    margin: 20px 50px 10px;
 }
+
+.imagem_inicio {
+    width: 100%;
+    height: 500px ;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    
+}
+
+#fundo_cor {
+    width: 30vw;
+    background-color: #00b2ed;
+    border-radius: 50px;
+    box-shadow: 30px -30px #00b2edbd;  
+    border-radius: 50px;   
+}
+
+
+.usuario {
+    padding: 20px;   
+}
+
+.input_login {
+    color: #FFFFFF;
+    width: 45%;
+    padding: 5px;
+    border: 0;
+    border-bottom: 2px solid #FFFFFF;
+    outline: 0;
+}
+
+.botao_iniciar {
+    background: transparent;
+    color: #FFFFFF;
+    border-style:ridge;
+    border-color: #FFFFFF;
+    border-radius: 50px;
+    height: 40px;
+    width: 200px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.botao_iniciar:hover {
+    font-size: 20px;
+    height: 45px;
+    width: 205px;
+
+    transition: 0.5s;
+}
+
+.text_login {
+    padding-top: 30px;
+    margin-bottom: 50px;
+    font-weight: 1;
+    
+    
+}
+
+#img_senha {
+    background: url(imagem/senha.png) no-repeat right / 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 1em;
+}
+
+#img_usuario {
+    background: url(imagem/usuario.png) no-repeat right / 1.3em;
+    padding-right: 1.5em;
+    padding-bottom: 1.1em;
+}
+
+input::placeholder {
+    color: #FFFFFF;
+  }

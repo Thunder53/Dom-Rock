@@ -23,29 +23,30 @@ public class HomeController {
 	@GetMapping("/")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("view/index.html");
+		mv.setViewName("home/index.html");
 		return mv;
 
 	}
-	@GetMapping("/")
-	public String getLogin (UsuarioDAO usuario) {
-		usuario.buscaUsuario ("buscarUsuario");
-		return "Login";
-		
-
-	}
 	
-	@PostMapping("/login")
-	public String login(@ModelAttribute UsuarioDAO usuarioDAO, Usuario usuario) {
-		System.out.println("login request:" + usuarioDAO);
-		UsuarioDAO buscaUsuario = usuarioDAO.buscaUsuario(usuario.getEmail(), usuario.getSenha());
-		if(buscaUsuario != null) {
-			usuario.addAttribute ("Login", buscaUsuario.getEmail());
-			return "CRUD";
-		}else {
-			return "error_page";
-		}
-	}
+//	@GetMapping("/")
+//	public String getLogin (UsuarioDAO usuario) {
+//		usuario.buscaUsuario ("buscarUsuario");
+//		return "Login";
+//		
+//
+//	}
+//	
+//	@PostMapping("/login")
+//	public String login(@ModelAttribute UsuarioDAO usuarioDAO, Usuario usuario) {
+//		System.out.println("login request:" + usuarioDAO);
+//		UsuarioDAO buscaUsuario = usuarioDAO.buscaUsuario(usuario.getEmail(), usuario.getSenha());
+//		if(buscaUsuario != null) {
+//			usuario.addAttribute ("Login", buscaUsuario.getEmail());
+//			return "CRUD";
+//		}else {
+//			return "error_page";
+//		}
+//	}
 	
 	
 	

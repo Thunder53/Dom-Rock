@@ -21,7 +21,7 @@ public class VendedorDAO {
 	    }
 
 	    private static final String createTableSQL = "CREATE TABLE vendedor " +
-	        "(ID INT PRIMARY KEY ," +
+	        "(ID SERIAL PRIMARY KEY ," +
 	        " NOME VARCHAR(50), " +
 	        " EMAIL VARCHAR(50), " +
 	        " CONTATO VARCHAR(50), " +
@@ -65,10 +65,10 @@ public class VendedorDAO {
 	             stmt.setString(1, v.getNome());
 	             ResultSet rs = stmt.executeQuery();
 	             while (rs.next()) {
-	                 v.setNome(rs.getString("nome"));
-	                 v.setContato(rs.getString("contato"));
-	                 v.setEmail(rs.getString("email"));
-	                 v.setCpf(rs.getString("cpf"));
+	                 rs.getString("nome");
+	                 rs.getString("contato");
+	                 rs.getString("email");
+	                 rs.getString("cpf");
 	             }
 	             return v;
 	         } catch (SQLException ex) {

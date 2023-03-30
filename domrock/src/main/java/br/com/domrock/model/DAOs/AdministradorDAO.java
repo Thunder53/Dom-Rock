@@ -82,10 +82,10 @@ public class AdministradorDAO {
 		             stmt.setString(1, a.getNome());
 		             ResultSet rs = stmt.executeQuery();
 		             while (rs.next()) {
-		                 a.setNome(rs.getString("nome"));
-		                 a.setContato(rs.getString("contato"));
-		                 a.setEmail(rs.getString("email"));
-		                 a.setCpf(rs.getString("cpf"));
+		                 rs.getString("nome");
+		                 rs.getString("contato");
+		                 rs.getString("email");
+		                 rs.getString("cpf");
 		             }
 		             return a;
 		         } catch (SQLException ex) {

@@ -6,23 +6,27 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import br.com.domrock.model.Cliente;
 
-import br.com.domrock.model.Usuario;
 
-public class UsuarioDAO {
+public class ClienteDAO {
+	
 	private final String url = "jdbc:postgresql://localhost/domrock";
     private final String user = "root";
     private final String password = "";
     private Connection con;
     
-    public UsuarioDAO() {
+    public ClienteDAO() {
         con = ConexaoDAO.getConnection();
     }
 
-    private static final String createTableSQL = "CREATE TABLE usuario " +
-        "(ID SERIAL PRIMARY KEY NOT NULL ," +
-        " EMAIL VARCHAR(50)NOT NULL, " +
-        " SENHA VARCHAR(50)NOT NULL)";
+    private static final String createTableSQL = "CREATE TABLE cliente " +
+        "(cod_cliente int PRIMARY KEY ," +
+        " nome_cliente VARCHAR(50), " +
+        " nome_gerencia VARCHAR(50), " +
+        " produto_a VARCHAR(50), " +
+        " produto_b VARCHAR(50)," +
+        " produto_c VARCHAR(50)";
 
     public void criaTabela() throws SQLException {
         System.out.println(createTableSQL);
@@ -34,15 +38,18 @@ public class UsuarioDAO {
         }
     }
     
-    public void insereUsuario(Usuario u) {
-    	 String sql = "INSERT INTO usuario (email, senha) VALUES (?, ?)";
+    public void insereCliente(Cliente c) {
+    	 String sql = "INSERT INTO cliente (cod_cliente, nome_cliente, produto_a, produto_b, produto_c) VALUES (?, ?, ?, ?, ?)";
          try {
              con = ConexaoDAO.getConnection();
              PreparedStatement stmt = con.prepareStatement(sql);
-             stmt.setString(1, u.getEmail());
-             stmt.setString(2, u.getSenha());
+             stmt.setLong(1, c.getCod_cliente());
+             stmt.setString(2, c.getNome_cliente());
+             stmt.setString(3, c.getProduto_a());
+             stmt.setString(4, c.getProduto_b());
+             stmt.setString(5, c.getProduto_c());
              stmt.execute();
-             System.out.println("\nLogin realizado\n");
+             System.out.println("\nCliente adicionado\n");
          } catch (SQLException ex) {
              System.out.println("Erro: " + ex);
          } finally {
@@ -50,19 +57,23 @@ public class UsuarioDAO {
          }
     }
     
-   public Usuario buscaUsuario(String User) {
-    	 Usuario u = new Usuario();
-         String sql = "SELECT * FROM usuario WHERE email = ?";
+   public Cliente buscaCliente(String nome) {
+    	 Cliente c = new Cliente();
+         String sql = "SELECT * FROM cliente WHERE nome_cliente = ?";
          try {
              con = ConexaoDAO.getConnection();
              PreparedStatement stmt = con.prepareStatement(sql);
-             stmt.setString(1, u.getEmail());
+             stmt.setString(1, c.getNome_cliente());
              ResultSet rs = stmt.executeQuery();
              while (rs.next()) {
-                 rs.getString("email");
-                 rs.getString("funcao");
-                 }
-             return u;
+                 rs.getString("cod_cliente");
+                 rs.getString("nome_cliente");
+                 rs.getString("nome_gerencia");
+                 rs.getString("produto_a");
+                 rs.getString("produto_b");
+                 rs.getString("produto_c");
+             }
+             return c;
          } catch (SQLException ex) {
              System.out.println("Erro: " + ex);
              return null;
@@ -72,7 +83,7 @@ public class UsuarioDAO {
     }
     
     public static void main(String[] argv) throws SQLException {
-        UsuarioDAO criaTabelaExemplo = new UsuarioDAO();
+        ClienteDAO criaTabelaExemplo = new ClienteDAO();
         criaTabelaExemplo.criaTabela();
     }
 

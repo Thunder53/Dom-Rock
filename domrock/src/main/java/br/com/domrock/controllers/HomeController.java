@@ -23,7 +23,7 @@ public class HomeController {
 	@GetMapping("/")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/home/CadastroVendedor.html");
+		mv.setViewName("/home/Index.html");
 		return mv;
 
 	}

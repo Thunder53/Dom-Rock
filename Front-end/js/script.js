@@ -1,46 +1,29 @@
 const formulario = document.querySelector("form");
-const Inome = document.querySelector(".nome");
-const Iemail = document.querySelector(".email");
-const Isenha = document.querySelector(".senha");
-const Icpf = document.querySelector(".cpf");
-const Icontato = document.querySelector(".contato");
+const Inome = document.querySelector(".input_login");
+const Isenha = document.querySelector(".input_senha");
+const Ibotao = document.querySelector("#botao")
 
-function cadastrar(){
-    fetch("http://localhost:8080/vendedor",
-    {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({
-            nome: Inome.value,
-            email: Iemail.value,
-            senha: Isenha.value,
-            cpf: Icpf.value,
-            contato: Icontato.value
-        })
-    })
-    .then(function(res) {console.log(res)})
-    .catch(function(res) {console.log(res)})
-};
+function homeAdministrador() {
+    var novaPagina = "formVendedor.html";
+    window.open(novaPagina);
+    window.close();
+  }
 
-function limpar(){
-    Inome.value = "";
-    Iemail.value = "";
-    Isenha.value = "";
-    Icpf.value = "";
-    Icontato.value = "";
-}
+if (Ibotao) {
+    Ibotao.addEventListener('click', function(event) {
+        const email = Inome.value;
+        const password = Isenha.value;
+      
+        // Verifica se o email e a senha correspondem aos valores esperados
+        if (email === 'ariane@domrock.com' && password === '123456789') {
+            homeAdministrador();
+        } else {
+            alert('Login ou senha incorretos!');
+        }
+    });
+  } else {
+    console.error('Botão não encontrado no DOM!');
+  }
 
-formulario.addEventListener('submit', function(event){
-    event.preventDefault();
 
-    if (Inome.value === "" || Iemail.value === "" || Isenha.value === "" || Icpf.value === "" || Icontato.value === "") {
-        alert("Insira todos os campos.");
-    } else {
-        cadastrar();
-        limpar();
-        alert("Vendedor cadastrado com sucesso.");
-    }
-});
+

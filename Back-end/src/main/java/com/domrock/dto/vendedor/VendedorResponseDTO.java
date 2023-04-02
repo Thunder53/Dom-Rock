@@ -1,4 +1,4 @@
-package com.domrock.dto;
+package com.domrock.dto.vendedor;
 
 import com.domrock.model.Vendedor;
 

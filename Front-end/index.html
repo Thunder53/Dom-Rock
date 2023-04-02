@@ -6,7 +6,7 @@
 <meta name="viewport" content="width-width-devicen initial-scale=1.0">
 <meta name="author" content="Thunder"/>
 <link rel="stylesheet" href="./styles/styles.css">
-<script src="./js/Login.js"></script>
+<script src="./js/script.js" defer></script>
 </head>
  <body>
 	 
@@ -17,21 +17,22 @@
             </div>
         </header>
         <main class="main-login">
-        <section class="divisao_principal">
-            <div class="login" id="fundo_cor">   
-                <h1 class="text_login">Login</h1>         
-                <div class="usuario">                
-                    <input type="text" id="img_usuario" class="input_login" placeholder="Usuário">
-                </div>              
-                <div class="usuario">                
-                        <input type="password" id="img_senha" class="input_login" placeholder="Senha">
-                </div>
-                <button class="botao_iniciar" onclick="checarCredencial()" >INICIAR</button>           
+            <section class="divisao_principal">
+                <form action="">
+                    <div class="login" id="fundo_cor">   
+                        <h1 class="text_login">Login</h1>         
+                    <div class="usuario">                
+                        <input class="input_login" type="text" id="img_usuario" placeholder="Usuário">
+                    </div>              
+                    <div class="usuario">                
+                            <input class="input_senha" type="password" id="img_senha" placeholder="Senha">
+                    </div>
+                    <button class="botao_iniciar" id="botao" onclick="checarCredencial()" >INICIAR</button>       
+                </form>    
             </div>
             <img class="imagem_inicio" src="imagem/computador.svg">
             </section>
         </main>
-        
         
     </body>
 </html>

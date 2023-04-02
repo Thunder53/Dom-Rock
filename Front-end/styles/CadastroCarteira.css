@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     
 }
 
@@ -42,9 +42,14 @@ nav li a{
     font-size: 17px;
     color:#FFFFFF;
 }
+
 .menu { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none; 
   }
+
 .menu :hover {
     color: #01B7E6;
     text-decoration: underline;
@@ -66,7 +71,7 @@ nav li a{
     text-align: left;
     margin-bottom: 20px;
 }
-.cod_cliente, input{
+.cod_cliente-input, input{
     padding: 5px 10px; 
     margin-left: 10px;
     border-radius: 25px;
@@ -74,23 +79,23 @@ nav li a{
     background-color: transparent;
     color:#FFFFFF;
 }
-.nome_cliente{
+.nome_cliente-input{
     padding: 5px 10px; 
     margin-left: 20px;
 }
-.gerencia{
+.gerencia-input{
     padding: 5px 10px; 
     margin-left: 70px;
 }
-.produto_A{
+.produto_A-input{
     padding: 5px 10px; 
     margin-left: 70px;
 }
-.produto_B{
+.produto_B-input{
     padding: 5px 10px; 
     margin-left: 65px;
 }
-.produto_C{
+.produto_C-input{
     padding: 5px 10px; 
     margin-left: 60px;
 }

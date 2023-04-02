@@ -1,6 +1,6 @@
 package com.domrock.model;
 
-import com.domrock.dto.VendedorRequestDTO;
+import com.domrock.dto.vendedor.VendedorRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -30,4 +30,5 @@ public class Vendedor {
         this.cpf = data.cpf();
         this.contato = data.contato();
     }
+
 }

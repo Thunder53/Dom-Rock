@@ -1,9 +1,10 @@
 package com.domrock.controller;
 
 import com.domrock.dto.vendedor.VendedorRequestDTO;
-import com.domrock.dto.vendedor.VendedorResponseDTO;
-import com.domrock.model.Vendedor;
-import com.domrock.repository.VendedorRepository;
+import com.domrock.dto.vendedor.cliente.ClienteRequestDTO;
+import com.domrock.dto.vendedor.cliente.ClienteResponseDTO;
+import com.domrock.model.Cliente;
+import com.domrock.repository.ClienteRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,24 +12,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/vendedor")
-public class VendedorController {
+@RequestMapping("/cliente")
+public class ClienteController {
 
     @Autowired
-    private VendedorRepository repository;
+    private ClienteRepository repository;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
-    public List<VendedorResponseDTO> getAll(){
-        List<VendedorResponseDTO> vendedorList = repository.findAll().stream().map(VendedorResponseDTO::new).toList();;
+    public List<ClienteResponseDTO> getAll(){
+        List<ClienteResponseDTO> vendedorList = repository.findAll().stream().map(ClienteResponseDTO::new).toList();;
         return vendedorList;
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
-    public void saveVendedor(@RequestBody VendedorRequestDTO data){
-        Vendedor vendedorData = new Vendedor(data);
-        repository.save(vendedorData);
+    public void saveCliente(@RequestBody ClienteRequestDTO data){
+        Cliente clienteData = new Cliente(data);
+        repository.save(clienteData);
         return;
     }
 

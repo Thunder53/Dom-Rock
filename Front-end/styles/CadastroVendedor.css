@@ -28,20 +28,31 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 100px ;
+    gap: 20px;
 }
+
 nav ul{
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 20px;
 }
+
 nav ul li{
     padding: 0 10px; 
 }
+
 nav li a{
     text-decoration: none;
     font-size: 17px;
     color:#FFFFFF;
 }
+
+.menu :hover {
+    color: #01B7E6;
+    text-decoration: underline;
+}
+
 .destaque {
     color: #01B7E6; 
     text-decoration: underline; 
@@ -96,4 +107,5 @@ nav li a{
     border-color:#01B7E6;
     background-color: transparent;
     color:#01B7E6;
+    align-items: center;
 }

@@ -73,6 +73,16 @@ body {
     outline: 0;
 }
 
+.input_senha {
+    color: #FFFFFF;
+    width: 45%;
+    padding: 5px;
+    border: 0;
+    border-bottom: 2px solid #FFFFFF;
+    outline: 0;
+}
+
+
 .botao_iniciar {
     background: transparent;
     color: #FFFFFF;

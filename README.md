@@ -112,7 +112,10 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
 
 ![Tela_Cadastro_Carteira](https://user-images.githubusercontent.com/102214439/226492638-408c6ef3-ca2b-49c4-aad9-348ab80a0bf1.png)
 
-> **Tela de cadastro dos produtos**
+## Burndown
 
-![Tela_Cadastro_produtos](https://user-images.githubusercontent.com/102214439/226492739-f8fe50dd-4d60-4701-b205-6d2ed4257eec.png)
+![Burndown](https://user-images.githubusercontent.com/102214439/229376019-01b8fbf5-572d-4a9a-baf3-67651ab18678.png)
 
+## Jornada do Usuário 
+
+![jornada](https://user-images.githubusercontent.com/102214439/229376060-647e5844-e2d0-4f95-a564-55fa64628e5f.png)

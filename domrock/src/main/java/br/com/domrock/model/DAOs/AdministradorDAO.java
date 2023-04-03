@@ -13,7 +13,7 @@ public class AdministradorDAO {
 	
 		private final String url = "jdbc:postgresql://localhost/domrock";
 		private final String user = "root";
-		private final String password = "";
+		private final String password = "Tobias*2004";
 		private Connection con;
 	    
 	    public AdministradorDAO() {

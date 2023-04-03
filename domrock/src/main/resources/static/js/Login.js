@@ -1,16 +1,25 @@
-function checarCredencial(){
-			var img_usuario = document.getElementById("img_usuario").value;
-			var img_senha = document.getElementById("img_senha").value;
+
 			
-			fetch('https://example.com/api/verificaCredecial',{
-				method: 'POST',
-				body: JSON.stringify({img_usuario:img_usuario, img_senha:img_senha}),
-				headers:{'Content-Type':'application/json'}
-				})
-				.then(response => response.json())
-				.then(data => {
+const tabela = "AdministradorDAO"; // troque pelo nome da tabela que deseja buscar
+
+function buscaAdministrador() {
+  fetch(`jdbc:postgresql://localhost:8080/domrock/${administrador}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }) 	
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      console.log(data); // exibe os dados da tabela no console
+    })
+    .catch(function (err) {
+      console.log(err);
+    })    
+    .then(data => {
 					if (data.authenticated){
-						window.location.href = "pagina_vendedor.html";
 						}else{
 							alert("Nome de usuário ou senha incorretas.");
 						}
@@ -18,4 +27,5 @@ function checarCredencial(){
 				.catch(error =>{
 					console.error('Erro:Tudo deu errado', error);
 				});
-			}
+}
+			

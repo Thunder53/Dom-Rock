@@ -30,5 +30,12 @@ public class Administrador extends Usuario{
 		public void setCpf(String cpf) {
 			this.cpf = cpf;
 		}
+
+		
+
+		public void addAttribute(String string, String nome2) {
+			// TODO Auto-generated method stub
+			
+		}
 	
 }

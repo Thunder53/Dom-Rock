@@ -1,0 +1,111 @@
+body {
+    background: #000000;
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;;
+}
+
+.C_Carteira{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.logo_domrock {
+    width: 20vw;
+}
+
+.sumario{
+    max-width: 1300px;
+    margin: 0 0;
+    margin-right: 500px;
+    padding: 0 4%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px ;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+nav ul li{
+    padding: 0 10px; 
+}
+nav li a{
+    text-decoration: none;
+    font-size: 17px;
+    color:#FFFFFF;
+}
+
+.menu { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+  }
+
+.menu :hover {
+    color: #01B7E6;
+    text-decoration: underline;
+}
+
+.titulopagina{
+    padding: 0 10px; 
+    margin-left: 1000px;
+    display: flex; 
+  	align-items: center; 
+}
+.titulopagina img{
+    width: 40px;
+    margin-right: 10px;
+}
+.instrucoes{
+    padding: 0 10px; 
+    margin-left: -900px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.cod_cliente-input, input{
+    padding: 5px 10px; 
+    margin-left: 10px;
+    border-radius: 25px;
+    border-color:#01B7E6;
+    background-color: transparent;
+    color:#FFFFFF;
+}
+.nome_cliente-input{
+    padding: 5px 10px; 
+    margin-left: 20px;
+}
+.gerencia-input{
+    padding: 5px 10px; 
+    margin-left: 70px;
+}
+.produto_A-input{
+    padding: 5px 10px; 
+    margin-left: 70px;
+}
+.produto_B-input{
+    padding: 5px 10px; 
+    margin-left: 65px;
+}
+.produto_C-input{
+    padding: 5px 10px; 
+    margin-left: 60px;
+}
+.salvar button{
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 20px 35px; 
+    margin-left: 70px;
+    border-radius: 25px;
+    border-color:#01B7E6;
+    background-color: transparent;
+    color:#01B7E6;
+}

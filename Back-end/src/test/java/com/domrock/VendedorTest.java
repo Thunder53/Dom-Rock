@@ -12,7 +12,7 @@ class VendedorTest {
 
     @Test
     public void testCreateVendedorFromDTO() {
-        VendedorRequestDTO dto = new VendedorRequestDTO(null, "Vendedor 1", null, "123.456.789-10", "12123456789");
+        VendedorRequestDTO dto = new VendedorRequestDTO("Vendedor1", "123.456.789-10", "12123456789");
         
 
         Vendedor vendedor = new Vendedor (dto);

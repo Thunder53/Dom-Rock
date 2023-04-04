@@ -17,12 +17,20 @@ body {
     width: 20vw;
 }
 
-.sumario{
-    max-width: 1300px;
-    margin: 0 0;
-    margin-right: 500px;
-    padding: 0 4%;
+.sumario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
+.logo_superior {
+    display: flex;
+    align-items: center;
+}
+.menu li {
+    margin-left: 10px;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -43,12 +51,17 @@ nav li a{
     color:#FFFFFF;
 }
 
-.menu { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none; 
-  }
+.menu li {
+    margin-left: 10px;
+    position: relative;
+}
+
+.sair {
+    position: absolute;
+    left: 300px;
+    top: 0;
+    right: 0;
+}
 
 .menu :hover {
     color: #01B7E6;
@@ -99,13 +112,22 @@ nav li a{
     padding: 5px 10px; 
     margin-left: 60px;
 }
-.salvar button{
+
+button{
     cursor: pointer;
     margin-top: 30px;
     padding: 20px 35px; 
     margin-left: 70px;
     border-radius: 25px;
     border-color:#01B7E6;
-    background-color: transparent;
+    background-color: black;
     color:#01B7E6;
+}
+
+button:hover{
+    font-size: 15px;
+    height: 70px;
+    width: 105px;
+
+    transition: 0.5s;
 }

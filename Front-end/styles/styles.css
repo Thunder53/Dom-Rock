@@ -5,6 +5,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-family: 'Lato', sans-serif;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 
@@ -98,7 +99,7 @@ body {
 }
 
 .botao_iniciar:hover {
-    font-size: 20px;
+    font-size: 18px;
     height: 45px;
     width: 205px;
 

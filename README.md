@@ -121,3 +121,76 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
 ## Jornada do Usuário 
 
 ![jornada](https://user-images.githubusercontent.com/102214439/229376060-647e5844-e2d0-4f95-a564-55fa64628e5f.png)
+
+# Backlog 2ª Sprint
+
+<table align="center">
+  <tr>
+   <td>Tasks</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Vendedor adicionar expectativa de vendas</td>
+   <td>Alta</td>
+  </tr>
+
+  <tr>
+   <td>Adicionar campo de acompanhamento de previsões</td>
+   <td>Alta</td>
+  </tr>
+
+  <tr>
+   <td>Cadastro dos clientes</td>
+   <td>Média</td>
+  </tr>
+  
+  <tr>
+   <td>Cadastro dos produtos</td>
+   <td>Média</td>
+  </tr>
+ 
+  <tr>
+    <td>Validadores (CPF, TELEFONE, E-MAIL E SENHA)</td>
+    <td>Baixa</td>
+  </tr>
+  
+ 
+    
+</table>
+
+## User stories
+
+<table align="center">
+  <tr>
+   <td>User stories</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Vendedor deve ser capaz de cadastrar a previsão na sua carteira de clientes</td>
+   <td>01</td>
+  </tr>
+
+  <tr>
+   <td>Adicionar na carteira do cliente campo contendo as previsões de vendas dos produtos de cada cliente</td>
+   <td>02</td>
+  </tr>
+  
+  <tr>
+    <td>Administrador deve ser capaz de cadastrar o cliente </td>
+    <td>03</td>
+  
+  <tr>
+  
+  <tr>
+    <td>Administrador deve ser capaz de cadastrar os produtos </td>
+    <td>03</td>
+  
+  <tr>
+  
+   <td>Adicionar validadores nos dados (CPF, E-MAIL, TELEFONE, SENHA)</td>
+   <td>04</td>
+  </tr>
+  
+</table>

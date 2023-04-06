@@ -95,23 +95,13 @@ nav li a{
 .nome_cliente-input{
     padding: 5px 10px; 
     margin-left: 20px;
+    margin-top: 150px;
 }
 .gerencia-input{
     padding: 5px 10px; 
     margin-left: 70px;
 }
-.produto_A-input{
-    padding: 5px 10px; 
-    margin-left: 70px;
-}
-.produto_B-input{
-    padding: 5px 10px; 
-    margin-left: 65px;
-}
-.produto_C-input{
-    padding: 5px 10px; 
-    margin-left: 60px;
-}
+
 
 button{
     cursor: pointer;

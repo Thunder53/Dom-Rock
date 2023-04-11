@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+
+:root{
+    --font-principal: 'Lato', sans-serif;
+}
+
 body {
     background: #000000;
     color: #FFFFFF;
-    font-family: 'Lato', sans-serif;;
+    font-family: var(--font-principal);
 }
 
 .C_Carteira{
@@ -134,6 +140,7 @@ button.botaocadastarcliente{
     background-color: black;
     color:#01B7E6;
     
+    
 }
 
 button.botaocadastarcliente:hover{
@@ -154,9 +161,21 @@ button.botaocadastarcliente:hover{
     color: #01B7E6;
     text-align: start;
     border-radius: 25PX;
+    font-family: var(--font-principal);
     
-    
+    justify-content: center;
 }
 .titulo{
     text-align: center;
 }
+.info_clientes{
+    color: #FFFFFF;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+    justify-content: end;
+}
+

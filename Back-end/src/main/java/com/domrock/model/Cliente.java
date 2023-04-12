@@ -21,15 +21,9 @@ public class Cliente {
     private Long cod_cliente;
     private String nome_cliente;
     private String nome_gerencia;
-    private String produto_a;
-    private String produto_b;
-    private String produto_c;
 
     public Cliente(ClienteRequestDTO data) {
         this.nome_cliente = data.nome_cliente();
         this.nome_gerencia = data.nome_gerencia();
-        this.produto_a = data.produto_a();
-        this.produto_b = data.produto_b();
-        this.produto_c = data.produto_c();
     }
 }

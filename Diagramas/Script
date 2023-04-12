@@ -1,0 +1,60 @@
+/* Lógico_2: */
+
+CREATE TABLE usuario (
+    cpf CHAR,
+    contato CHAR,
+    senha CHAR,
+    nome CHAR,
+    id SERIAL PRIMARY KEY,
+    email CHAR,
+    acesso CHAR,
+    UNIQUE (email, cpf)
+);
+
+CREATE TABLE cliente (
+    cod_cliente SERIAL PRIMARY KEY,
+    nome_cliente CHAR,
+    nome_gerencia CHAR,
+    fk_usuario_id SERIAL
+);
+
+CREATE TABLE venda (
+    quant_vendida FLOAT,
+    quant_estimada FLOAT,
+    atualizada_em DATE,
+    criada_em DATE,
+    id_venda SERIAL PRIMARY KEY,
+    fk_usuario_id SERIAL,
+    fk_cliente_cod_cliente SERIAL,
+    fk_produto_cod_produto SERIAL
+);
+
+CREATE TABLE produto (
+    cod_produto SERIAL PRIMARY KEY,
+    nome_produto CHAR,
+    fk_cliente_cod_cliente SERIAL
+);
+ 
+ALTER TABLE cliente ADD CONSTRAINT FK_cliente_2
+    FOREIGN KEY (fk_usuario_id)
+    REFERENCES usuario (id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE venda ADD CONSTRAINT FK_venda_2
+    FOREIGN KEY (fk_usuario_id)
+    REFERENCES usuario (id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE venda ADD CONSTRAINT FK_venda_3
+    FOREIGN KEY (fk_cliente_cod_cliente)
+    REFERENCES cliente (cod_cliente)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE venda ADD CONSTRAINT FK_venda_4
+    FOREIGN KEY (fk_produto_cod_produto)
+    REFERENCES produto (cod_produto)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE produto ADD CONSTRAINT FK_produto_2
+    FOREIGN KEY (fk_cliente_cod_cliente???)
+    REFERENCES ??? (???);

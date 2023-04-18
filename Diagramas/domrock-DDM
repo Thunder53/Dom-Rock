@@ -1,0 +1,14 @@
+
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(1, '293.989.888-00', '(12)98822-1222', '123456789', 'vitoria@gmail.com', 'vendedor')
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(2, '555.989.888-00', '(12)98922-1222', '123456789', 'anderson@gmail.com', 'vendedor')
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(3, '555.989.888-00', '(12)95252-1222', '123456789', 'ariane@domrock.com', 'administrador')
+
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(1, 'ELEVADORES ATLAS SCHINDLER LTDA', 'IndÃºstria - SÃ£o Paulo', 1)
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(2, 'MTS CHAPA PADRÃƒO', 'Gmat', 2)
+
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(465.562.962.962.963, 5.277.031.421.661.370, 18-04-2023, 1, 1, 1, 1) 
+
+insert into produto(cod_produto, nome_produto) values(1, 'SPOT-BG8,00X1200CSNARQCIVIL300')
+insert into produto(cod_produto, nome_produto) values(2, 'SPOT-BG8,00X1200SAE1008')
+
+

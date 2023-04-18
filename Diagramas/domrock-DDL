@@ -1,20 +1,20 @@
 /* Lógico_2: */
 
 CREATE TABLE usuario (
-    cpf CHAR,
-    contato CHAR,
-    senha CHAR,
-    nome CHAR,
+    cpf CHAR(255),
+    contato CHAR(255),
+    senha CHAR(255),
+    nome CHAR(255),
     id SERIAL PRIMARY KEY,
-    email CHAR,
-    acesso CHAR,
+    email CHAR(255),
+    acesso CHAR(255),
     UNIQUE (email, cpf)
 );
 
 CREATE TABLE cliente (
     cod_cliente SERIAL PRIMARY KEY,
-    nome_cliente CHAR,
-    nome_gerencia CHAR,
+    nome_cliente CHAR(255),
+    nome_gerencia CHAR(255),
     fk_usuario_id SERIAL
 );
 
@@ -31,8 +31,7 @@ CREATE TABLE venda (
 
 CREATE TABLE produto (
     cod_produto SERIAL PRIMARY KEY,
-    nome_produto CHAR,
-    fk_cliente_cod_cliente SERIAL
+    nome_produto CHAR
 );
  
 ALTER TABLE cliente ADD CONSTRAINT FK_cliente_2
@@ -54,7 +53,3 @@ ALTER TABLE venda ADD CONSTRAINT FK_venda_4
     FOREIGN KEY (fk_produto_cod_produto)
     REFERENCES produto (cod_produto)
     ON DELETE RESTRICT;
- 
-ALTER TABLE produto ADD CONSTRAINT FK_produto_2
-    FOREIGN KEY (fk_cliente_cod_cliente???)
-    REFERENCES ??? (???);

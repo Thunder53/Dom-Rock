@@ -44,22 +44,22 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
 
   <tr>
    <td>Admin cadastra carteira de clientes</td>
-   <td>Alta</td>
+   <td>Imprescindível</td>
   </tr>
 
   <tr>
    <td>Admin cadastra vendedores</td>
-   <td>Alta</td>
+   <td>Importante</td>
   </tr>
 
   <tr>
    <td>Tela do administrador</td>
-   <td>Média</td>
+   <td>Importante</td>
   </tr>
  
   <tr>
     <td>Tela de Login</td>
-    <td>Baixa</td>
+    <td>Desejável</td>
   </tr>
     
 </table>
@@ -82,17 +82,17 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Administrador deve ser capaz de cadastrar vendedores</td>
+   <td>Administrador irá cadastrar os vendedores no sistema!</td>
    <td>01</td>
   </tr>
 
   <tr>
-   <td>Administrador deve ser capaz de criar a carteira com os clientes</td>
+   <td>Administrador conseguira cadastrar as carteiras dos clientes</td>
    <td>02</td>
   </tr>
   
   <tr>
-   <td>Como administrador quero fazer login no sistema</td>
+   <td>Administrador deve conseguir fazer seu login no sistema</td>
    <td>03</td>
   </tr>
   
@@ -131,28 +131,28 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Vendedor adicionar expectativa de vendas</td>
-   <td>Alta</td>
+   <td>Vendedor poderá adicionar expectativa de vendas</td>
+   <td>Imprescindível</td>
   </tr>
 
   <tr>
    <td>Adicionar campo de acompanhamento de previsões</td>
-   <td>Alta</td>
+   <td>Imprescindível</td>
   </tr>
 
   <tr>
    <td>Cadastro dos clientes</td>
-   <td>Média</td>
+   <td>Importante</td>
   </tr>
   
   <tr>
    <td>Cadastro dos produtos</td>
-   <td>Média</td>
+   <td>Importante</td>
   </tr>
  
   <tr>
     <td>Validadores (CPF, TELEFONE, E-MAIL E SENHA)</td>
-    <td>Baixa</td>
+    <td>Desejável</td>
   </tr>
   
  
@@ -168,28 +168,28 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Vendedor deve ser capaz de cadastrar a previsão na sua carteira de clientes</td>
+   <td>Vendedor irá conseguir fazer o cadastro de previsão de vendas dos seus clientes</td>
    <td>01</td>
   </tr>
 
   <tr>
-   <td>Adicionar na carteira do cliente campo contendo as previsões de vendas dos produtos de cada cliente</td>
+   <td>Será incluido na carteira do cliente o campo contento as previsões de vendas dos produtos daquele cliente em específico</td>
    <td>02</td>
   </tr>
   
   <tr>
-    <td>Administrador deve ser capaz de cadastrar o cliente </td>
+    <td>O administrador conseguira fazer os cadastros dos clientes e seus produtos</td>
     <td>03</td>
   
   <tr>
   
   <tr>
-    <td>Administrador deve ser capaz de cadastrar os produtos </td>
+    <td>O administrador poderá cadastrar novos produtos para clientes ja cadastrados</td>
     <td>03</td>
   
   <tr>
   
-   <td>Adicionar validadores nos dados (CPF, E-MAIL, TELEFONE, SENHA)</td>
+   <td>Serão adicionados validadores para que os dados sejam inseridos de forma correta evitando erro do usuário</td>
    <td>04</td>
   </tr>
   

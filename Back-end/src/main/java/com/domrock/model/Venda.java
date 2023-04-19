@@ -1,0 +1,34 @@
+package com.domrock.model;
+
+import com.domrock.dto.venda.Venda.VendaRequestDTO;
+import com.domrock.dto.venda.cliente.ClienteRequestDTO;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@Table(name="venda")
+@Entity(name="venda")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id_venda")
+
+public class Venda {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_venda;
+    private Float quant_vendida;
+    private Float quant_estimada;
+    private Date atualizada_em;
+
+    public Venda(VendaRequestDTO data){
+        this.quant_vendida = data.quant_vendida();
+        this.quant_estimada = data.quant_estimada();
+        this.atualizada_em = data.atualizada_em();
+    }
+
+}

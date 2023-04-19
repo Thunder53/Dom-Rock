@@ -1,6 +1,5 @@
 package com.domrock.model;
 
-import com.domrock.dto.vendedor.VendedorRequestDTO;
 import com.domrock.dto.vendedor.cliente.ClienteRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

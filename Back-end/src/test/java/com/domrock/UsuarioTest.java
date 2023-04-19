@@ -3,7 +3,6 @@ package com.domrock;
 import com.domrock.dto.usuario.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.domrock.model.Usuario;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

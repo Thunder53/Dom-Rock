@@ -1,6 +1,5 @@
 package com.domrock.controller;
 
-import com.domrock.dto.vendedor.VendedorRequestDTO;
 import com.domrock.dto.vendedor.cliente.ClienteRequestDTO;
 import com.domrock.dto.vendedor.cliente.ClienteResponseDTO;
 import com.domrock.model.Cliente;

@@ -1,12 +1,7 @@
 package com.domrock.controller;
 
-import com.domrock.dto.venda.VendaRequestDTO;
 import com.domrock.dto.venda.VendaResponseDTO;
-import com.domrock.dto.vendedor.VendedorResponseDTO;
-import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
-import com.domrock.repository.VendedorRepository;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

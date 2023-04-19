@@ -1,7 +1,5 @@
 package com.domrock.model;
-
-import com.domrock.dto.venda.Venda.VendaRequestDTO;
-import com.domrock.dto.venda.cliente.ClienteRequestDTO;
+import com.domrock.dto.venda.VendaRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

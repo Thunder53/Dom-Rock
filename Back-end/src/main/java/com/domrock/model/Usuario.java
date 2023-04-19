@@ -1,14 +1,14 @@
 package com.domrock.model;
 
-import com.domrock.dto.usuario.*;
+import com.domrock.dto.vendedor.UsuarioRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name="usuario")
-@Entity(name="usuario")
+@Table(name="vendedor")
+@Entity(name="vendedor")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,34 +17,20 @@ import lombok.NoArgsConstructor;
 public class Usuario {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String nome;
     private String email;
     private String senha;
-    @Enumerated(EnumType.STRING)
-    private TipoAcesso acesso;
+    private String cpf;
+    private String contato;
+    private String acesso;
 
     public Usuario(UsuarioRequestDTO data) {
+        this.nome = data.nome();
         this.email = data.email();
         this.senha = data.senha();
-        try {
-            this.acesso = TipoAcesso.valueOf(data.acesso().toUpperCase());
-        } catch (IllegalArgumentException ex) {
-            throw new IllegalArgumentException("Tipo de acesso inválido");
-        }
-    }
-    
-    public enum TipoAcesso {
-        VENDEDOR("Vendedor"),
-        ADMINISTRADOR("Administrador");
-
-        private final String valor;
-
-        TipoAcesso(String valor) {
-            this.valor = valor;
-        }
-
-        public String getValor() {
-            return valor;
-        }
+        this.cpf = data.cpf();
+        this.contato = data.contato();
+        this.acesso = data.acesso();
     }
 
 }

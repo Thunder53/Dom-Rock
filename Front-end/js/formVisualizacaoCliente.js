@@ -1,8 +1,9 @@
 
 function buscar(){
-    const url = "http://localhost:8080/cliente";
+    const urlCliente = "http://localhost:8080/cliente";
+    const urlUsuario = "http://localhost:8080/usuario";
 
-    fetch(url)
+    fetch(urlCliente)
       .then(response => response.json())
       .then(data => {
         const boxview = document.querySelector(".boxview");
@@ -22,11 +23,17 @@ function buscar(){
           row.insertCell().textContent = clienteList.fk_usuario_id;
         });
 
+         // Faz uma requisição para a rota de usuários e adiciona o nome do usuário correspondente como uma nova célula
+      fetch(urlUsuario + "/" + clienteList.fk_usuario_id)
+      .then(response => response.json())
+      .then(usuario => {
+        row.insertCell().textContent = usuario.nome_usuario;
         row.cells[0].classList.add("cod_cliente");
         row.cells[1].classList.add("nome_cliente");
         row.cells[2].classList.add("nome_gerencia");
         row.cells[3].classList.add("fk_usuario_id");
-        
+        row.cells[4].classList.add("id");
+      })
 
         // Exibe a boxview
        
@@ -42,3 +49,4 @@ const botao = document.getElementById("botao");
 botao.addEventListener("click", function() {
     window.location.href = "formCarteiraCliente.html";
 });
+

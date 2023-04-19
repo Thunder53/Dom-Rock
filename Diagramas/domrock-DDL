@@ -31,7 +31,7 @@ CREATE TABLE venda (
 
 CREATE TABLE produto (
     cod_produto SERIAL PRIMARY KEY,
-    nome_produto CHAR
+    nome_produto CHAR(255)
 );
  
 ALTER TABLE cliente ADD CONSTRAINT FK_cliente_2

@@ -20,8 +20,8 @@ public class ClienteController {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public List<ClienteResponseDTO> getAll(){
-        List<ClienteResponseDTO> vendedorList = repository.findAll().stream().map(ClienteResponseDTO::new).toList();;
-        return vendedorList;
+        List<ClienteResponseDTO> clientList = repository.findAll().stream().map(ClienteResponseDTO::new).toList();;
+        return clientList;
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -29,7 +29,7 @@ public class ClienteController {
     public void saveCliente(@RequestBody ClienteRequestDTO data){
         Cliente clienteData = new Cliente(data);
         repository.save(clienteData);
-        return;
+        return ;
     }
 
     @CrossOrigin(origins = "http://localhost:5500")

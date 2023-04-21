@@ -22,6 +22,9 @@ public class Venda {
     private Float quant_vendida;
     private Float quant_estimada;
     private Date atualizada_em;
+    private Long fk_cliente_cod_cliente;
+    @OneToOne()
+    private Cliente cliente;
 
     public Venda(VendaRequestDTO data){
         this.quant_vendida = data.quant_vendida();

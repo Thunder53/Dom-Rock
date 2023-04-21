@@ -25,7 +25,7 @@ public class ClienteController {
     }
     @GetMapping("/clientes-com-vendas")
     public List<Object[]> buscarClientesComVendas() {
-        return ClienteRepository.buscarClientesComVendas();
+        return repository.buscarClientesComVendas();
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")

@@ -1,6 +1,6 @@
 
 function buscar(){
-  const url = "http://localhost:8080/cliente";
+  const url = "http://localhost:8080/cliente/clientes-com-vendas";
 
   fetch(url)
     .then(response => response.json())

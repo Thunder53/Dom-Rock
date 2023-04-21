@@ -23,6 +23,10 @@ public class ClienteController {
         List<ClienteResponseDTO> clientList = repository.findAll().stream().map(ClienteResponseDTO::new).toList();;
         return clientList;
     }
+    @GetMapping("/clientes-com-vendas")
+    public List<Object[]> buscarClientesComVendas() {
+        return ClienteRepository.buscarClientesComVendas();
+    }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping

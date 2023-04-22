@@ -24,13 +24,14 @@ public class Cliente {
     private Long cod_cliente;
     private String nome_cliente;
     private String nome_gerencia;
+    private Long fk_usuario_id;
     @OneToMany()
-    @JoinColumn(name="fk_cliente_cod_cliente")
-    private List<Venda> vendaList;
+    @JoinColumn(name="fk_usuario_id")
+    private List<Usuario> usuarioList;
     public Cliente(ClienteRequestDTO data) {
         this.nome_cliente = data.nome_cliente();
         this.nome_gerencia = data.nome_gerencia();
-        vendaList = new ArrayList<Venda>();
+        usuarioList = new ArrayList<Usuario>();
     }
 
 }

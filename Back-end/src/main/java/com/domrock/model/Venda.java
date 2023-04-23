@@ -22,13 +22,13 @@ public class Venda {
     private Float quant_vendida;
     private Float quant_estimada;
     private Date atualizada_em;
-    private Long fk_cliente_cod_cliente;
-
+    private Date criada_em;
 
     public Venda(VendaRequestDTO data){
         this.quant_vendida = data.quant_vendida();
         this.quant_estimada = data.quant_estimada();
         this.atualizada_em = data.atualizada_em();
+        this.criada_em = data.criada_em();
     }
 
 }

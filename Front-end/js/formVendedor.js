@@ -6,7 +6,7 @@ const Icpf = document.querySelector(".cpf");
 const Icontato = document.querySelector(".contato");
 
 function cadastrar(){
-    fetch("http://localhost:8080/vendedor",
+    fetch("http://localhost:8080/usuario",
     {
         headers: {
             'Accept': 'application/json',

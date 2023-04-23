@@ -43,22 +43,22 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Admin cadastra carteira de clientes</td>
+   <td>Sistema de cadastro da carteira de clienets</td>
    <td>Imprescindível</td>
   </tr>
 
   <tr>
-   <td>Admin cadastra vendedores</td>
+   <td>Sistema para cadastro dos vendedores</td>
    <td>Importante</td>
   </tr>
 
   <tr>
-   <td>Tela do administrador</td>
+   <td>Visão administrativa dos cadastro de clientes, produtos e vendedor</td>
    <td>Importante</td>
   </tr>
  
   <tr>
-    <td>Tela de Login</td>
+    <td>Mecânismo de autenticação e autorização do sistema</td>
     <td>Desejável</td>
   </tr>
     
@@ -82,17 +82,19 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Administrador irá cadastrar os vendedores no sistema!</td>
+   <td>Como administrador quero cadastrar os vendedores para cirar seu acesso ao sistema</td>
    <td>01</td>
   </tr>
 
   <tr>
-   <td>Administrador conseguira cadastrar as carteiras dos clientes</td>
+   <td>Como administrador quero cadastrar as carteiras de clientes para o vendedor ter acesso ao seus clientes e produtos</td>
    <td>02</td>
   </tr>
   
+  
+  
   <tr>
-   <td>Administrador deve conseguir fazer seu login no sistema</td>
+   <td>Como administrador quero ter acesso ao sistema pelo método de login</td>
    <td>03</td>
   </tr>
   
@@ -131,31 +133,26 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Vendedor poderá adicionar expectativa de vendas</td>
+   <td>Visualização de informações do cliente</td>
    <td>Imprescindível</td>
   </tr>
 
   <tr>
-   <td>Adicionar campo de acompanhamento de previsões</td>
+   <td>Sistema de cadastro de novos clientes e seus produtos</td>
    <td>Imprescindível</td>
   </tr>
 
   <tr>
-   <td>Cadastro dos clientes</td>
+   <td>Gráfico de visualização da quantidade de vendas</td>
    <td>Importante</td>
   </tr>
   
   <tr>
-   <td>Cadastro dos produtos</td>
+   <td>Gerenciamento da carteira do cliente</td>
    <td>Importante</td>
   </tr>
  
-  <tr>
-    <td>Validadores (CPF, TELEFONE, E-MAIL E SENHA)</td>
-    <td>Desejável</td>
-  </tr>
-  
- 
+
     
 </table>
 
@@ -168,29 +165,26 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Vendedor irá conseguir fazer o cadastro de previsão de vendas dos seus clientes</td>
+   <td>Como administrador quero visualizar as informações do cliente</td>
    <td>01</td>
   </tr>
 
   <tr>
-   <td>Será incluido na carteira do cliente o campo contento as previsões de vendas dos produtos daquele cliente em específico</td>
-   <td>02</td>
+   <td>Como administrador quero cadastrar novos clientes e produtos para ser incluidos nas carteiras de vendedores</td>
+   <td>01</td>
   </tr>
   
   <tr>
-    <td>O administrador conseguira fazer os cadastros dos clientes e seus produtos</td>
-    <td>03</td>
+    <td>Como administrador e vendedor quero visualizar por meio de gráficos a quantidade de vendas para que seja feito um planejamento de vendas</td>
+    <td>02</td>
   
   <tr>
   
   <tr>
-    <td>O administrador poderá cadastrar novos produtos para clientes ja cadastrados</td>
-    <td>03</td>
+    <td>Como vendedor quero administrar minha carteira de clientes inserir minhas previsões de vendas</td>
+    <td>02</td>
   
   <tr>
   
-   <td>Serão adicionados validadores para que os dados sejam inseridos de forma correta evitando erro do usuário</td>
-   <td>04</td>
-  </tr>
   
 </table>

@@ -7,8 +7,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name="vendedor")
-@Entity(name="vendedor")
+@Table(name="usuario")
+@Entity(name="usuario")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,6 +23,7 @@ public class Usuario {
     private String cpf;
     private String contato;
     private String acesso;
+
 
     public Usuario(UsuarioRequestDTO data) {
         this.nome = data.nome();

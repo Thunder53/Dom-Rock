@@ -25,11 +25,21 @@ public class UsuarioController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping
-    public void saveUsuario(@RequestBody UsuarioRequestDTO data){
+//    @PostMapping
+//    public void saveUsuario(@RequestBody UsuarioRequestDTO data){
+//        Usuario usuarioData = new Usuario(data);
+//        repository.save(usuarioData);
+//        return;
+//    }
+    @PostMapping("/usuarios")
+    public ResponseEntity<?> criarUsuario(@Valid @RequestBody UsuarioRequestDTO data, BindingResult result) {
+        ErrorResponse errorResponse = usuario.validarCampos(data);
+        if (errorResponse != null) {
+            return ResponseEntity.status(errorResponse.getStatus()).body(errorResponse);
+        }
         Usuario usuarioData = new Usuario(data);
         repository.save(usuarioData);
-        return;
+        return ResponseEntity.ok(new UsuarioResponseDTO(usuarioData));
     }
 
     @CrossOrigin(origins = "http://localhost:5500")

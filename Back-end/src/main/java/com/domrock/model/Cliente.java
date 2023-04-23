@@ -25,4 +25,5 @@ public class Cliente {
         this.nome_cliente = data.nome_cliente();
         this.nome_gerencia = data.nome_gerencia();
     }
+
 }

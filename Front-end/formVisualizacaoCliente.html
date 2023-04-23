@@ -43,21 +43,19 @@
 				<section class="boxview__tabela">
 					<table class="info_cliente">
 						<tr>
-							<th>Código</th>
-							<th>Nome</th>
-							<th>Gerência</th>
-							<th>Vendedor</th>
-							<th>Produto A</th>
-														
+							<th>Codígo</th>
+							<th>Nome do Cliente</th>
+							<th>Nome da Gerência</th>
+							<th>Nome do Vendendor</th>
+																					
 						</tr>
 						</section>
 						<section>
-							<tr>
-								<td th:text="${clienteList.cod_cliente}"></td>
-								<td th:text="${clienteList.nome_cliente}"></td>
-								<td th:text="${clienteList.nome_gerencia}"></td>
-								<td th:text="${clienteList.fk_usuario_id}"></td>
+							<tr sytle = align="center">
 								<td th:text="${clienteList.id}"></td>
+								<td th:text="${clienteList.nomeCliente}"></td>
+								<td th:text="${clienteList.nomeGerencia}"></td>
+								<td th:text="${clienteList.nome}"></td>
 								
 							</tr>
 						</section>

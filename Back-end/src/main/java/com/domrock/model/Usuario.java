@@ -24,6 +24,7 @@ public class Usuario {
     private String contato;
     private String acesso;
 
+
     public Usuario(UsuarioRequestDTO data) {
         this.nome = data.nome();
         this.email = data.email();

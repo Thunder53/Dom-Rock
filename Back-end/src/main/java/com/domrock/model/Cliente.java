@@ -21,17 +21,14 @@ import java.util.List;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cod_cliente;
+    private String cod_cliente;
     private String nome_cliente;
     private String nome_gerencia;
-    private Long fk_usuario_id;
-    @OneToMany()
-    @JoinColumn(name="fk_usuario_id")
-    private List<Usuario> usuarioList;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String fk_usuario_id;
     public Cliente(ClienteRequestDTO data) {
         this.nome_cliente = data.nome_cliente();
         this.nome_gerencia = data.nome_gerencia();
-        usuarioList = new ArrayList<Usuario>();
     }
 
 }

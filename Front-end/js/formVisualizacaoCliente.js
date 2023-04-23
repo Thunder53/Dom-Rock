@@ -1,5 +1,4 @@
-
-function buscar(){
+function buscar() {
   const url = "http://localhost:8080/cliente/clientes-com-vendas";
 
   fetch(url)
@@ -14,32 +13,26 @@ function buscar(){
       }
 
       // Adiciona cada cliente como uma nova linha na tabela
-      data.forEach(clienteList => {
+      data.forEach(cliente => {
         const row = infoCliente.insertRow();
-        row.insertCell().textContent = clienteList.cod_cliente;
-        row.insertCell().textContent = clienteList.nome_cliente;
-        row.insertCell().textContent = clienteList.nome_gerencia;
-        row.insertCell().textContent = clienteList.quant_vendida;
-        row.insertCell().textContent = clienteList.fk_cliente_cod_cliente;
-        
-      });
+        row.insertCell().textContent = cliente.id;
+        row.insertCell().textContent = cliente.nomeCliente;
+        row.insertCell().textContent = cliente.nomeGerencia;
+        row.insertCell().textContent = cliente.nome;
 
-      row.cells[0].classList.add("cod_cliente");
-      row.cells[1].classList.add("nome_cliente");
-      row.cells[2].classList.add("nome_gerencia");
-      row.cells[3].classList.add("quant_vendida");
-      row.cells[4].classList.add("fk_cliente_cod_cliente");
-      
-      
+        row.cells[0].classList.add("id");
+        row.cells[1].classList.add("nomeCliente");
+        row.cells[2].classList.add("nomeGerencia");
+        row.cells[3].classList.add("nome");
+       });
 
       // Exibe a boxview
-     
     })
-
-    .catch(error => console.error(error_cliente));
-
-  
+    .catch(error => console.error(error));
 };
+
+// Executa a função buscar
+
 
 // Executa a função buscar assim que o documento HTML é completamente carregado
 document.addEventListener('DOMContentLoaded', buscar);

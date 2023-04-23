@@ -16,15 +16,14 @@ import lombok.NoArgsConstructor;
 
 public class Usuario {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String nome;
     private String email;
     private String senha;
     private String cpf;
     private String contato;
     private String acesso;
-    @OneToOne()
-    private Cliente cliente;
+
 
     public Usuario(UsuarioRequestDTO data) {
         this.nome = data.nome();

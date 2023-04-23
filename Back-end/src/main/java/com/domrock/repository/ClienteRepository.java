@@ -15,16 +15,16 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     public class ClienteComVenda {
         private String nome;
-        private String id;
+        private Long id;
         private String acesso;
-        private String codCliente;
+        private Long codCliente;
         private String nomeCliente;
         private String nomeGerencia;
-        private String fkUsuarioId;
+        private Long fkUsuarioId;
 
         public ClienteComVenda() {}
 
-        public ClienteComVenda(String nome, String id, String acesso, String codCliente, String nomeCliente, String nomeGerencia, String fkUsuarioId) {
+        public ClienteComVenda(String nome, Long id, String acesso, Long codCliente, String nomeCliente, String nomeGerencia, Long fkUsuarioId) {
             this.nome = nome;
             this.id = id;
             this.acesso = acesso;
@@ -42,11 +42,11 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             this.nome = nome;
         }
 
-        public String getId() {
+        public Long getId() {
             return id;
         }
 
-        public void setId(String id) {
+        public void setId(Long id) {
             this.id = id;
         }
 
@@ -58,11 +58,11 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             this.acesso = acesso;
         }
 
-        public String getCodCliente() {
+        public Long getCodCliente() {
             return codCliente;
         }
 
-        public void setCodCliente(String codCliente) {
+        public void setCodCliente(Long codCliente) {
             this.codCliente = codCliente;
         }
 
@@ -82,11 +82,11 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             this.nomeGerencia = nomeGerencia;
         }
 
-        public String getFkUsuarioId() {
+        public Long getFkUsuarioId() {
             return fkUsuarioId;
         }
 
-        public void setFkUsuarioId(String fkUsuarioId) {
+        public void setFkUsuarioId(Long fkUsuarioId) {
             this.fkUsuarioId = fkUsuarioId;
         }
     }

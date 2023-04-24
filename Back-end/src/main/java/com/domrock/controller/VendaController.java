@@ -1,9 +1,7 @@
 package com.domrock.controller;
 
-import com.domrock.dto.vendedor.VendedorRequestDTO;
-import com.domrock.dto.vendedor.VendedorResponseDTO;
-import com.domrock.model.Vendedor;
-import com.domrock.repository.VendedorRepository;
+import com.domrock.dto.venda.VendaResponseDTO;
+import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,25 +9,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/vendedor")
-public class VendedorController {
+@RequestMapping("/venda")
+public class VendaController {
 
     @Autowired
-    private VendedorRepository repository;
+    private VendaRepository repository;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
-    public List<VendedorResponseDTO> getAll(){
-        List<VendedorResponseDTO> vendedorList = repository.findAll().stream().map(VendedorResponseDTO::new).toList();;
-        return vendedorList;
-    }
-
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping
-    public void saveVendedor(@RequestBody VendedorRequestDTO data){
-        Vendedor vendedorData = new Vendedor(data);
-        repository.save(vendedorData);
-        return;
+    public List<VendaResponseDTO> getAll(){
+        List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();;
+        return vendaList;
     }
 
     @CrossOrigin(origins = "http://localhost:5500")
@@ -39,4 +29,5 @@ public class VendedorController {
         response.setHeader("Access-Control-Allow-Headers", "Content-Type");
         response.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     }
+
 }

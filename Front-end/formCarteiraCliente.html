@@ -20,19 +20,20 @@
 				</div>
 				<ul class="menu">
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Administrador</a></li>
-					<li><a class="pagina" href="#">Vendedor</a></li>
+					<li><a href="formVendedor.html">Cadastro Vendedor</a></li>
+					<li><a class="pagina" href="formVisualizacaoCliente.html">Visualização de Cliente</a></li>
 					<li><a href="#">Dados</a></li>
+					<li class="sair"><a href="index.html">Sair</a></li>
 				</ul>
 			</nav>
 		</div>	
 	</header>
 	<section>
 		<div class="titulopagina">
-			<img class="icone01" src="./imagem/icone01.png"><h1>CADASTRO DE CARTEIRA</h1>
+			<img class="icone01" src="./imagem/icone01.png"><h1>CADASTRO DE CLIENTE</h1>
 		</div>
 	</section>
-	<section class="C_Carteira">
+	<section class="C_Carteira" style="text-align: center;">
 		<form action="">
 			<div class="instrucoes">
 				<a>Para salvar as informações clique em "OK".</a>
@@ -41,20 +42,16 @@
 				<a>Nome do cliente</a><input class="nome_cliente" type="text" size="158">
 			</div>
 			<div class="gerencia-input">
-				<a>Gerencia</a><input class="gerencia" type="text" size="158">
+				<a>Gerencia</a><input class="nome_gerencia" type="text" size="158">
 			</div>
-			<div class="produto_A-input">
-				<a>Produto A</a><input class="produto_a" type="text" size="158">
-			</div>
-			<div class="produto_B-input">
-				<a>Produto B</a><input class="produto_b" type="text" size="158">
-			</div>
-			<div class="produto_C-input">
-				<a>Produto C</a>   <input class="produto_b" type="text" size="158">
-			</div>
-			<div class="salvar">
-				<button>OK</button>
-			</div>
+
+				<label for="caixa-de-selecao">Selecione uma opção:</label>
+				<select id="caixa-de-selecao">
+				<option value="opcao1">Opção 1</option>
+				<option value="opcao2">Opção 2</option>
+				<option value="opcao3">Opção 3</option>
+				</select>
+			<button>OK</button>
 		</form>
 	</section>
 </body>

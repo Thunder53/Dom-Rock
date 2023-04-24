@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+
+:root{
+    --font-principal: 'Lato', sans-serif;
+}
+
 body {
     background: #000000;
     color: #FFFFFF;
-    font-family: 'Lato', sans-serif;;
+    font-family: var(--font-principal);
 }
 
 .C_Carteira{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    gap: 15px;
-    
+    justify-content: center;
 }
 
 .logo_domrock {
@@ -84,40 +86,81 @@ nav li a{
     text-align: left;
     margin-bottom: 20px;
 }
-.cod_cliente-input, input{
-    padding: 5px 10px; 
-    margin-left: 10px;
-    border-radius: 25px;
-    border-color:#01B7E6;
-    background-color: transparent;
-    color:#FFFFFF;
-}
-.nome_cliente-input{
-    padding: 5px 10px; 
-    margin-left: 20px;
-    margin-top: 150px;
-}
-.gerencia-input{
-    padding: 5px 10px; 
-    margin-left: 70px;
-}
 
 
-button{
+button.botaook{
+    display: inline-block;
     cursor: pointer;
     margin-top: 30px;
     padding: 20px 35px; 
-    margin-left: 70px;
+    margin-left: 20px;
+    margin-right: 30px;
     border-radius: 25px;
     border-color:#01B7E6;
     background-color: black;
     color:#01B7E6;
 }
 
-button:hover{
+button.botaook:hover{
     font-size: 15px;
     height: 70px;
     width: 105px;
 
     transition: 0.5s;
 }
+
+
+button.botaocadastarcliente{
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 20px 35px; 
+    margin-left: 20px;
+    border-radius: 25px;
+    border-color:#01B7E6;
+    background-color: black;
+    color:#01B7E6;
+    
+    
+}
+
+button.botaocadastarcliente:hover{
+    font-size: 15px;
+    height: 70px;
+    width: 260px;
+    transition: 0.5s;
+}
+
+
+.boxview {
+    width: 1000px;
+    height: 500px;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 25PX;
+    border: 2px solid #01b8e6;
+    
+    
+}
+
+.botoes{
+    text-align: end;
+}
+
+.boxview__linha{
+    border-color: #01B7E6;
+}
+
+.boxview__titulo{
+    display: flex;
+    justify-content: center;
+}
+
+
+.info_cliente td {
+    text-align: center;
+    padding: 10px;
+}
+    
+
+

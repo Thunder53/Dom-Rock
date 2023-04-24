@@ -16,6 +16,12 @@
 
 > _Dev. Team_ - [Tobias Fernandes Bezerra Sousa](https://www.linkedin.com/in/tobias-sousa-23bba822a)
 
+> _Dev. Team_ - [Beatrice Lopes Correa]()
+
+> _Dev. Team_ - [Thiago Chaves]()
+
+> _Dev. Team_ - [Murilo Junior]()
+
 ## Empresa parceira
 
 A Dom Rock é uma empresa que oferece soluções utilizando tecnologia de dados para ampliar resultados em marketing, vendas, distribuição, logística, operações, engenharia e finanças.
@@ -43,23 +49,23 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Admin cadastra carteira de clientes</td>
-   <td>Alta</td>
+   <td>Sistema de cadastro da carteira de clienets</td>
+   <td>Imprescindível</td>
   </tr>
 
   <tr>
-   <td>Admin cadastra vendedores</td>
-   <td>Alta</td>
+   <td>Sistema para cadastro dos vendedores</td>
+   <td>Importante</td>
   </tr>
 
   <tr>
-   <td>Tela do administrador</td>
-   <td>Média</td>
+   <td>Visão administrativa dos cadastro de clientes, produtos e vendedor</td>
+   <td>Importante</td>
   </tr>
  
   <tr>
-    <td>Tela de Login</td>
-    <td>Baixa</td>
+    <td>Mecânismo de autenticação e autorização do sistema</td>
+    <td>Desejável</td>
   </tr>
     
 </table>
@@ -82,17 +88,19 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   </tr>
 
   <tr>
-   <td>Administrador deve ser capaz de cadastrar vendedores</td>
+   <td>Como administrador quero cadastrar os vendedores para cirar seu acesso ao sistema</td>
    <td>01</td>
   </tr>
 
   <tr>
-   <td>Administrador deve ser capaz de criar a carteira com os clientes</td>
+   <td>Como administrador quero cadastrar as carteiras de clientes para o vendedor ter acesso ao seus clientes e produtos</td>
    <td>02</td>
   </tr>
   
+  
+  
   <tr>
-   <td>Como administrador quero fazer login no sistema</td>
+   <td>Como administrador quero ter acesso ao sistema pelo método de login</td>
    <td>03</td>
   </tr>
   
@@ -120,3 +128,72 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
 ## Jornada do Usuário 
 
 ![jornada](https://user-images.githubusercontent.com/102214439/229376060-647e5844-e2d0-4f95-a564-55fa64628e5f.png)
+
+# Backlog 2ª Sprint
+
+<table align="center">
+  <tr>
+   <td>Tasks</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Visualização de informações do cliente</td>
+   <td>Imprescindível</td>
+  </tr>
+
+  <tr>
+   <td>Sistema de cadastro de novos clientes e seus produtos</td>
+   <td>Imprescindível</td>
+  </tr>
+
+  <tr>
+   <td>Gráfico de visualização da quantidade de vendas</td>
+   <td>Importante</td>
+  </tr>
+  
+  <tr>
+   <td>Gerenciamento da carteira do cliente</td>
+   <td>Importante</td>
+  </tr>
+ 
+
+    
+</table>
+
+## User stories
+
+<table align="center">
+  <tr>
+   <td>User stories</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Como administrador quero visualizar as informações do cliente</td>
+   <td>01</td>
+  </tr>
+
+  <tr>
+   <td>Como administrador quero cadastrar novos clientes e produtos para ser incluidos nas carteiras de vendedores</td>
+   <td>01</td>
+  </tr>
+  
+  <tr>
+    <td>Como administrador e vendedor quero visualizar por meio de gráficos a quantidade de vendas para que seja feito um planejamento de vendas</td>
+    <td>02</td>
+  
+  <tr>
+  
+  <tr>
+    <td>Como vendedor quero administrar minha carteira de clientes inserir minhas previsões de vendas</td>
+    <td>02</td>
+  
+  <tr>
+  
+  
+</table>
+
+## Burndown 2° Sprint
+
+![Burndown](https://user-images.githubusercontent.com/108765052/233890630-b1804266-d104-4522-8315-0864c3e408c4.jpg)

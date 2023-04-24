@@ -1,6 +1,6 @@
 package com.domrock.model;
 
-import com.domrock.dto.usuario.*;
+import com.domrock.dto.vendedor.UsuarioRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -17,34 +17,45 @@ import lombok.NoArgsConstructor;
 public class Usuario {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String nome;
     private String email;
     private String senha;
-    @Enumerated(EnumType.STRING)
-    private TipoAcesso acesso;
+    private String cpf;
+    private String contato;
+    private String acesso;
+
 
     public Usuario(UsuarioRequestDTO data) {
+        this.nome = data.nome();
         this.email = data.email();
         this.senha = data.senha();
-        try {
-            this.acesso = TipoAcesso.valueOf(data.acesso().toUpperCase());
-        } catch (IllegalArgumentException ex) {
-            throw new IllegalArgumentException("Tipo de acesso inválido");
-        }
-    }
-    
-    public enum TipoAcesso {
-        VENDEDOR("Vendedor"),
-        ADMINISTRADOR("Administrador");
-
-        private final String valor;
-
-        TipoAcesso(String valor) {
-            this.valor = valor;
-        }
-
-        public String getValor() {
-            return valor;
-        }
+        this.cpf = data.cpf();
+        this.contato = data.contato();
+        this.acesso = data.acesso();
     }
 
+    public boolean validarNome(){
+        Matcher matcher = Regex.NOME_REGEX.matcher(this.nome);
+        return matcher.matches();
+    }
+
+    public boolean validarEmail(){
+        Matcher matcher = Regex.EMAIL_REGEX.matcher(this.email);
+        return matcher.matches();
+    }
+
+    public boolean validarSenha(){
+        Matcher matcher = Regex.SENHA_REGEX.matcher(this.senha);
+        return matcher.matches();
+    }
+
+    public boolean validarCpf(){
+        Matcher matcher = Regex.CPF_REGEX.matcher(this.cpf);
+        return matcher.matches();
+    }
+
+    public boolean validarContato(){
+        Matcher matcher = Regex.CONTATO_REGE.matcher(this.contato);
+        return matcher.matches();
+    }
 }

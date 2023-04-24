@@ -116,7 +116,6 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
 
 ## Burndown
 
-![Tela_Cadastro_produtos](https://user-images.githubusercontent.com/102214439/226492739-f8fe50dd-4d60-4701-b205-6d2ed4257eec.png)
 =======
 ![Burndown](https://user-images.githubusercontent.com/102214439/229376019-01b8fbf5-572d-4a9a-baf3-67651ab18678.png)
 

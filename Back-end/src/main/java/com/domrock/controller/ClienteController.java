@@ -6,6 +6,8 @@ import com.domrock.model.Cliente;
 import com.domrock.repository.ClienteRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -49,10 +51,13 @@ public class ClienteController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/cliente")
-    public void saveCliente(@RequestBody ClienteRequestDTO data){
-        Cliente clienteData = new Cliente(data);
-        repository.save(clienteData);
-        return;
+    public ResponseEntity<Cliente> criarCliente(@RequestBody Cliente cliente) {
+        try {
+            Cliente novoCliente = repository.save(cliente);
+            return new ResponseEntity<>(novoCliente, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @CrossOrigin(origins = "http://localhost:5500")

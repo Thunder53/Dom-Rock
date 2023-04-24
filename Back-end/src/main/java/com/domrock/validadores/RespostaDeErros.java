@@ -1,4 +1,6 @@
-package com.domrock.libs;
+package com.domrock.validadores;
+
+import com.domrock.dto.vendedor.UsuarioRequestDTO;
 
 import java.util.regex.Pattern;
 

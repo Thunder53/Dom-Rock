@@ -12,15 +12,12 @@ class ClienteTest {
 
     @Test
     public void testCreateClienteFromDTO() {
-        ClienteRequestDTO dto = new ClienteRequestDTO("Cliente 1", "Gerente 1", "Produto A", "Produto B", "Produto C");
+        ClienteRequestDTO dto = new ClienteRequestDTO("Cliente 1", "Gerente 1");
         
 
         Cliente cliente = new Cliente(dto);
 
         assertEquals("Cliente 1", cliente.getNome_cliente());
         assertEquals("Gerente 1", cliente.getNome_gerencia());
-        assertEquals("Produto A", cliente.getProduto_a());
-        assertEquals("Produto B", cliente.getProduto_b());
-        assertEquals("Produto C", cliente.getProduto_c());
     }
 }

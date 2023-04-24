@@ -6,7 +6,7 @@
 <meta name="viewport" content="width-width-devicen initial-scale=1.0">
 <meta name="author" content="Thunder"/>
 <link rel="stylesheet" href="./styles/VisualizacaoCliente.css">
-<script src="./js/formVisualizacaoCliente.js" defer></script>
+<script src="./js/carteiraVendedor.js" defer></script>
 </head>
 	
 <title>Dom Rock</title>
@@ -20,9 +20,9 @@
 				</div>
 				<ul class="menu">
 					<li><a href="homeAdmin.html">Home</a></li>
-					<li><a href="homeAdmin.html" style="color: #01B7E6;">Administrador</a></li>
-					<li><a href="homeAdmin.html">Vendedor</a></li>
-					<li><a href="dadosVendas.html" style="color: #01B7E6;">Dados</a></li>
+					<li><a href="homeAdmin.html" >Administrador</a></li>
+					<li><a href="homeAdmin.html"style="color: #01B7E6;" >Vendedor</a></li>
+					<li><a href="dadosVendas.html">Dados</a></li>
                     <li class="sair"><a href="index.html">Sair</a></li>
 				</ul>
 			</nav>
@@ -30,31 +30,27 @@
 	</header>
 	<section>
 		<div class="titulopagina">
-			<img class="icone01" src="./imagem/icone01.png"><h1>Visualização de Cliente</h1>
+			<img class="icone01" src="./imagem/icone01.png"><h1>MINHA CARTEIRA</h1>
 		</div>
 	</section>
 	<section class="C_Carteira">
 		<form action="">
 			<div class="boxview">
 				<section class="boxview__titulo">
-					<h3>INFORMAÇÕES DOS CLIENTES</h3>
+					<h3>MEUS CLIENTES</h3>
 				</section>
 				<hr class="boxview__linha">
 				<section class="boxview__tabela">
-					<table class="info_cliente">
+					<table align="center" class="info_cliente">
 						<tr>
-							<th>Nome do Cliente</th>
-							<th>Nome da Gerência</th>
-							<th>Nome do Vendendor</th>
-																					
+							<th>Código</th>
+							<th>Nome</th>														
 						</tr>
 						</section>
 						<section>
-							<tr sytle = align="center">
-								<td th:text="${clienteList.nomeCliente}"></td>
-								<td th:text="${clienteList.nomeGerencia}"></td>
-								<td th:text="${clienteList.nome}"></td>
-								
+							<tr>
+								<td th:text="${clienteList.cod_cliente}"></td>
+								<td th:text="${clienteList.nome_cliente}"></td>
 							</tr>
 						</section>
 					</table>
@@ -62,7 +58,7 @@
 			</div>	
 		</div>
 			<div class="botoes">
-				<button class="botaocadastarcliente" id="botao" type="button">CADASTRAR NOVO CLIENTE</button>
+				<button class="botaook" id="botaoAtualizar">Atualizar</button>
 			</div>
 		</form>
 	</section>

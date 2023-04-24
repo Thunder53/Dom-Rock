@@ -15,7 +15,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 
 public class Usuario {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
@@ -33,6 +34,7 @@ public class Usuario {
         this.contato = data.contato();
         this.acesso = data.acesso();
     }
+}
 
     public boolean validarNome(){
         Matcher matcher = Regex.NOME_REGEX.matcher(this.nome);

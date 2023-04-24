@@ -24,11 +24,12 @@ public class Cliente {
     private Long cod_cliente;
     private String nome_cliente;
     private String nome_gerencia;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long fk_usuario_id;
+
     public Cliente(ClienteRequestDTO data) {
         this.nome_cliente = data.nome_cliente();
         this.nome_gerencia = data.nome_gerencia();
+        this.fk_usuario_id = getFk_usuario_id();
     }
 
 }

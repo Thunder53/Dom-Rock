@@ -1,4 +1,4 @@
-package com.domrock.libs;
+package com.domrock.validadores;
 
 import java.util.regex.Pattern;
 

@@ -16,6 +16,12 @@
 
 > _Dev. Team_ - [Tobias Fernandes Bezerra Sousa](https://www.linkedin.com/in/tobias-sousa-23bba822a)
 
+> _Dev. Team_ - [Beatrice Lopes Correa]()
+
+> _Dev. Team_ - [Thiago Chaves]()
+
+> _Dev. Team_ - [Murilo Junior]()
+
 ## Empresa parceira
 
 A Dom Rock é uma empresa que oferece soluções utilizando tecnologia de dados para ampliar resultados em marketing, vendas, distribuição, logística, operações, engenharia e finanças.
@@ -187,3 +193,7 @@ A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo q
   
   
 </table>
+
+## Burndown 2° Sprint
+
+![Burndown](https://user-images.githubusercontent.com/108765052/233890630-b1804266-d104-4522-8315-0864c3e408c4.jpg)

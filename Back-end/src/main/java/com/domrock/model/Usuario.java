@@ -35,29 +35,3 @@ public class Usuario {
         this.acesso = data.acesso();
     }
 }
-
-//    public boolean validarNome(){
-//        Matcher matcher = Regex.NOME_REGEX.matcher(this.nome);
-//        return matcher.matches();
-//    }
-//
-//    public boolean validarEmail(){
-//        Matcher matcher = Regex.EMAIL_REGEX.matcher(this.email);
-//        return matcher.matches();
-//    }
-//
-//    public boolean validarSenha(){
-//        Matcher matcher = Regex.SENHA_REGEX.matcher(this.senha);
-//        return matcher.matches();
-//    }
-//
-//    public boolean validarCpf(){
-//        Matcher matcher = Regex.CPF_REGEX.matcher(this.cpf);
-//        return matcher.matches();
-//    }
-//
-//    public boolean validarContato(){
-//        Matcher matcher = Regex.CONTATO_REGE.matcher(this.contato);
-//        return matcher.matches();
-//    }
-//}

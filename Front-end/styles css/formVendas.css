@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lato&display=swap');
+
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #D6D8FA;
+    --cor-terciaria: #000000;
+    --cor-branca: #FFFFFF;
+    --cor-shadow: rgba(0, 0, 0, 0.25);
+    --cor-borda: #00B1ED;
+    
+    --fonte-primaria: 'Barlow Condensed', sans-serif;
+    --cor-hover: #9b9cab;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-primaria);
+    
+}
+
+.cabecalho{
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-primaria);
+}
+
+.cabecalho__logo{
+    width: 20%;
+    background-color: var(--cor-primaria);
+}
+
+.cabecalho__nav{
+    padding-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 300px;
+    font-size: 24px;
+}
+
+.cabecalho__home{
+    text-decoration: none;
+    color: var(--cor-branca);
+}
+
+.cabecalho__home:hover{
+    color: var(--cor-borda);
+}
+
+.vendas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 145px;
+    background-color: var(--cor-fundo);
+}
+
+.vendas__registro{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 180px;
+}
+
+.vendas__registro__colunas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+}
+
+.vendas__registro__input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    font-size: 24px;
+}
+
+label{
+    width: 73px;
+    height: 30px;
+}
+
+input{
+    padding-left: 10px;
+    height: 30px;
+    width: 277px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-borda);
+    box-shadow: 0px 4px 4px var(--cor-shadow);
+}
+
+input::placeholder{
+    padding: 10px;
+}
+
+.vendas__botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 225px;
+    height: 40px;
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-borda);
+}
+
+button:hover{
+    background-color: var(--cor-hover);
+    cursor: pointer;
+}
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles css/formVendas.css">
+    <script src="../javascript/formVendas.js" defer></script>
+    <title>Dom Rock</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="cabecalho__logo" src="../assets/logo-domrock.png" alt="Logo Dom Rock">
+        <nav class="cabecalho__nav">
+            <a class="cabecalho__home" href="../view/homeVendedor.html">Home</a>
+            <p class="cabecalho__titulo">Registrar vendas</p>
+        </nav>
+    </header>
+    <main class="vendas">
+        <section class="vendas__registro">
+            <div class="vendas__registro__colunas">
+                <div class="vendas__registro__input">
+                    <label>Cliente</label>
+                    <input id="cliente" type="text" placeholder="Nome do cliente">
+                </div>
+               <div class="vendas__registro__input">
+                    <label>Produto</label>
+                    <input id="produto" type="text" placeholder="Informe o produto">
+               </div>
+            </div>
+            <div class="vendas__registro__colunas">
+                <div class="vendas__registro__input">
+                    <label>Data</label>
+                    <input id="data" type="month" placeholder="__/__/____">
+                </div>
+                <div class="vendas__registro__input">
+                    <label>Quantidade</label>
+                    <input id="quantidade" type="number" placeholder="Quantidade estimada">
+                </div>
+            </div>
+        </section>
+        <section class="vendas__botao">
+            <div>
+                <button id="registrar">Registrar</button>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

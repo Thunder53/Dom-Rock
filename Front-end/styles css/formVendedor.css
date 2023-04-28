@@ -48,54 +48,77 @@
     color: var(--cor-borda);
 }
 
-.vendas{
+#fundo__cor__nav {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 45vh;
+    width: 20vw;
+    background-color: var(--cor-secundaria);
+    border-radius: 15px;
+}
+
+#fundo__cor__cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 65vh;
+    background-color: var(--cor-secundaria);
+    border-radius: 15px;   
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 56px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--cor-fundo);
+}
+
+.botoes__navegadores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 46px;
+}
+
+a{
     font-family: var(--fonte-primaria);
+    color: var(--cor-primaria);
+    text-decoration: none;
     font-size: 20px;
 }
 
-.vendas__registro{
+a:hover{
+    color: var(--cor-borda);
+}
+
+.cadastro__vendedor{
     display: flex;
-    justify-content: center;
     flex-direction: row;
 }
 
-#fundo__cor {
-    width: 75vw;
-    height: 65vh;
-    background-color: var(--cor-secundaria);
-    border-radius: 25px;   
-}
 
-.vendas__registro__colunas{
-    padding: 80px;
+.cadastro__vendedor__colunas{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    gap: 75px;
+    gap: 25px;
 }
 
-.vendas__registro__input{
+.cadastro__vendedor__input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 10px;
     font-size: 20px;
-}
-
-label{
-    width: 73px;
-    height: 30px;
 }
 
 input{
@@ -110,18 +133,24 @@ input{
 }
 
 input::placeholder{
-    padding: 10px;
+    padding: 5px;
 }
 
-.vendas__botao{
+input::placeholder{
+    padding: 5px;
+}
+
+.cadastro__vendedor__botao{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
     align-items: center;
 }
 
 button{
     width: 225px;
-    height: 55px;
+    height: 50px;
     font-size: 20px;
     border-radius: 10px;
     background-color: var(--cor-branca);

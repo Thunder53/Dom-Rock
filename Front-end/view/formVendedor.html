@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles css/formVendedor.css">
+    <script src="../javascript/formVendedor.js" defer></script>
+    <title>Dom Rock</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="cabecalho__logo" src="../assets/logo-domrock.png" alt="Logo Dom Rock">
+        <nav class="cabecalho__nav">
+            <a class="cabecalho__home" href="">Home</a>
+        </nav>
+    </header>
+    <main class="cadastro">
+        <section class="cadastro__botoes" id="fundo__cor__nav">
+            <nav class="botoes__navegadores">
+                <a class="botoes__navegadores__cadastro__cliente" href="../view/formCliente.html">Cadastrar clientes</a>
+                <a class="botoes__navegadores__cadastro__vendedor" href="../view/formVendedor.html">Cadastrar vendedores</a>
+            </nav>
+        </section>
+        <section class="cadastro__vendedor" id="fundo__cor__cadastro">
+            <form action="" class="cadastro__vendedor">
+                <div class="cadastro__vendedor__colunas" >
+                    <div class="cadastro__vendedor__input">
+                        <label>Nome completo</label>
+                        <input class="nome" type="text" placeholder="Nome completo">
+                    </div>
+                    <div class="cadastro__vendedor__input">
+                        <label>E-mail</label>
+                        <input class="email" type="text" placeholder="E-mail">
+                    </div>
+                    <div class="cadastro__vendedor__input">
+                        <label>Confirmação E-mail</label>
+                        <input class="email-confirm" type="text" placeholder="Confirmação email">
+                    </div>
+                    <div class="cadastro__vendedor__input">
+                        <label>Cpf</label>
+                        <input class="cpf" type="number" placeholder="___.___.___-__">
+                    </div>
+                    <div class="cadastro__vendedor__input">
+                        <label>Senha</label>
+                        <input class="senha" type="password" placeholder="******">
+                    </div>
+                    <div class="cadastro__vendedor__input">
+                        <label>Contato</label>
+                        <input class="contato" type="number" placeholder="(**) *****-****">
+                    </div>
+                    <div class="cadastro__vendedor__botao">
+                        <button>Cadastrar</button>
+                    </div>     
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

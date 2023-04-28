@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles css/formCliente.css">
+    <script src="../javascript/formCliente.js" defer></script>
+    <title>Dom Rock</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="cabecalho__logo" src="../assets/logo-domrock.png" alt="Logo Dom Rock">
+        <nav class="cabecalho__nav">
+            <a class="cabecalho__home" href="../view/homeAdministrador.html">Home</a>
+        </nav>
+    </header>
+    <main class="cadastro">
+        <section class="cadastro__botoes" id="fundo__cor__nav">
+            <nav class="botoes__navegadores">
+                <a class="botoes__navegadores__cadastro__cliente" href="../view/formCliente.html">Cadastrar clientes</a>
+                <a class="botoes__navegadores__cadastro__vendedor" href="../view/formVendedor.html">Cadastrar vendedores</a>
+            </nav>
+        </section>
+        <section class="cadastro__cliente" id="fundo__cor__cadastro">
+            <form action="" class="cadastro__cliente">
+                <div class="cadastro__cliente__colunas" >
+                    <div class="cadastro__cliente__input">
+                        <label>Nome</label>
+                        <input id="nome_cliente" type="text" placeholder="Nome do cliente">
+                    </div>
+                   <div class="cadastro__cliente__input">
+                        <label>Gerencia</label>
+                        <input id="nome_gerencia" type="text" placeholder="Nome da gerencia">
+                   </div>
+                </div>
+                <div class="cadastro__cliente__colunas">
+                    <div class="cadastro__cliente__input">
+                        <label>Vendedor</label>
+                        <select id="caixa-de-selecao" class="caixa"></select>
+                    </div>
+                    <div class="cadastro__cliente__input">
+                        <button>Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

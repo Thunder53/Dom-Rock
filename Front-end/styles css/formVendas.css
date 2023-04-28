@@ -2,13 +2,13 @@
 
 :root{
     --cor-primaria: #000000;
-    --cor-secundaria: #D6D8FA;
+    --cor-secundaria: #d3d3d3;
     --cor-terciaria: #000000;
     --cor-branca: #FFFFFF;
     --cor-shadow: rgba(0, 0, 0, 0.25);
     --cor-borda: #00B1ED;
     
-    --fonte-primaria: 'Barlow Condensed', sans-serif;
+    --fonte-primaria: 'Lato', sans-serif;
     --cor-hover: #9b9cab;
 }
 
@@ -36,7 +36,7 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 300px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .cabecalho__home{
@@ -51,28 +51,37 @@
 .vendas{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    gap: 145px;
     background-color: var(--cor-fundo);
+    font-family: var(--fonte-primaria);
+    font-size: 20px;
 }
 
 .vendas__registro{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
-    gap: 180px;
+}
+
+#fundo__cor {
+    width: 75vw;
+    height: 65vh;
+    background-color: var(--cor-secundaria);
+    border-radius: 25px;   
 }
 
 .vendas__registro__colunas{
+    padding: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 70px;
+    gap: 75px;
 }
 
 .vendas__registro__input{
@@ -80,8 +89,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 35px;
-    font-size: 24px;
+    gap: 40px;
+    font-size: 20px;
 }
 
 label{
@@ -93,7 +102,7 @@ input{
     padding-left: 10px;
     height: 30px;
     width: 277px;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 10px;
     background-color: var(--cor-secundaria);
     border-color: var(--cor-borda);
@@ -112,8 +121,8 @@ input::placeholder{
 
 button{
     width: 225px;
-    height: 40px;
-    font-size: 24px;
+    height: 55px;
+    font-size: 20px;
     border-radius: 10px;
     background-color: var(--cor-secundaria);
     border-color: var(--cor-borda);

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles css/formVendas.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../javascript/formVendas.js" defer></script>
     <title>Dom Rock</title>
 </head>
@@ -13,12 +14,18 @@
         <img class="cabecalho__logo" src="../assets/logo-domrock.png" alt="Logo Dom Rock">
         <nav class="cabecalho__nav">
             <a class="cabecalho__home" href="../view/homeVendedor.html">Home</a>
-            <p class="cabecalho__titulo">Registrar vendas</p>
         </nav>
     </header>
-    <main class="vendas" id="fundo__cor">
-        <p>Registrar vendas</p>
-        <section class="vendas__registro" >
+    <main class="body">
+        <section>
+            <ul class="nav nav-tabs" style="width: 500px">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="">Registrar Venda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./minhasVendas.html">Minhas Vendas</a>
+                </li>
+              </ul>
             <div class="vendas__registro__colunas" >
                 <div class="vendas__registro__input">
                     <label>Cliente</label>
@@ -28,21 +35,17 @@
                     <label>Produto</label>
                     <input id="produto" type="text" placeholder="Informe o produto">
                </div>
-            </div>
-            <div class="vendas__registro__colunas">
-                <div class="vendas__registro__input">
-                    <label>Data</label>
-                    <input id="data" type="month" placeholder="__/__/____">
+               <div class="vendas__registro__input">
+                   <label>Data</label>
+                   <input id="data" type="month" placeholder="__/__/____">
                 </div>
                 <div class="vendas__registro__input">
                     <label>Quantidade</label>
                     <input id="quantidade" type="number" placeholder="Quantidade estimada">
                 </div>
-            </div>
-        </section>
-        <section class="vendas__botao">
-            <div>
-                <button id="registrar">REGISTRAR</button>
+                <div class="vendas__botao">
+                    <button id="registrar">REGISTRAR</button>
+                </div>
             </div>
         </section>
     </main>

@@ -48,6 +48,18 @@
     color: var(--cor-borda);
 }
 
+.body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 56px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .vendas{
     display: flex;
     flex-direction: column;
@@ -76,12 +88,12 @@
 }
 
 .vendas__registro__colunas{
-    padding: 80px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 75px;
+    gap: 30px;
 }
 
 .vendas__registro__input{

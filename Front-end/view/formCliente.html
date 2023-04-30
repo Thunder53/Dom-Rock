@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles css/formCliente.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../javascript/formCliente.js" defer></script>
     <title>Dom Rock</title>
 </head>
@@ -16,13 +17,15 @@
         </nav>
     </header>
     <main class="cadastro">
-        <section class="cadastro__botoes" id="fundo__cor__nav">
-            <nav class="botoes__navegadores">
-                <a class="botoes__navegadores__cadastro__cliente" href="../view/formCliente.html">Cadastrar clientes</a>
-                <a class="botoes__navegadores__cadastro__vendedor" href="../view/formVendedor.html">Cadastrar vendedores</a>
-            </nav>
-        </section>
-        <section class="cadastro__cliente" id="fundo__cor__cadastro">
+        <section>
+            <ul class="nav nav-tabs" style="width: 500px">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./formVendedor.html">Cadastrar Vendedor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Cadastrar Cliente</a>
+                </li>
+              </ul>
             <form action="" class="cadastro__cliente">
                 <div class="cadastro__cliente__colunas" >
                     <div class="cadastro__cliente__input">
@@ -32,17 +35,15 @@
                    <div class="cadastro__cliente__input">
                         <label>Gerencia</label>
                         <input id="nome_gerencia" type="text" placeholder="Nome da gerencia">
-                   </div>
-                </div>
-                <div class="cadastro__cliente__colunas">
+                    </div>
                     <div class="cadastro__cliente__input">
                         <label>Vendedor</label>
                         <select id="caixa-de-selecao" class="caixa"></select>
                     </div>
-                    <div class="cadastro__cliente__input">
+                    <div class="cadastro__cliente__botao">
                         <button>Cadastrar</button>
                     </div>
-                </div>
+                   </div>
             </form>
         </section>
     </main>

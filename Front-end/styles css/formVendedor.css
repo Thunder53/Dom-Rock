@@ -110,6 +110,7 @@ a:hover{
     flex-direction: column;
     justify-content: space-between;
     gap: 25px;
+    padding: 20px;
 }
 
 .cadastro__vendedor__input{

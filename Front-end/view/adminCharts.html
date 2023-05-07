@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdn.oesmith.co.uk/morris-0.5.1.css'>
+    <link rel="stylesheet" href="../styles css/adminCharts.css">
+
+    <title>Dom Rock</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="cabecalho__logo" src="../assets/logo-domrock.png" alt="Logo Dom Rock">
+        <nav class="cabecalho__nav">
+            <a class="cabecalho__home"  href="">Home</a>
+            <a class="cabecalho__home"  href="adminCharts.html">Dashboard</a>
+            <a class="cabecalho__home"  href="formCliente.html">Cadastro</a>
+        </nav>
+    </header>
+    <br>
+    <div class"row">
+        <div class="col-sm-6 text-center">
+          <label class="label label-success">Area Chart</label>
+          <div id="area-chart" ></div>
+        </div>
+        <div class="col-sm-6 text-center">
+           <label class="label label-success">Line Chart</label>
+          <div id="line-chart"></div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div  class="col-sm-6 text-center">
+           <label class="label label-success">Bar Chart</label>
+          <div id="bar-chart" ></div>
+        </div>
+        <div class="col-sm-6 text-center">
+           <label class="label label-success">Bar stacked</label>
+          <div id="stacked" ></div>
+        </div>
+    </div>
+</body>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js'></script>
+<script src="../js/chartAdmin.js"></script>
+</html> 

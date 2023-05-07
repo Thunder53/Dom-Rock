@@ -129,13 +129,14 @@ input::placeholder{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 button{
     width: 225px;
     height: 55px;
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 10px !important;
     background-color: var(--cor-branca);
     border-color: var(--cor-borda);
 }

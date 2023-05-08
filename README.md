@@ -18,17 +18,17 @@
 </p>
 <!-- -->
 <br>
-<h1 align="left"> Sobre a Dom Rock </h1>
+<h1 align="center"> Sobre a Dom Rock </h1>
 
 Dom Rock é uma empresa que oferece soluções utilizando tecnologia de dados para ampliar resultados em marketing, vendas, distribuição, logística, operações, engenharia e finanças.
 Utilizando modelos matemáticos e algoritmos baseados em aprendizado de máquina que endereçam duas soluções sendo Nxt.Demand com quatro produtos – Vox, Sales&Distribution, Marketing&Planning, Pricing – e Nxt.Operations com dois produtos – Matching&Risk e Optimization.
 
-<h1 align="left"> Nossa proposta </h1>
+<h1 align="center"> Nossa proposta </h1>
 
 A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo que padronizar todos os arquivos antes do uso, sendo assim sentiu necessidade de uma aplicação web que facilitaria a entrada destes dados em um padrão definido diminuindo o tempo gasto com a padronização. <br>
 Nesse semestre o grupo está propondo uma solução para a empresa. O desafio consiste em lidar com o histórico de movimentação de produtos (vendas e estoque), predição de faturamento (feito por um algoritmo de IA já existente) e a entrada de dados oriundas da força de vendas quanto ao planejamento futuro.
 
-<h1 align="left">🗓️ Entregas </h1>
+<h1 align="center">🗓️ Entregas </h1>
 
 <div>
   <table align="center">
@@ -43,21 +43,21 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
    <td>Primeira Sprint</td>
    <td>Cadastro carteira de clientes • Cadastro dos vendedores • Visão administrativa dos cadastro de clientes, produtos e vendedor • Mecânismo de autenticação e autorização do sistema</td>
    <td>02/04/2023</td>
-   <td><a href="">Visualizar</a></td>
+   <td><a href="https://github.com/Thunder53/Dom-Rock/releases/tag/Sprint01">Sprint01</a></td>
   </tr>
 
   <tr>
    <td>Segunda Sprint</td>
    <td>Visualização de informações do cliente • Sistema de cadastro de novos clientes e seus produtos • Gráfico de visualização da quantidade de vendas • Gerenciamento da carteira do cliente</td>
    <td>23/04/2023</td>
-   <td><a href="">Visualizar</a></td>
+   <td><a href="https://github.com/Thunder53/Dom-Rock/releases/tag/Sprint02">Sprint02</a></td>
   </tr>
 
   <tr>
    <td>Terceira Sprint</td>
    <td> --- </td>
    <td>23/04/2023</td>
-   <td><a href="">Visualizar</a></td>
+   <td><a href="">Sprint03</a></td>
   </tr>
  
   </table>
@@ -65,17 +65,19 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 
 <div>
 
-<h1 align="left">📋 Documentação do projeto</h1></details>
+<h1 align="center">📋 Documentação do projeto</h1></details>
   <h2>Product Backlog</h2>
-  <a href=""></a>
+    <img src="doc/Assets/backlog.png">
 
-  <h2>User Stories</h2>
+  <h2 align="center">User Stories (Sprint 3)</h2>
+    <img src="doc/Assets/user-stories-3.png">
 
-  <h2>Burndown</h2>
+  <h2 align="center">Burndown</h2>
 
-  <h3>
+  <h3 align="center">
     <a href="doc/Diagramas">• Diagramas 
     <a href="https://trello.com/b/JinZ6ETv/thunder">• Cards (Trello)
+    <a href="">• Documentação Completa (sprints 1, 2 e 3)
   </h3>
 
 

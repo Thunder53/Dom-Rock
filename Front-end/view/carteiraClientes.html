@@ -20,30 +20,28 @@
         <section>
             <ul class="nav nav-tabs" style="width: 500px">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="./formVendas.html">Registrar Venda</a>
+                  <a class="nav-link" aria-current="page" href="formVendas.html">Registrar Venda</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="">Minhas Vendas</a>
+                  <a class="nav-link" href="./minhasVendas.html">Minhas Vendas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="carteiraClientes.html">Minha Carteira</a>
+                    <a class="nav-link active" aria-current="page" href="">Minha Carteira</a>
                 </li>
-            </ul>
+              </ul>
 
-            <div style="padding-top: 25px;">
+              <div style="padding-top: 25px;">
                 <table align="center" class="table table-bordered">
                     <thead class="table-active">
                         <tr>
-                            <th>Cliente</th>
-                            <th>Produto</th>
-                            <th>Data</th>														
+                            <th>Código</th>
+                            <th>Nome</th>													
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td th:text="$"></td>
-                            <td th:text="$"></td>
-                            <td th:text="$"></td>
+                            <td th:text="${clienteList.cod_cliente}"></td>
+                            <td th:text="${clienteList.nome_cliente}"></td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,6 +1,5 @@
 package com.domrock;
 
-import com.domrock.dto.usuario.*;
 import com.domrock.dto.vendedor.UsuarioRequestDTO;
 import com.domrock.model.Usuario;
 import org.junit.jupiter.api.Test;

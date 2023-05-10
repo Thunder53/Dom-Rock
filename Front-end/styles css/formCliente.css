@@ -101,9 +101,7 @@ a:hover{
 
 .cadastro__cliente{
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
-    gap: 50px;
 }
 
 
@@ -111,22 +109,31 @@ a:hover{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     gap: 25px;
+    padding: 20px;
 }
 
 .cadastro__cliente__input{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.cadastro__cliente__botao{
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 6px;
-    font-size: 20px;
+    gap: 25px;
+    align-items: center;
 }
 
 input, select{
     padding-left: 10px;
     height: 30px;
-    width: 277px;
+    width: 365px;
     font-size: 18px;
     border-radius: 10px;
     background-color: var(--cor-secundaria);

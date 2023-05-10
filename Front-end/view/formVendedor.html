@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles css/formVendedor.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../javascript/formVendedor.js" defer></script>
     <title>Dom Rock</title>
 </head>
@@ -16,13 +17,15 @@
         </nav>
     </header>
     <main class="cadastro">
-        <section class="cadastro__botoes" id="fundo__cor__nav">
-            <nav class="botoes__navegadores">
-                <a class="botoes__navegadores__cadastro__cliente" href="../view/formCliente.html">Cadastrar clientes</a>
-                <a class="botoes__navegadores__cadastro__vendedor" href="../view/formVendedor.html">Cadastrar vendedores</a>
-            </nav>
-        </section>
-        <section class="cadastro__vendedor" id="fundo__cor__cadastro">
+        <section>
+            <ul class="nav nav-tabs" style="width: 500px">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="">Cadastrar Vendedor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./formCliente.html">Cadastrar Cliente</a>
+                </li>
+              </ul>
             <form action="" class="cadastro__vendedor">
                 <div class="cadastro__vendedor__colunas" >
                     <div class="cadastro__vendedor__input">
@@ -38,7 +41,7 @@
                         <input class="email-confirm" type="text" placeholder="Confirmação email">
                     </div>
                     <div class="cadastro__vendedor__input">
-                        <label>Cpf</label>
+                        <label>CPF</label>
                         <input class="cpf" type="number" placeholder="___.___.___-__">
                     </div>
                     <div class="cadastro__vendedor__input">

@@ -6,7 +6,7 @@
 
 ## Equipe
 
-> _Product Owner_ - [Luiz Henrique Berti](https://www.linkedin.com/in/luiz-henrique-berti-235a7a19b/)
+> _Product Owner_ - [Thiago Chaves]()
 
 > _Scrum Master_ - [Ariane Cristine Alves de Sousa](https://www.linkedin.com/in/ariane-sousa77)
 
@@ -17,8 +17,6 @@
 > _Dev. Team_ - [Tobias Fernandes Bezerra Sousa](https://www.linkedin.com/in/tobias-sousa-23bba822a)
 
 > _Dev. Team_ - [Beatrice Lopes Correa]()
-
-> _Dev. Team_ - [Thiago Chaves]()
 
 > _Dev. Team_ - [Murilo Junior]()
 

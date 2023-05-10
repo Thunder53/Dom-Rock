@@ -2,13 +2,13 @@
 
 :root{
     --cor-primaria: #000000;
-    --cor-secundaria: #D6D8FA;
+    --cor-secundaria: #d3d3d3;
     --cor-terciaria: #000000;
     --cor-branca: #FFFFFF;
     --cor-shadow: rgba(0, 0, 0, 0.25);
     --cor-borda: #00B1ED;
     
-    --fonte-primaria: 'Barlow Condensed', sans-serif;
+    --fonte-primaria: 'Lato', sans-serif;
     --cor-hover: #9b9cab;
 }
 
@@ -36,11 +36,7 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 300px;
-    font-size: 24px;
-}
-
-.cabecalho__titulo{
-    color: var(--cor-branca);
+    font-size: 20px;
 }
 
 .cabecalho__home{
@@ -50,4 +46,44 @@
 
 .cabecalho__home:hover{
     color: var(--cor-borda);
+}
+
+#fundo__cor__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45vh;
+    width: 20vw;
+    background-color: var(--cor-secundaria);
+    border-radius: 15px;
+}
+
+#fundo__cor__cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 65vh;
+    background-color: var(--cor-secundaria);
+    border-radius: 15px;   
+}
+
+button:hover{
+    background-color: var(--cor-branca);
+    cursor: pointer;
+}
+
+button{
+    margin-top: 150px;
+    padding: 20px 35px; 
+    margin-left: 355px;
+    border-radius: 25px;
+    border-color:#01B7E6;
+    background-color: var(--cor-secundaria);
+    color:black;   
+    font-size: 15px; 
+    display: center;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 1;
 }

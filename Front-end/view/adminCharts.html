@@ -20,21 +20,29 @@
         </nav>
     </header>
     <br>
-    <div class"row">
+    <div class="row">
         <div class="col-sm-6 text-center">
+            <canvas id="grafico_area">
           <label class="label label-success">Area Chart</label>
           <div id="area-chart" ></div>
+        </canvas>
         </div>
+        //Grafico de Linha
         <div class="col-sm-6 text-center">
+            <canvas id="graficos_barra_linha">
            <label class="label label-success">Line Chart</label>
           <div id="line-chart"></div>
+            </canvas>
         </div>
     </div>
     <br>
     <div class="row">
+        //Grafico de barra
         <div  class="col-sm-6 text-center">
+            <canvas id="graficos_barra">
            <label class="label label-success">Bar Chart</label>
           <div id="bar-chart" ></div>
+        </canvas>
         </div>
         <div class="col-sm-6 text-center">
            <label class="label label-success">Bar stacked</label>
@@ -46,5 +54,7 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js'></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../js/chartAdmin.js"></script>
 </html> 

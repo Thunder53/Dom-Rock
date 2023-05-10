@@ -1,35 +1,108 @@
-var data = [
-      { y: '2014', a: 50, b: 90},
-      { y: '2015', a: 65,  b: 75},
-      { y: '2016', a: 50,  b: 50},
-      { y: '2017', a: 75,  b: 60},
-      { y: '2018', a: 80,  b: 65},
-      { y: '2019', a: 90,  b: 70},
-      { y: '2020', a: 100, b: 75},
-      { y: '2021', a: 115, b: 75},
-      { y: '2022', a: 120, b: 85},
-      { y: '2023', a: 145, b: 85},
-      { y: '2024', a: 160, b: 95}
-    ],
-    config = {
-      data: data,
-      xkey: 'y',
-      ykeys: ['a', 'b'],
-      labels: ['Total Income', 'Total Outcome'],
-      fillOpacity: 0.6,
-      hideHover: 'auto',
-      behaveLikeLine: true,
-      resize: true,
-      pointFillColors:['#ffffff'],
-      pointStrokeColors: ['black'],
-      lineColors:['gray','blue']
-  };
-config.element = 'area-chart';
-Morris.Area(config);
-config.element = 'line-chart';
-Morris.Line(config);
-config.element = 'bar-chart';
-Morris.Bar(config);
-config.element = 'stacked';
-config.stacked = true;
-Morris.Bar(config);
+// Obtenha os dados do backend do Spring Boot (usando o fetch API, por exemplo)
+fetch('http://localhost:8080/venda')
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    const quantidadesEstimadas = data.map(venda => venda.quant_estimada / 100000000000000);
+    const quantidadesVendidas = data.map(venda => venda.quant_vendida / 100000000000000);
+    const labels = data.map(venda => new Date(venda.atualizada_em));
+
+    const quantidadesEstimadaslinha = data.map(venda => venda.quant_estimada / 100000000000000);
+    const quantidadesVendidaslinha = data.map(venda => venda.quant_vendida / 100000000000000);
+    const labels_linha = data.map(venda => new Date(venda.atualizada_em));
+    
+    // Dados para o gráfico de barras
+    const dataEstimada = {
+      label: 'Quantidade Estimada',
+      data: quantidadesEstimadas,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    };
+
+    const dataVendida = {
+      label: 'Quantidade Vendida',
+      data: quantidadesVendidas,
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1
+    };
+
+    const barData = {
+      labels: labels.map(label => label.toLocaleDateString()), // converte as labels para string
+      datasets: [dataEstimada, dataVendida]
+    };
+
+    // Dados para o gráfico de linha
+    const dataEstimadalinha = {
+      labels : 'Quantidade Estimada',
+      data: quantidadesEstimadaslinha,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+  
+    };
+    const dataVendidalinha = {
+      label: 'Quantidade Vendida',
+      data: quantidadesVendidaslinha,
+      backgroundColor: "rgba(75, 192, 192, 1)",
+      borderColor: "rgba(75, 192, 192, 1)",
+      borderWidth: 1
+    };
+    const lineData = {
+      labels: labels.map(label => label.toLocaleDateString()), // converte as labels para string
+      datasets: [dataEstimadalinha, dataVendidalinha]
+    };
+
+    //Criar grafico de area
+    const dataEstimadaarea = {
+      labels : 'Quantidade Estimada',
+      data: quantidadesEstimadaslinha,
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1
+  
+    };
+    const dataVendidaarea = {
+      label: 'Quantidade Vendida',
+      data: quantidadesVendidaslinha,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    };
+    
+    const areadata = {
+      labels: labels.map(label => label.toLocaleDateString()), // converte as labels para string
+      datasets: [dataEstimadaarea, dataVendidaarea] // adicione o novo conjunto de dados
+    };
+
+    const options = {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: false
+            }
+          }
+        ]
+      }
+    };
+
+    // Crie as instâncias de gráfico
+    const barChart = new Chart(document.getElementById('graficos_barra'), {
+      type: 'bar',
+      data: barData
+    });
+
+    const lineChart = new Chart(document.getElementById('graficos_barra_linha'), {
+      type: 'line',
+      data: lineData
+    });
+
+    const areaChart = new Chart(document.getElementById('grafico_area'), {
+      type: 'line',
+      data: areadata,
+      options: options
+    });
+});

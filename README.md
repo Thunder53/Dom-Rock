@@ -1,6 +1,6 @@
 <h1 align="center"></h1>
 <div text align="center">
-  <img src="doc/assets/logo02.png"  width="360" height="120" />
+  <img src="doc/Assets/logo02.png"  width="360" height="120" />
 </div><br>
 
 <!--badges-->
@@ -71,7 +71,7 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 
   <h2 align="center">Backlog</h2>
   <h3 align="center">Tasks</h3>
-    <p align="center"><img src="doc/backlog/sprint3-backlog.png"></p>
+    <p align="center"><img src="doc/Backlog/sprint3-backlog.png"></p>
   <h2 align="center">User Stories</h2>
     <p align="center"><img src="doc/Backlog/user-stories-3.png"></p>
 
@@ -81,8 +81,7 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
   <h3 align="center">
     <a href="doc/Diagramas">• Diagramas 
     <a href="https://trello.com/b/JinZ6ETv/thunder">• Cards (Trello)
-    <a href="">• Documentação Completa
-    <a href="">• Wireframes
+    <a href="doc/README.md">• Documentação Completa
   </h3>
 
 

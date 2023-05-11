@@ -67,4 +67,8 @@
     <h2 align="left">5.3 Wireframes</h2>
 
 <h1 align="center">6.Diagramas</h1>
+    <h2 align="left">6.1 Modelo Lógico</h2>
+        <p align="left"><img src="Diagramas/Modelo_Logico.png"></p>
+    <h2 align="left">6.2 Diagrama Entidade-Relacionamento</h2>
+        <p align="left"><img src="Diagramas/Diagrama_Entidade_Relacionamento.png"></p>
 

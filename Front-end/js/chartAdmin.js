@@ -12,6 +12,7 @@ fetch('http://localhost:8080/venda')
     const quantidadesVendidaslinha = data.map(venda => venda.quant_vendida / 100000000000000);
     const labels_linha = data.map(venda => new Date(venda.atualizada_em));
     
+    
     // Dados para o gráfico de barras
     const dataEstimada = {
       label: 'Quantidade Estimada',

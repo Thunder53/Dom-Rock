@@ -23,12 +23,14 @@ public class Venda {
     private Float quant_estimada;
     private Date atualizada_em;
     private Date criada_em;
+    private Long fk_produto_cod_produto;
 
     public Venda(VendaRequestDTO data){
         this.quant_vendida = data.quant_vendida();
         this.quant_estimada = data.quant_estimada();
         this.atualizada_em = data.atualizada_em();
         this.criada_em = data.criada_em();
+        this.fk_produto_cod_produto = data.fk_produto_cod_produto();
     }
 
 }

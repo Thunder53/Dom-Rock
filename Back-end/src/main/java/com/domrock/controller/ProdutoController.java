@@ -18,18 +18,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/produto")
+@RequestMapping
 public class ProdutoController {
 
     @Autowired
     private ProdutoRepository repository;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping
+    @GetMapping("/produto")
     public List<ProdutoResponseDTO> getAll(){
         List<ProdutoResponseDTO> produtoList = repository.findAll().stream().map(ProdutoResponseDTO::new).toList();
         return produtoList;
     }
+
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/produto-com-venda")
+    public List<ProdutoRepository.ProdutocomVenda>buscarprodutocomvenda() {
+        List<Object[]> resultado = repository.buscarprodutocomvenda();
+        List<ProdutoRepository.ProdutocomVenda> produtos_venda = new ArrayList<>();
+
+        for (Object[] obj : resultado) {
+            ProdutoRepository.ProdutocomVenda produto_venda = new ProdutoRepository.ProdutocomVenda();
+            produto_venda.setCod_produto(Long.valueOf(Long.toString((Long) obj[1])));
+            produto_venda.setNome_produto((String) obj[3]);
+            produto_venda.setQuant_vendida((Float.valueOf(Float.toString((Float) obj[0]))));
+            produto_venda.setFk_produto_cod_produto((Long.valueOf(Long.toString((Long) obj[2]))));
+            produtos_venda.add(produto_venda);
+
+        }
+
+        return produtos_venda;
+    }
+
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

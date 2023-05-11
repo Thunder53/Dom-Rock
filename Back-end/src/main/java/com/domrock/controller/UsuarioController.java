@@ -22,9 +22,12 @@ public class UsuarioController {
     private UsuarioRepository repository;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping
-    public List<UsuarioResponseDTO> getAll(){
-        List<UsuarioResponseDTO> usuarioList = repository.findAll().stream().map(UsuarioResponseDTO::new).toList();;
+    @GetMapping("/vendedores")
+    public List<UsuarioResponseDTO> getVendedores(){
+        List<UsuarioResponseDTO> usuarioList = repository.findAllByAcesso("vendedor")
+                .stream()
+                .map(UsuarioResponseDTO::new)
+                .toList();
         return usuarioList;
     }
 

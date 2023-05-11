@@ -48,7 +48,6 @@ public class ClienteController {
         return clientes_usuario;
     }
 
-
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/cliente")
     public ResponseEntity<Cliente> criarCliente(@RequestBody Cliente cliente) {
@@ -59,6 +58,14 @@ public class ClienteController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/clientes-by-vendedor/{id}")
+    public List<ClienteResponseDTO> findByVendedor(@PathVariable Long id){
+        List<Cliente> clientes = repository.findByVendedor(id);
+        return clientes.stream().map(ClienteResponseDTO::new).toList();
+    }
+
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

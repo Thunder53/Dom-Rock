@@ -2,7 +2,8 @@ const registrar = document.getElementById("registrar");
 const Icliente = document.getElementById("cliente");
 const Iproduto = document.getElementById("produto");
 const Idata = document.getElementById("data");
-const Iquantidade = document.getElementById("quantidade")
+const Iquantidade = document.getElementById("quantidade");
+const select = document.getElementById('caixa-de-selecao-cliente');
 
 function cadastrar(){
     fetch("http://localhost:8080/venda",
@@ -40,3 +41,15 @@ registrar.addEventListener('click', function(){
         alert("Vendedor cadastrado com sucesso.");
     }
 });
+
+
+    fetch(`http://localhost:8080/clientes-by-vendedor/${localStorage.getItem('id')}`)
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(cliente => {
+            const option = document.createElement('option');
+            option.text = cliente.nome_cliente;
+            select.appendChild(option);
+        });
+    })
+    .catch(error => console.error(error));

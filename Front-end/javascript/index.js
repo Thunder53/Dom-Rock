@@ -9,6 +9,12 @@ function homeVendedor() {
   window.close();
 }
 
+function homeAdministrador() {
+  var novaPagina = "../view/homeAdministrador.html";
+  window.open(novaPagina);
+  window.close();
+}
+
 function fazerLogin() {
   let email = document.getElementById("img_usuario").value;
   let senha = document.getElementById("img_senha").value;
@@ -24,7 +30,7 @@ function fazerLogin() {
       if (response.ok) {
           response.json().then(data => {
               let id = data;
-              // Salvar id em uma variável para uso em outras páginas
+              localStorage.setItem("id", id);
               homeVendedor();
           });
       } else {
@@ -36,18 +42,12 @@ function fazerLogin() {
   });
 }
 
-function homeAdministrador() {
-    var novaPagina = "../view/homeAdministrador";
-    window.open(novaPagina);
-    window.close();
-  }
-
 formulario.addEventListener('submit', function(event){
     event.preventDefault();
     if ( Iemail.value.trim() === "" || Isenha.value.trim() === "") {
       alert("Insira valores aos campos")
     } else {
-      if ( Iemail === "ariane@domrock.com" && Isenha === "123456789"){
+      if ( Iemail.value.trim() === "ariane@domrock.com" && Isenha.value.trim() === "123456789"){
         homeAdministrador();
       } else {
         fazerLogin();

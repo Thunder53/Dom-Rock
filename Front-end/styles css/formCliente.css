@@ -44,6 +44,13 @@
     color: var(--cor-branca);
 }
 
+.cabecalho__sair {
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    padding: 50px;
+}
+  
 .cabecalho__home:hover{
     color: var(--cor-borda);
 }

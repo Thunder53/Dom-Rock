@@ -48,6 +48,13 @@
     color: var(--cor-borda);
 }
 
+.cabecalho__sair {
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    padding: 50px;
+}
+
 #fundo__cor__nav {
     display: flex;
     align-items: center;

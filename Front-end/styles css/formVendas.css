@@ -48,6 +48,13 @@
     color: var(--cor-borda);
 }
 
+.cabecalho__sair {
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    padding: 50px;
+}
+
 .body{
     display: flex;
     flex-direction: row;
@@ -110,7 +117,7 @@ label{
     height: 30px;
 }
 
-input{
+input, select{
     padding-left: 10px;
     height: 30px;
     width: 277px;

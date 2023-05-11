@@ -13,7 +13,7 @@ cadastro_vendedor.addEventListener("click", function() {
   window.location.href = "formVendedor.html";
 });
 
-const teste = document.getElementById("teste");
-teste.addEventListener("click", function() {
-  window.location.href = "homeAdministrador.html";
+const dados = document.getElementById("dados");
+dados.addEventListener("click", function() {
+  window.location.href = "../view/adminCharts.html";
 });

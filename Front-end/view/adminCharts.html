@@ -49,6 +49,45 @@
         </canvas>
         </div>
     </div>
+     <!-- Filtro por data e produto -->
+    <div class="FiltroData">
+        <label for="data-filter">Filtro por data:</label>
+            <select id="data-filter">
+                <option value="todos">Todos</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+        <button id="filtrar-data">Filtrar</button>
+    </div>
+    <br>
+    <div class="FiltroProduto">
+        <label for="produto-filter">Filtro por produto:</label>
+            <select id="produto-filter">
+                <option value="todos">Todos</option>
+                <option value="a">Produto A</option>
+                <option value="b">Produto B</option>
+            </select>
+        <button id="filtrar-produto">Filtrar</button>
+    </div>
+    <br>
+    <div class="FiltroVendedor">
+    <label for="vendedor-filter">Filtro por vendedor:</label>
+        <select id="vendedor-filter">
+            <option value="todos">Todos</option>
+            <option value="1">Vendedor 1</option>
+            <option value="2">Vendedor 2</option>
+        </select>
+    <button id="filtrar-vendedor">Filtrar</button>
+    </div>
 </body>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
@@ -57,4 +96,5 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../js/chartAdmin.js"></script>
+<script src="../js/chartAdminFiltro.js"></script>
 </html> 

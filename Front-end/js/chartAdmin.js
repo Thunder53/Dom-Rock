@@ -1,6 +1,5 @@
 // Obtenha os dados do backend do Spring Boot (usando o fetch API, por exemplo)
 fetch('http://localhost:8080/venda')
-fetch('http://localhost:8080/produto')
   .then(response => {
     return response.json();
   })
@@ -9,15 +8,15 @@ fetch('http://localhost:8080/produto')
     const quantidadesVendidas = data.map(venda => venda.quant_vendida / 100000000000000);
     const labels = data.map(venda => new Date(venda.atualizada_em));
 
-    const cod_produto ;
-    const nome_produto ;
+    const quantidadesEstimadaslinha = data.map(venda => venda.quant_estimada / 100000000000000);
+    const quantidadesVendidaslinha = data.map(venda => venda.quant_vendida / 100000000000000);
+    const labels_linha = data.map(venda => new Date(venda.atualizada_em));
     
     // Dados para o gráfico de barras
     const dataEstimada = {
       label: 'Quantidade Estimada',
       data: quantidadesEstimadas,
       type:"line",
-      fill: false,
       backgroundColor: 'rgba(54, 162, 235, 0.2)',
       borderColor: 'rgba(54, 162, 235, 1)',
       borderWidth: 1
@@ -39,7 +38,7 @@ fetch('http://localhost:8080/produto')
     // Dados para o gráfico de linha
     const dataEstimadalinha = {
       labels : 'Quantidade Estimada',
-      data: cod_produto,
+      data: quantidadesEstimadaslinha,
       backgroundColor: 'rgba(54, 162, 235, 0.2)',
       borderColor: 'rgba(54, 162, 235, 1)',
       borderWidth: 1
@@ -47,14 +46,14 @@ fetch('http://localhost:8080/produto')
     };
     const dataVendidalinha = {
       label: 'Quantidade Vendida',
-      data: nome_produto,
+      data: quantidadesVendidaslinha,
       backgroundColor: "rgba(75, 192, 192, 1)",
       borderColor: "rgba(75, 192, 192, 1)",
       borderWidth: 1
     };
     const lineData = {
       labels: labels.map(label => label.toLocaleDateString()), // converte as labels para string
-      datasets: [cod_produto, nome_produto]
+      datasets: [dataEstimadalinha, dataVendidalinha]
     };
     //Fim do grafico de linha
     //Criar grafico de area

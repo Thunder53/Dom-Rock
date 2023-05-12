@@ -60,6 +60,12 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
    <td><a href="">Sprint03</a></td>
   </tr>
  
+   <tr>
+   <td>Quarta Sprint</td>
+   <td>Implementação de notificações no sistema quando metas são atingidas pelos vendedores, gráficos histórico e predição de vendas, melhorias na interface</td>
+   <td>13/06/2023</td>
+   <td><a href="">Sprint04</a></td>
+  </tr>
   </table>
 </div>
 
@@ -78,6 +84,10 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 
   <h1 align="center">📉 Burndown</h1>
 
+  
+  <h1 align="center"> Backlog Sprint 4</h1>
+        <p align="center"><img src="doc/Backlog/sprint4-backlog.png"></p>
+  
   <h3 align="center">
     <a href="doc/Diagramas">• Diagramas 
     <a href="https://trello.com/b/JinZ6ETv/thunder">• Cards (Trello)

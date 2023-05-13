@@ -38,5 +38,5 @@ document.addEventListener('DOMContentLoaded', buscar);
 
 const botao = document.getElementById("botao");
 botao.addEventListener("click", function() {
-  window.location.href = "formCarteiraCliente.html";
+  window.location.href = "formCliente.html";
 });

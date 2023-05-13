@@ -1,6 +1,5 @@
 package com.domrock.controller;
 
-import com.domrock.dto.vendedor.cliente.ClienteRequestDTO;
 import com.domrock.dto.vendedor.cliente.ClienteResponseDTO;
 import com.domrock.model.Cliente;
 import com.domrock.repository.ClienteRepository;
@@ -30,7 +29,6 @@ public class ClienteController {
     public List<ClienteRepository.ClienteComVenda> buscarClientesComVendas() {
         List<Object[]> resultado = repository.buscarClientesComVendas();
         List<ClienteRepository.ClienteComVenda> clientes_usuario = new ArrayList<>();
-
         for (Object[] obj : resultado) {
             ClienteRepository.ClienteComVenda cliente_usuario = new ClienteRepository.ClienteComVenda();
             cliente_usuario.setNome((String) obj[0]);
@@ -42,12 +40,9 @@ public class ClienteController {
             cliente_usuario.setFkUsuarioId((Long.valueOf(Long.toString((Long) obj[6]))));
             clientes_usuario.add(cliente_usuario);
 
-
         }
-
         return clientes_usuario;
     }
-
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/cliente")
@@ -59,6 +54,14 @@ public class ClienteController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/clientes-by-vendedor/{id}")
+    public List<ClienteResponseDTO> findByVendedor(@PathVariable Long id){
+        List<Cliente> clientes = repository.findByVendedor(id);
+        return clientes.stream().map(ClienteResponseDTO::new).toList();
+    }
+
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

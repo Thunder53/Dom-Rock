@@ -106,67 +106,58 @@ a:hover{
     color: var(--cor-borda);
 }
 
-.cadastro__vendedor{
-    display: flex;
-    flex-direction: row;
-}
-
-
-.cadastro__vendedor__colunas{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 25px;
-    padding: 20px;
-}
-
-.cadastro__vendedor__input{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px;
-}
-
-input{
-    padding-left: 10px;
-    height: 30px;
-    width: 277px;
-    font-size: 18px;
-    border-radius: 10px;
-    background-color: var(--cor-secundaria);
-    border-color: var(--cor-borda);
-    box-shadow: 0px 4px 4px var(--cor-shadow);
-}
-
-input::placeholder{
-    padding: 5px;
-}
-
-input::placeholder{
-    padding: 5px;
-}
-
-.cadastro__vendedor__botao{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 25px;
-    align-items: center;
-}
-
-button{
-    width: 225px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 10px !important;
-    background-color: var(--cor-branca);
-    border-color: var(--cor-borda);
-}
-
 button:hover{
     background-color: var(--cor-hover);
     cursor: pointer;
 }
 
+button.botaocadastarcliente{
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 20px 35px; 
+    margin-left: 20px;
+    border-radius: 25px;
+    border-color:#01B7E6;
+    background-color: transparent;
+    color:black;
+    
+    
+}
+
+button.botaocadastarcliente:hover{
+    font-size: 15px;
+    height: 70px;
+    width: 260px;
+    transition: 0.5s;
+}
+
+
+.boxview {
+    width: 1000px;
+    height: 400px;
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid #01b8e6;
+    margin: 50px auto 0;
+}
+
+.botoes{
+    text-align: end;
+}
+
+.boxview__linha{
+    border-color: #01B7E6;
+}
+
+.boxview__titulo{
+    display: flex;
+    justify-content: center;
+}
+
+
+.info_cliente td {
+    /*text-align: center;*/
+    padding: 10px;
+}

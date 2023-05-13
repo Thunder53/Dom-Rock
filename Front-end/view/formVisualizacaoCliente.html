@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles css/VisualizacaoCliente.css">
+    <script src="../javascript/formVisualizacaoCliente.js" defer></script>
+    <title>Dom Rock</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="cabecalho__logo" src="../assets/logo-domrock.png" alt="Logo Dom Rock">
+        <nav class="cabecalho__nav">
+            <a class="cabecalho__home" href="../view/homeAdministrador.html">Home</a>
+        </nav>
+		<a class="cabecalho__sair" href="../view/index.html">Sair</a>
+    </header>
+        <section class="C_Carteira">
+			<form action="">
+				<div class="boxview">
+					<section class="boxview__titulo">
+						<h3>INFORMAÇÕES DOS CLIENTES</h3>
+					</section>
+					<hr class="boxview__linha">
+					<section class="boxview__tabela">
+						<table align="center" class="info_cliente">
+							<tr>
+								<th>Nome do Cliente</th>
+								<th>Nome da Gerência</th>
+								<th>Nome do Vendendor</th>
+																						
+							</tr>
+							</section>
+							<section>
+								<tr align="left">
+									<td th:text="${clienteList.nomeCliente}"></td>
+									<td th:text="${clienteList.nomeGerencia}"></td>
+									<td th:text="${clienteList.nome}"></td>
+									
+								</tr>
+							</section>
+						</table>
+					</section>
+				</div>	
+			</div>
+				<div class="botoes">
+					<button class="botaocadastarcliente" id="botao" type="button">CADASTRAR NOVO CLIENTE</button>
+				</div>
+    </main>
+    <footer></footer>
+</body>
+</html>

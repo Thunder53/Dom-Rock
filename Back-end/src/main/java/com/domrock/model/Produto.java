@@ -1,12 +1,11 @@
 package com.domrock.model;
+
 import com.domrock.dto.vendedor.cliente.ProdutoRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 @Table(name="produto")
 @Entity(name="produto")
@@ -26,6 +25,5 @@ public class Produto {
         this.nome_produto = data.nome_produto();
     }
 
-
-
 }
+

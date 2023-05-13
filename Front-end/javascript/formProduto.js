@@ -1,6 +1,6 @@
 const formulario = document.querySelector("form");
-const Inome_cliente = document.querySelector(".nome_cliente");
-const Inome_gerencia = document.querySelector(".nome_gerencia");
+const Inome_produto = document.getElementById("nome_produto");
+const Inome_cliente = document.getElementById("nome_cliente");
 const select = document.getElementById('caixa-de-selecao');
 let list = [];
 
@@ -53,7 +53,7 @@ formulario.addEventListener('submit', function(event){
 });
 
 
-fetch("http://localhost:8080/usuario")
+fetch("http://localhost:8080/usuario/vendedores")
     .then(response => response.json())
     .then(data => {
         data.forEach(usuario => {

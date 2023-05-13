@@ -72,6 +72,9 @@ body {
     border: 0;
     border-bottom: 2px solid #FFFFFF;
     outline: 0;
+    background: url(../assets/usuario.png) no-repeat right / 1.3em;
+    padding-right: 1.5em;
+    padding-bottom: 1.1em;
 }
 
 .input_senha {
@@ -81,6 +84,9 @@ body {
     border: 0;
     border-bottom: 2px solid #FFFFFF;
     outline: 0;
+    background: url(../assets/senha.png) no-repeat right / 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 1em;
 }
 
 
@@ -110,20 +116,7 @@ body {
     padding-top: 30px;
     margin-bottom: 50px;
     font-weight: 1;
-    
-    
-}
-
-#img_senha {
-    background: url(imagem/senha.png) no-repeat right / 1.5em;
-    padding-right: 1.5em;
-    padding-bottom: 1em;
-}
-
-#img_usuario {
-    background: url(imagem/usuario.png) no-repeat right / 1.3em;
-    padding-right: 1.5em;
-    padding-bottom: 1.1em;
+  
 }
 
 input::placeholder {

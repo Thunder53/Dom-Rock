@@ -53,7 +53,7 @@ formulario.addEventListener('submit', function(event){
 });
 
 
-fetch("http://localhost:8080/usuario")
+fetch("http://localhost:8080/usuario/vendedores")
     .then(response => response.json())
     .then(data => {
         data.forEach(usuario => {

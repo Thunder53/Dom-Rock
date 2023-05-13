@@ -1,5 +1,7 @@
 package com.domrock.dto.venda;
 
+import com.domrock.model.Venda;
+
 import java.util.Date;
 
 public record VendaResponseDTO(Float quant_vendida, Float quant_estimada, Date atualizada_em, Date criada_em, Long fk_usuario_id) {

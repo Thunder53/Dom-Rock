@@ -15,12 +15,12 @@ function buscar() {
       // Adiciona cada cliente como uma nova linha na tabela
       data.forEach(cliente => {
         const row = infoCliente.insertRow();
-        row.insertCell().textContent = cliente.nomeCliente;
-        row.insertCell().textContent = cliente.nomeGerencia;
+        row.insertCell().textContent = cliente.Nome_Cliente;
+        row.insertCell().textContent = cliente.Nome_Gerencia;
         row.insertCell().textContent = cliente.nome;
 
-        row.cells[0].classList.add("nomeCliente");
-        row.cells[1].classList.add("nomeGerencia");
+        row.cells[0].classList.add("Nome_Cliente");
+        row.cells[1].classList.add("Nome_Gerencia");
         row.cells[2].classList.add("nome");
        });
 

@@ -3,20 +3,26 @@ package com.domrock.controller;
 import com.domrock.dto.vendedor.cliente.ClienteResponseDTO;
 import com.domrock.model.Cliente;
 import com.domrock.repository.ClienteRepository;
+import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class ClienteController {
 
     @Autowired
     private ClienteRepository repository;
+    @Autowired
+    private  JdbcTemplate jdbcTemplate;
+
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/cliente")
@@ -26,20 +32,22 @@ public class ClienteController {
     }
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/clientes-com-vendas")
-    public List<ClienteRepository.ClienteComVenda> buscarClientesComVendas() {
-        List<Object[]> resultado = repository.buscarClientesComVendas();
-        List<ClienteRepository.ClienteComVenda> clientes_usuario = new ArrayList<>();
-        for (Object[] obj : resultado) {
-            ClienteRepository.ClienteComVenda cliente_usuario = new ClienteRepository.ClienteComVenda();
-            cliente_usuario.setNome((String) obj[0]);
-            cliente_usuario.setId(Long.valueOf(Long.toString((Long) obj[1])));
-            cliente_usuario.setAcesso((String) obj[2]);
-            cliente_usuario.setCodCliente((Long.valueOf(Long.toString((Long) obj[3]))));
-            cliente_usuario.setNomeCliente((String) obj[4]);
-            cliente_usuario.setNomeGerencia((String) obj[5]);
-            cliente_usuario.setFkUsuarioId((Long.valueOf(Long.toString((Long) obj[6]))));
+      public List<Map<String, Object>> getClienteComVendas() {
+        List<Map<String, Object>> clientes_usuario = new ArrayList<>();
+        String sql = "select u.nome, u.id, u.acesso, c.cod_cliente, c.nome_cliente, c.nome_gerencia, " +
+                "c.fk_usuario_id from usuario u, cliente c where c.fk_usuario_id = u.id " +
+                "and u.acesso = 'vendedor'";
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
+        for (Map<String, Object> row : rows) {
+            Map<String, Object> cliente_usuario = new HashMap<>();
+            cliente_usuario.put("nome", row.get("nome"));
+            cliente_usuario.put("id", row.get("id"));
+            cliente_usuario.put("Acesso", row.get("Acesso"));
+            cliente_usuario.put("Cod_Cliente", row.get("Cod_Cliente"));
+            cliente_usuario.put("Nome_Cliente", row.get("Nome_Cliente"));
+            cliente_usuario.put("Nome_Gerencia", row.get("Nome_Gerencia"));
+            cliente_usuario.put("Fk_Usuario_Id", row.get("Fk_Usuario_Id"));
             clientes_usuario.add(cliente_usuario);
-
         }
         return clientes_usuario;
     }

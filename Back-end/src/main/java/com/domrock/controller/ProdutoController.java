@@ -2,6 +2,7 @@ package com.domrock.controller;
 
 import com.domrock.dto.produto.ProdutoRequestDTO;
 import com.domrock.dto.produto.ProdutoResponseDTO;
+import com.domrock.dto.usuario.UsuarioRequestDTO;
 import com.domrock.model.Produto;
 import com.domrock.model.Usuario;
 import com.domrock.repository.ProdutoRepository;
@@ -32,7 +33,13 @@ public class ProdutoController {
         return produtoList;
     }
 
-
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/produto")
+    public void saveProduto(@RequestBody ProdutoRequestDTO data){
+        Produto produtodata = new Produto(data);
+        repository.save(produtodata);
+        return;
+    }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/produto-com-cliente")

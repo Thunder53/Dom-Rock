@@ -22,7 +22,6 @@ public class Produto {
     private String nome_produto;
 
     public Produto(ProdutoRequestDTO data) {
-        this.cod_produto = data.cod_produto();
         this.nome_produto = data.nome_produto();
     }
 

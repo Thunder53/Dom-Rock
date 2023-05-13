@@ -1,0 +1,35 @@
+function buscar() {
+    const url = "http://localhost:8080/produto-com-cliente";
+  
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const boxview = document.querySelector(".boxview");
+        const infoCliente = document.querySelector(".info_cliente");
+  
+    
+        // Adiciona cada cliente como uma nova linha na tabela
+        data.forEach(cliente => {
+          const row = infoCliente.insertRow();
+          row.insertCell().textContent = cliente.nome_cliente;
+          row.insertCell().textContent = cliente.nome_produto;
+          row.insertCell().textContent = cliente.criada_em;
+  
+          row.cells[0].classList.add("nome_cliente");
+          row.cells[1].classList.add("nome_produto");
+          row.cells[2].classList.add("criada_em");
+         });
+  
+        // Exibe a boxview
+      })
+      .catch(error => console.error(error));
+  };
+  
+  // Executa a função buscar
+  
+  
+  // Executa a função buscar assim que o documento HTML é completamente carregado
+  document.addEventListener('DOMContentLoaded', buscar);
+  
+  
+ 

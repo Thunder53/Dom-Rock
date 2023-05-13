@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles css/formVendas.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="../javascript/formVendas.js" defer></script>
+    <script src="../javascript/formMinhasVendas.js" defer></script>
     <title>Dom Rock</title>
 </head>
 <body>
@@ -37,17 +37,17 @@
             <div style="padding-top: 25px;">
                 <table align="center" class="table table-bordered">
                     <thead class="table-active">
-                        <tr>
+                        <tr class="boxview">
                             <th>Cliente</th>
                             <th>Produto</th>
                             <th>Data</th>														
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="info_cliente">
                         <tr>
-                            <td th:text="$"></td>
-                            <td th:text="$"></td>
-                            <td th:text="$"></td>
+                            <td th:text="${clienteList.nome_cliente}"></td>
+							<td th:text="${clienteList.nome_produto}"></td>
+							<td th:text="${clienteList.criada_em}"></td>
                         </tr>
                     </tbody>
                 </table>

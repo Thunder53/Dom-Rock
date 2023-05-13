@@ -57,16 +57,16 @@ public class ProdutoController {
         return produtos_cliente;
     }
 
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/produto-por-nome")
-    public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome) {
-        Produto produto = repository.findByNome(nome);
-        if (produto != null) {
-            return ResponseEntity.ok(produto.getCod_produto());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @GetMapping("/produto-por-nome")
+//    public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome) {
+//        Produto produto = repository.findByNome(nome);
+//        if (produto != null) {
+//            return ResponseEntity.ok(produto.getCod_produto());
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
 
 
     @CrossOrigin(origins = "http://localhost:5500")

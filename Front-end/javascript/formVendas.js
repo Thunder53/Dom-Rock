@@ -43,6 +43,8 @@ registrar.addEventListener('click', function(){
 });
 
 
+
+
     fetch(`http://localhost:8080/clientes-by-vendedor/${localStorage.getItem('id')}`)
     .then(response => response.json())
     .then(data => {

@@ -1,8 +1,12 @@
 package com.domrock.controller;
 
+import com.domrock.dto.produto.ProdutoRequestDTO;
+import com.domrock.dto.produto.ProdutoResponseDTO;
 import com.domrock.dto.vendedor.UsuarioRequestDTO;
 import com.domrock.dto.vendedor.UsuarioResponseDTO;
+import com.domrock.model.Produto;
 import com.domrock.model.Usuario;
+import com.domrock.repository.ProdutoRepository;
 import com.domrock.repository.UsuarioRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,32 +19,33 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/usuario")
-public class UsuarioController {
+@RequestMapping("/produto")
+public class ProdutoController {
 
     @Autowired
-    private UsuarioRepository repository;
+    private ProdutoRepository repository;
 
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/vendedores")
-    public List<UsuarioResponseDTO> getVendedores(){
-        List<UsuarioResponseDTO> usuarioList = repository.findAllByAcesso("vendedor")
-                .stream()
-                .map(UsuarioResponseDTO::new)
-                .toList();
-        return usuarioList;
-    }
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @GetMapping
+//    public List<ProdutoResponseDTO> getProdutos(){
+//        List<ProdutoResponseDTO> produtoList;
+//        produtoList = repository.findAllByAcesso("produto")
+//                .stream()
+//                .map(ProdutoResponseDTO::new)
+//                .toList();
+//        return produtoList;
+//    }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
-    public void saveUsuario(@RequestBody UsuarioRequestDTO data){
-        Usuario usuarioData = new Usuario(data);
-        repository.save(usuarioData);
+    public void saveProduto(@RequestBody ProdutoRequestDTO data){
+        Produto produtoData = new Produto(data);
+        repository.save(produtoData);
         return;
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/usuario-por-nome")
+    @GetMapping("/produto-por-nome")
     public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome) {
         Usuario usuario = repository.findByNome(nome);
         if (usuario != null) {
@@ -49,18 +54,6 @@ public class UsuarioController {
             return ResponseEntity.notFound().build();
         }
     }
-
-
-//    @PostMapping("/usuarios")
-//    public ResponseEntity<?> criarUsuario(@Valid @RequestBody UsuarioRequestDTO data, BindingResult result) {
-//        ErrorResponse errorResponse = usuario.validarCampos(data);
-//        if (errorResponse != null) {
-//            return ResponseEntity.status(errorResponse.getStatus()).body(errorResponse);
-//        }
-//        Usuario usuarioData = new Usuario(data);
-//        repository.save(usuarioData);
-//        return ResponseEntity.ok(new UsuarioResponseDTO(usuarioData));
-//    }
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

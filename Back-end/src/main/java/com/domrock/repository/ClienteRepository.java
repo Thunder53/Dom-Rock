@@ -8,11 +8,16 @@ import java.util.List;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
-    @Query("select u.nome, u.id, u.acesso, c.cod_cliente, c.nome_cliente, c.nome_gerencia, c.fk_usuario_id from usuario u, cliente c where c.fk_usuario_id = u.id and u.acesso = 'vendedor'")
+    @Query("select u.nome, u.id, u.acesso, c.cod_cliente, c.nome_cliente, c.nome_gerencia, " +
+            "c.fk_usuario_id from usuario u, cliente c where c.fk_usuario_id = u.id " +
+            "and u.acesso = 'vendedor'")
+
     public List<Object[]> buscarClientesComVendas();
 
     @Query("SELECT c FROM cliente c WHERE c.fk_usuario_id = ?1")
     List<Cliente> findByVendedor(Long id);
+
+
 
     public class ClienteComVenda {
         private String nome;

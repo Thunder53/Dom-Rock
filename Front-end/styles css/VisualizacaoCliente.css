@@ -118,8 +118,9 @@ button:hover{
 }
 
 button.botaocadastarcliente{
-    display: inline-block;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 30px;
     padding: 20px 35px; 
     margin-left: 20px;
@@ -127,24 +128,20 @@ button.botaocadastarcliente{
     border-color:#01B7E6;
     background-color: transparent;
     color:black;
-    
-    
+    transform: translate(250%);
 }
 
 button.botaocadastarcliente:hover{
-    font-size: 15px;
-    height: 70px;
-    width: 260px;
-    transition: 0.5s;
+    background-color: var(--cor-hover);
+    cursor: pointer;
 }
-
 
 .boxview {
     width: 1000px;
     height: 400px;
     background-color: var(--cor-secundaria);
     padding: 20px;
-    border-radius: 25px;
+    border-radius: 10px;
     border: 2px solid #01b8e6;
     margin: 50px auto 0;
 }
@@ -164,6 +161,34 @@ button.botaocadastarcliente:hover{
 
 
 .info_cliente td {
-    /*text-align: center;*/
     padding: 10px;
 }
+
+.boxview__tabela {
+    margin: 10px;
+}
+  
+
+.info_cliente {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+  
+.info_cliente th, .info_cliente td {
+    border: 1px solid var(--cor-borda);
+    padding: 8px;
+    text-align: left;
+}
+
+  
+.info_cliente tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.boxview__titulo {
+    background-color: transparent;
+    color: var(--cor-primaria);
+    padding: 10px;
+}
+  

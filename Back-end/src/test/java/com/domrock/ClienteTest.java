@@ -1,10 +1,5 @@
 package com.domrock;
 
-import com.domrock.dto.vendedor.cliente.ClienteRequestDTO;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import com.domrock.model.Cliente;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 //@SpringBootTest

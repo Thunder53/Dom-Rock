@@ -35,7 +35,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 300px;
+    gap: 150px;
     font-size: 20px;
 }
 
@@ -53,6 +53,12 @@
     position: absolute;
     right: 0;
     padding: 50px;
+    font-size: 20px;
+    color: var(--cor-branca);
+}
+
+.cabecalho__sair:hover {
+    color: var(--cor-borda);
 }
 
 #fundo__cor__nav {

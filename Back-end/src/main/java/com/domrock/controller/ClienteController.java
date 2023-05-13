@@ -1,6 +1,6 @@
 package com.domrock.controller;
 
-import com.domrock.dto.vendedor.cliente.ClienteResponseDTO;
+import com.domrock.dto.cliente.ClienteResponseDTO;
 import com.domrock.model.Cliente;
 import com.domrock.repository.ClienteRepository;
 import com.domrock.repository.VendaRepository;

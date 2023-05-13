@@ -1,17 +1,12 @@
 package com.domrock.controller;
 
-import com.domrock.dto.vendedor.UsuarioRequestDTO;
-import com.domrock.dto.vendedor.UsuarioResponseDTO;
 import com.domrock.model.Usuario;
 import com.domrock.repository.UsuarioRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController

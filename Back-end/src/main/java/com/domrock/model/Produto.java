@@ -1,6 +1,9 @@
 package com.domrock.model;
 
+<<<<<<< HEAD
 import com.domrock.dto.produto.ProdutoRequestDTO;
+=======
+>>>>>>> 4c6e17073f2493510f08526da82c46aa74e90c03
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

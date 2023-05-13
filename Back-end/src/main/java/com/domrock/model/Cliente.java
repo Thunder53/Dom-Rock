@@ -1,14 +1,11 @@
 package com.domrock.model;
 
-import com.domrock.dto.vendedor.cliente.ClienteRequestDTO;
+import com.domrock.dto.cliente.ClienteRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Table(name="cliente")

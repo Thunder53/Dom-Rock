@@ -18,7 +18,8 @@ function cadastrar(){
             email: Iemail.value,
             senha: Isenha.value,
             cpf: Icpf.value,
-            contato: Icontato.value
+            contato: Icontato.value,
+            acesso: "vendedor"
         })
     })
     .then(function(res) {console.log(res)})

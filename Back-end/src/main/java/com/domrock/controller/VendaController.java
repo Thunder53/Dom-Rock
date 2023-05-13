@@ -4,6 +4,7 @@ import com.domrock.dto.venda.VendaResponseDTO;
 import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +15,9 @@ public class VendaController {
 
     @Autowired
     private VendaRepository repository;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping

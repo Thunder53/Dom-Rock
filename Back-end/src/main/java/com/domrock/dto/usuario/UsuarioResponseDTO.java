@@ -1,4 +1,4 @@
-package com.domrock.dto.vendedor;
+package com.domrock.dto.usuario;
 
 import com.domrock.model.Usuario;
 

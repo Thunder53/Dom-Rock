@@ -1,4 +1,4 @@
-package com.domrock.dto.vendedor.cliente;
+package com.domrock.dto.cliente;
 
 import com.domrock.model.Cliente;
 

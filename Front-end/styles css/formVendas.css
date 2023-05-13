@@ -16,7 +16,6 @@
     margin: 0;
     padding: 0;
     font-family: var(--fonte-primaria);
-    
 }
 
 .cabecalho{
@@ -35,8 +34,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 300px;
+    gap: 150px;
     font-size: 20px;
+    align-items: center;
 }
 
 .cabecalho__home{
@@ -53,6 +53,12 @@
     position: absolute;
     right: 0;
     padding: 50px;
+    font-size: 20px;
+    color: var(--cor-branca);
+}
+
+.cabecalho__sair:hover {
+    color: var(--cor-borda);
 }
 
 .body{
@@ -120,7 +126,7 @@ label{
 input, select{
     padding-left: 10px;
     height: 30px;
-    width: 277px;
+    width: 400px;
     font-size: 18px;
     border-radius: 10px;
     background-color: var(--cor-secundaria);

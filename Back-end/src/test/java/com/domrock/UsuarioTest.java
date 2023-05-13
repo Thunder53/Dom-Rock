@@ -1,6 +1,5 @@
 package com.domrock;
 
-import com.domrock.dto.vendedor.UsuarioRequestDTO;
 import com.domrock.model.Usuario;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

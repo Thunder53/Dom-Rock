@@ -1,6 +1,5 @@
 package com.domrock.model;
 
-import com.domrock.dto.vendedor.cliente.ProdutoRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

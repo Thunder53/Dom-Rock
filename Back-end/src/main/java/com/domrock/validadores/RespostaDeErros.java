@@ -1,9 +1,5 @@
 package com.domrock.validadores;
 
-import com.domrock.dto.vendedor.UsuarioRequestDTO;
-
-import java.util.regex.Pattern;
-
 public class RespostaDeErros {
     private String message;
     private int status;

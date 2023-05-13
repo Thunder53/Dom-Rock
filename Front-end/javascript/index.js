@@ -4,13 +4,13 @@ const Iemail = document.querySelector(".input_login");
 const Isenha = document.querySelector(".input_senha");
 
 function homeVendedor() {
-  var novaPagina = "../view/homeVendedor.html";
+  var novaPagina = "../view/vendedorCharts.html";
   window.open(novaPagina);
   window.close();
 }
 
 function homeAdministrador() {
-  var novaPagina = "../view/homeAdministrador.html";
+  var novaPagina = "../view/adminCharts.html";
   window.open(novaPagina);
   window.close();
 }

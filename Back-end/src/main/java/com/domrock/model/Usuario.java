@@ -37,6 +37,7 @@ public class Usuario {
         this.acesso = data.acesso();
     }
 }
+<<<<<<< HEAD
 //    public boolean validarNome(){
 //        Matcher matcher = Regex.NOME_REGEX.matcher(this.nome);
 //        return matcher.matches();
@@ -62,3 +63,5 @@ public class Usuario {
 //        return matcher.matches();
 //    }
 //}
+=======
+>>>>>>> origin/back-endpoint-filtros

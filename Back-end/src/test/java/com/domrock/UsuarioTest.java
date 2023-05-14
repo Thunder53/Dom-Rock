@@ -1,25 +1,22 @@
 package com.domrock;
 
+import com.domrock.dto.vendedor.UsuarioRequestDTO;
 import com.domrock.model.Usuario;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.Assertions;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-@SpringBootTest
 class UsuarioTest {
 
-    @Test
     public void testCreateUsuarioFromDTO() {
-        UsuarioRequestDTO dto = new UsuarioRequestDTO(null, "Ana", "exemplo@gmail.com", "teste123", "123.456.789-10",
-                "12982578188", "administrador");
+        UsuarioRequestDTO dto = new UsuarioRequestDTO(null, "Ana Maria", "exemplo@gmail.com", "Teste123*",
+                "662.270.970-04", "12982578188", "administrador");
 
         Usuario usuario = new Usuario(dto);
 
-        assertEquals("Ana", usuario.getNome());
-        assertEquals("exemplo@gmail.com", usuario.getEmail());
-        assertEquals("teste123", usuario.getSenha());
-        assertEquals("12982578188", usuario.getContato());
-        assertEquals("administrador", usuario.getAcesso());
+        Assertions.assertEquals("Ana Maria", usuario.getNome());
+        Assertions.assertEquals("exemplo@gmail.com", usuario.getEmail());
+        Assertions.assertEquals("Teste123*", usuario.getSenha());
+        Assertions.assertEquals("662.270.970-04", usuario.getCpf());
+        Assertions.assertEquals("12982578188", usuario.getContato());
+        Assertions.assertEquals("administrador", usuario.getAcesso());
     }
 }

@@ -21,44 +21,6 @@
         </nav>
         <a class="cabecalho__sair" href="../view/index.html">Sair</a>
     </header>
-    <br>
-    <!-- Filtros -->
-    <div class="FiltroData">
-        <label for="data-filter">Filtro por data:</label>
-            <select id="data-filter">
-                <option value='todos'>Todos</option>
-                <option value='Janeiro'>Janeiro</option>
-                <option value='Fevereiro'>Fevereiro</option>
-                <option value='Março'>Março</option>
-                <option value='Abril'>Abril</option>
-                <option value='Maio'>Maio</option>
-                <option value='Junho'>Junho</option>
-                <option value='Julho'>Julho</option>
-                <option value='Agosto'>Agosto</option>
-                <option value='Setembro'>Setembro</option>
-                <option value='Outubro'>Outubro</option>
-                <option value='Novembro'>Novembro</option>
-                <option value='Dezembro'>Dezembro</option>
-            </select>
-        <button onclick="BotaoData">Filtrar</button>
-    </div>
-    <br>
-    <div class="FiltroProduto">
-        <label for="produto-filter">Filtro por produto:</label>
-            <select id="produto-filter">
-                <option value="todos">Todos</option>
-            </select>
-        <button onclick="BotaoProduto">Filtrar</button>
-    </div>
-    <br>
-    <div class="FiltroVendedor">
-        <label for="vendedor-filter">Filtro por vendedor:</label>
-            <select id="vendedor-filter">
-                <option value="todos">Todos</option>
-            </select>
-        <button onclick="BotaoVendedor">Filtrar</button>
-    </div>
-    <br>
     <div class="row">
         <div class="col-sm-6 text-center">
             <label class="label label-success" style="font-size: 15px;">TOP 10 Vendedores</label>           
@@ -73,8 +35,9 @@
     <div class="row">
         <div class="col-sm-6 text-center">
             <label class="label label-success" style="font-size: 15px;">Comparativo das vendas</label>
+            <hr>
             <div class="input-group">
-                <select class="form-control" id="filtro-mes" style="width: 60%;">
+                <select class="form-control" id="filtro-mes" style="width: 30%;">
                     <option value="">Todos os meses</option>
                     <option value="1">Janeiro</option>
                     <option value="2">Fevereiro</option>
@@ -88,6 +51,12 @@
                     <option value="10">Outubro</option>
                     <option value="11">Novembro</option>
                     <option value="12">Dezembro</option>
+                </select>
+                <select class="form-control" id="filtro-mes" style="width: 30%;">
+                    <option value="">Todos os vendedores</option>
+                </select>
+                <select class="form-control" id="filtro-mes" style="width: 30%;">
+                    <option value="">Todos os produtos</option>
                 </select>
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button" onclick="filtrarDados()">Filtrar</button>

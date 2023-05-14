@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-<<<<<<< HEAD
     
     Usuario findByNome(String nome);
 
@@ -16,12 +15,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     List<Usuario> findAllByAcesso(String acesso);
 
-=======
-
 //    @Query(value = "select u from usuario u where u.nome like %?1%")
 //    Usuario findByNome(String nome);
 
     @Query(value = "select u from usuario u where u.nome like %?1%")
     List<Usuario> getByNome(String nome);
->>>>>>> origin/back-endpoint-filtros
+
 }

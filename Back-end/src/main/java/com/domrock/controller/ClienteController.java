@@ -2,6 +2,7 @@ package com.domrock.controller;
 
 import com.domrock.dto.cliente.ClienteResponseDTO;
 import com.domrock.model.Cliente;
+import com.domrock.model.Produto;
 import com.domrock.repository.ClienteRepository;
 import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletResponse;
@@ -62,6 +63,18 @@ public class ClienteController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/cliente/id-por-nome")
+    public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome_cliente) {
+        Cliente cliente = repository.findByNome(nome_cliente);
+        if (cliente != null) {
+            return ResponseEntity.ok(cliente.getCod_cliente());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/clientes-by-vendedor/{id}")

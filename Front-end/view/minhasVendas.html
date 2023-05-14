@@ -34,23 +34,26 @@
                 </li>
             </ul>
 
-            <div style="padding-top: 25px;">
+            <div style="max-height: 400px; overflow-y: scroll;">
                 <table align="center" class="table table-bordered">
                     <thead class="table-active">
                         <tr class="boxview">
                             <th>Cliente</th>
                             <th>Produto</th>
-                            <th>Data</th>														
+                            <th style="width: 120px;">Data</th>
+                            <th>Quantidade estimada</th>														
                         </tr>
                     </thead>
                     <tbody class="info_cliente">
                         <tr>
                             <td th:text="${clienteList.nome_cliente}"></td>
-							<td th:text="${clienteList.nome_produto}"></td>
-							<td th:text="${clienteList.criada_em}"></td>
+                            <td th:text="${clienteList.nome_produto}"></td>
+                            <td th:text="${clienteList.criada_em}"></td>
+                            <td th:text="${clienteList.quant_estimada}"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            
         </section>
 </main>

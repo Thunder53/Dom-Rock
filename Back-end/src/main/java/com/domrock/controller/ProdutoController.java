@@ -41,11 +41,13 @@ public class ProdutoController {
         return;
     }
 
+
+
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/produto-com-cliente")
     public List<Map<String, Object>> getProdutoComCliente() {
         List<Map<String, Object>> produtos_cliente = new ArrayList<>();
-        String sql = "select p.nome_produto, p.cod_produto, c.nome_cliente, c.cod_cliente, v.criada_em, \n" +
+        String sql = "select p.nome_produto, p.cod_produto, c.nome_cliente, c.cod_cliente, v.criada_em, v.quant_estimada,\n" +
                 "v.fk_cliente_cod_cliente, v.fk_produto_cod_produto\n" +
                 "from produto p, cliente c, venda v \n" +
                 "where v.fk_cliente_cod_cliente = c.cod_cliente and v.fk_produto_cod_produto = p.cod_produto";
@@ -57,6 +59,7 @@ public class ProdutoController {
             produto_cliente.put("nome_cliente", row.get("nome_cliente"));
             produto_cliente.put("cod_cliente", row.get("cod_cliente"));
             produto_cliente.put("criada_em", row.get("criada_em"));
+            produto_cliente.put("quant_estimada", row.get("quant_estimada"));
             produto_cliente.put("fk_cliente_cod_cliente", row.get("fk_cliente_cod_cliente"));
             produto_cliente.put("fk_produto_cod_produto", row.get("fk_produto_cod_produto"));
             produtos_cliente.add(produto_cliente);
@@ -64,17 +67,16 @@ public class ProdutoController {
         return produtos_cliente;
     }
 
-//    @CrossOrigin(origins = "*", allowedHeaders = "*")
-//    @GetMapping("/produto-por-nome")
-//    public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome) {
-//        Produto produto = repository.findByNome(nome);
-//        if (produto != null) {
-//            return ResponseEntity.ok(produto.getCod_produto());
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
-
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/id-por-nome")
+    public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome_produto) {
+        Produto produto = repository.findByNome(nome_produto);
+        if (produto != null) {
+            return ResponseEntity.ok(produto.getCod_produto());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

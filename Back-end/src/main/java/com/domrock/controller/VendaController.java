@@ -1,9 +1,13 @@
 package com.domrock.controller;
 
 import com.domrock.dto.venda.VendaResponseDTO;
+import com.domrock.model.Cliente;
+import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +30,17 @@ public class VendaController {
     public List<VendaResponseDTO> getAll(){
         List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();;
         return vendaList;
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping
+    public ResponseEntity<Venda> criarVenda(@RequestBody Venda venda) {
+        try {
+            Venda novaVenda = repository.save(venda);
+            return new ResponseEntity<>(novaVenda, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")

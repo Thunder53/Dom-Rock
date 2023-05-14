@@ -32,8 +32,9 @@ public class VendaController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
-    public List<VendaResponseDTO> getAll(){
-        List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();;
+    public List<VendaResponseDTO> getAll() {
+        List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();
+        ;
         return vendaList;
     }
 
@@ -69,25 +70,25 @@ public class VendaController {
         return topVendedores;
     }
 
-//    @CrossOrigin(origins = "*", allowedHeaders = "*")
-//    @GetMapping("/{mes}")
-//    public List<Venda> listarVendasPorMes(@PathVariable String mes) {
-//        // Cria um DateTimeFormatter para o formato "dd/MM/yyyy"
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//        // Converte o mês em string para um objeto LocalDate
-//        LocalDate data = LocalDate.parse("01/" + mes, formatter);
-//        // Obtém a data de início do mês
-//        LocalDate inicio = data.withDayOfMonth(1);
-//        // Obtém a data de fim do mês
-//        LocalDate fim = data.withDayOfMonth(data.lengthOfMonth());
-//
-//        // Chama o método findByCriadaEmBetween do repositório para buscar as vendas criadas no mês
-//        return repository.findByCriadaEmBetween(
-//                Date.from(inicio.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()),
-//                Date.from(fim.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant())
-//        );
-//    }
-
+    // @CrossOrigin(origins = "*", allowedHeaders = "*")
+    // @GetMapping("/{mes}")
+    // public List<Venda> listarVendasPorMes(@PathVariable String mes) {
+    // // Cria um DateTimeFormatter para o formato "dd/MM/yyyy"
+    // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    // // Converte o mês em string para um objeto LocalDate
+    // LocalDate data = LocalDate.parse("01/" + mes, formatter);
+    // // Obtém a data de início do mês
+    // LocalDate inicio = data.withDayOfMonth(1);
+    // // Obtém a data de fim do mês
+    // LocalDate fim = data.withDayOfMonth(data.lengthOfMonth());
+    //
+    // // Chama o método findByCriadaEmBetween do repositório para buscar as vendas
+    // criadas no mês
+    // return repository.findByCriadaEmBetween(
+    // Date.from(inicio.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()),
+    // Date.from(fim.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant())
+    // );
+    // }
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

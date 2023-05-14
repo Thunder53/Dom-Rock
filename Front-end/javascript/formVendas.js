@@ -1,96 +1,76 @@
-const registrar = document.getElementById("registrar");
-const Icliente = document.getElementById("cliente");
-const Iproduto = document.getElementById("produto");
-const Idata = document.getElementById("data");
-const Iquantidade = document.getElementById("quantidade");
-const select = document.getElementById('caixa-de-selecao-cliente');
-const selectProduto = document.getElementById('caixa-de-selecao-produto');
-let listCliente = [];
-let listProduto = [];
+const registrarBtn = document.getElementById("registrar");
+const clienteSelect = document.getElementById("caixa-de-selecao-cliente");
+const produtoSelect = document.getElementById("caixa-de-selecao-produto");
+const dataInput = document.getElementById("data");
+const quantidadeInput = document.getElementById("quantidade");
 
-function cadastrar() {
-    const nomeCliente = select.value.toString();
-    const nomeProduto = selectProduto.value.toString();
+registrarBtn.addEventListener("click", cadastrar);
+
+
+async function cadastrar() {
+    const clienteNome = clienteSelect.value;
+    const produtoNome = produtoSelect.value;
+    const data = dataInput.value;
+    const quantidade = quantidadeInput.value;
   
-    fetch(`http://localhost:8080/cliente/id-por-nome?nome_cliente=${nomeCliente}`)
-      .then(response => response.json())
-      .then(data => {
-        const cod_cliente = parseInt(data);
-        listCliente.push(cod_cliente);
-        const primeiroValor = listCliente[0];
-        return parseInt(primeiroValor);
-      })
-      .then(idCliente => {
-        return fetch(`http://localhost:8080/id-por-nome?nome_produto=${nomeProduto}`)
-          .then(response => response.json())
-          .then(data => {
-            const cod_produto = parseInt(data);
-            listProduto.push(cod_produto);
-            const primeiroValor = listProduto[0];
-            const idProduto = parseInt(primeiroValor);
+    try {
+      const clienteResponse = await fetch(`http://localhost:8080/cliente/id-por-nome?nome_cliente=${clienteNome}`);
+      const cliente = await clienteResponse.json();
   
-            return fetch("http://localhost:8080/venda", {
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              method: "POST",
-              body: JSON.stringify({
-                quant_vendida: null,
-                atualizada_em: null,
-                quant_estimada: Iquantidade.value,
-                criada_em: Idata.value,
-                fk_usuario_id: localStorage.getItem('id'),
-                fk_cliente_cod_cliente: idCliente,
-                fk_produto_cod_produto: idProduto
-              })
-            });
-          });
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Erro ao cadastrar a venda.");
-        }
-        alert("Venda cadastrada com sucesso!");
-      })
-      .catch(error => {
-        console.error(error);
-        alert("Ocorreu um erro ao cadastrar a venda.");
+      const produtoResponse = await fetch(`http://localhost:8080/id-por-nome?nome_produto=${produtoNome}`);
+      const produto = await produtoResponse.json();
+
+      const id_usuario = localStorage.getItem('id');
+  
+      const venda = {
+        fk_usuario_id: id_usuario,
+        fk_cliente_cod_cliente: cliente,
+        fk_produto_cod_produto: produto,
+        criada_em : data,
+        quant_estimada: quantidade
+      };
+  
+      const response = await fetch("http://localhost:8080/venda", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(venda)
       });
-  };
   
+      if (response.ok) {
+        alert("Venda registrada com sucesso!");
+      } else {
+        alert("Erro ao registrar venda. Por favor, tente novamente.");
+      }
+    } catch (error) {
+      alert("Erro ao acessar a API. Por favor, tente novamente mais tarde.");
+      console.error(error);
+    }
+  }
+
+  fetch(`http://localhost:8080/clientes-by-vendedor/${localStorage.getItem('id')}`)
+  .then(response => response.json())
+  .then(data => {
+      data.forEach(cliente => {
+          const option = document.createElement('option');
+          option.text = cliente.nome_cliente;
+          clienteSelect.appendChild(option);
+      });
+  })
+  .catch(error => console.error(error));
 
 
-function limpar(){
-    Inome.value = "";
-    Iemail.value = "";
-    Isenha.value = "";
-    Icpf.value = "";
-    Icontato.value = "";
-}
-
-registrar.addEventListener('click', function(){
-    cadastrar();
-});
-
-fetch(`http://localhost:8080/clientes-by-vendedor/${localStorage.getItem('id')}`)
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(cliente => {
-            const option = document.createElement('option');
-            option.text = cliente.nome_cliente;
-            select.appendChild(option);
-        });
-    })
-    .catch(error => console.error(error));
-
-fetch(`http://localhost:8080/produto`)
+    fetch("http://localhost:8080/produto")
     .then(response => response.json())
     .then(data => {
         data.forEach(produto => {
             const option = document.createElement('option');
             option.text = produto.nome_produto;
-            selectProduto.appendChild(option);
+            produtoSelect.appendChild(option);
         });
     })
     .catch(error => console.error(error));
+
+  
+

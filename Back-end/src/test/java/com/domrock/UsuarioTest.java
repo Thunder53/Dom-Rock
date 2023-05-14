@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.domrock;
 
 import com.domrock.model.Usuario;

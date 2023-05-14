@@ -24,22 +24,43 @@
     <br>
     <div class="row">
         <div class="col-sm-6 text-center">
-            <label class="label label-success">TOP 10 Vendedores</label>
+            <label class="label label-success" style="font-size: 15px;">TOP 10 Vendedores</label>           
            <div id="stacked" ></div>
          </div>
         <div class="col-sm-6 text-center">
-           <label class="label label-success">TOP 10 Produtos</label>
+           <label class="label label-success" style="font-size: 15px;">TOP 10 Produtos</label>
           <div id="line-chart"></div>
         </div>
     </div>
     <br>
     <div class="row">
-        <div  class="col-sm-6 text-center">
-           <label class="label label-success">Comparativo das vendas</label>
-          <div id="bar-chart" ></div>
-        </div>
         <div class="col-sm-6 text-center">
-            <label class="label label-success">Area Chart</label>
+            <label class="label label-success" style="font-size: 15px;">Comparativo das vendas</label>
+            <div class="input-group">
+                <select class="form-control" id="filtro-mes" style="width: 60%;">
+                    <option value="">Todos os meses</option>
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="filtrarDados()">Filtrar</button>
+                </span>
+            </div>
+            <div id="bar-chart"></div>
+        </div>
+        
+        <div class="col-sm-6 text-center">
+            <label class="label label-success" style="font-size: 15px;">Area Chart</label>
             <div id="area-chart" ></div>
           </div>
     </div>

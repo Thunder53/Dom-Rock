@@ -83,7 +83,7 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 
 
   <h1 align="center">📉 Burndown</h1>
-
+       <p align="center"><img src="doc/Burndown/Burndown3.jpeg"></p>
   
   <h1 align="center"> Backlog Sprint 4</h1>
         <p align="center"><img src="doc/Backlog/sprint4-backlog.png"></p>

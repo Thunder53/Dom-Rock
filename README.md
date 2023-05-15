@@ -1,199 +1,113 @@
-<div align="center">
-<img src="https://user-images.githubusercontent.com/108765052/225775245-e2ad2dff-dfb9-47d4-8870-17e59991321e.png" width="550px" />
-</div>
+<h1 align="center"></h1>
+<div text align="center">
+  <img src="doc/Assets/logo02.png"  width="360" height="120" />
+</div><br>
 
----
+<!--badges-->
+<p align="center">
+    <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white"/>
+    <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Spring-%2AA7.svg?style=for-the-badge&logo=Spring&logoColor=white"/><br>
+    <img src="https://img.shields.io/badge/Postgresql-%2300f.svg?style=for-the-badge&logo=postgresql&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white"/>
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+    <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/> 
 
-## Equipe
+</p>
+<!-- -->
+<br>
+<h1 align="center">📂 Sobre a Dom Rock </h1>
 
-> _Product Owner_ - [Luiz Henrique Berti](https://www.linkedin.com/in/luiz-henrique-berti-235a7a19b/)
-
-> _Scrum Master_ - [Ariane Cristine Alves de Sousa](https://www.linkedin.com/in/ariane-sousa77)
-
-> _Dev. Team_ - [Ludmila Mariana Chagas](https://www.linkedin.com/in/ludmila-mariana-chagas-273548187/)
-
-> _Dev. Team_ - [Elizabeth Cristina Alves Leite](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
-
-> _Dev. Team_ - [Tobias Fernandes Bezerra Sousa](https://www.linkedin.com/in/tobias-sousa-23bba822a)
-
-> _Dev. Team_ - [Beatrice Lopes Correa]()
-
-> _Dev. Team_ - [Thiago Chaves]()
-
-> _Dev. Team_ - [Murilo Junior]()
-
-## Empresa parceira
-
-A Dom Rock é uma empresa que oferece soluções utilizando tecnologia de dados para ampliar resultados em marketing, vendas, distribuição, logística, operações, engenharia e finanças.
+Dom Rock é uma empresa que oferece soluções utilizando tecnologia de dados para ampliar resultados em marketing, vendas, distribuição, logística, operações, engenharia e finanças.
 Utilizando modelos matemáticos e algoritmos baseados em aprendizado de máquina que endereçam duas soluções sendo Nxt.Demand com quatro produtos – Vox, Sales&Distribution, Marketing&Planning, Pricing – e Nxt.Operations com dois produtos – Matching&Risk e Optimization.
 
-## Contexto do projeto
+<h1 align="center">💻 Nossa proposta </h1>
 
-A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo que padronizar todos os arquivos antes do uso, sendo assim sentiu necessidade de uma aplicação web que facilitaria a entrada destes dados em um padrão definido diminuindo o tempo gasto com a padronização.
+A Dom Rock recebe a predição de vendas de seus clientes em formato csv tendo que padronizar todos os arquivos antes do uso, sendo assim sentiu necessidade de uma aplicação web que facilitaria a entrada destes dados em um padrão definido diminuindo o tempo gasto com a padronização. <br>
+Nesse semestre o grupo está propondo uma solução para a empresa. O desafio consiste em lidar com o histórico de movimentação de produtos (vendas e estoque), predição de faturamento (feito por um algoritmo de IA já existente) e a entrada de dados oriundas da força de vendas quanto ao planejamento futuro.
 
-## Requisitos do projeto
+<h1 align="center">🗓️ Entregas </h1>
 
-- Sistema WEB
-- Sistema CRUD
-- Cadastro de clientes e carteira de vendedores
-- Aplicação de dados pelo clientes em sua carteira
-- Extração de relatórios
-- Dashboard para análise de dados
-
-# Backlog 1ª Sprint
-
-<table align="center">
-  <tr>
-   <td>Tasks</td>
-   <td>Importância</td>
+<div>
+  <table align="center">
+    <tr>
+    <td><b>Entrega</b></td>
+    <td><b>Descrição</b></td>
+    <td><b>Data</b></td>
+    <td><b>Tag</b></td>
   </tr>
 
   <tr>
-   <td>Sistema de cadastro da carteira de clienets</td>
-   <td>Imprescindível</td>
+   <td>Primeira Sprint</td>
+   <td>Cadastro carteira de clientes, cadastro dos vendedores, visão administrativa dos cadastro de clientes, produtos e vendedor, mecânismo de autenticação e autorização do sistema</td>
+   <td>02/04/2023</td>
+   <td><a href="https://github.com/Thunder53/Dom-Rock/releases/tag/Sprint01">Sprint01</a></td>
   </tr>
 
   <tr>
-   <td>Sistema para cadastro dos vendedores</td>
-   <td>Importante</td>
+   <td>Segunda Sprint</td>
+   <td>Visualização de informações do cliente, sistema de cadastro de novos clientes e seus produtos, gráfico de visualização da quantidade de vendas, realizar gerenciamento da carteira do cliente</td>
+   <td>23/04/2023</td>
+   <td><a href="https://github.com/Thunder53/Dom-Rock/releases/tag/Sprint02">Sprint02</a></td>
   </tr>
 
   <tr>
-   <td>Visão administrativa dos cadastro de clientes, produtos e vendedor</td>
-   <td>Importante</td>
-  </tr>
- 
-  <tr>
-    <td>Mecânismo de autenticação e autorização do sistema</td>
-    <td>Desejável</td>
-  </tr>
-    
-</table>
-
-# Story cards
-
-## Sprint 01
-
-- Cadastrar vendedores
-- Cadastrar carteira de clientes
-- Tela administrador
-- Tela Login
-
-## User stories
-
-<table align="center">
-  <tr>
-   <td>User stories</td>
-   <td>Importância</td>
-  </tr>
-
-  <tr>
-   <td>Como administrador quero cadastrar os vendedores para cirar seu acesso ao sistema</td>
-   <td>01</td>
-  </tr>
-
-  <tr>
-   <td>Como administrador quero cadastrar as carteiras de clientes para o vendedor ter acesso ao seus clientes e produtos</td>
-   <td>02</td>
-  </tr>
-  
-  
-  
-  <tr>
-   <td>Como administrador quero ter acesso ao sistema pelo método de login</td>
-   <td>03</td>
-  </tr>
-  
-</table>
-
-## Wireframe
-
-> **Tela de login**
-
-![Tela_login](https://user-images.githubusercontent.com/102214439/226492401-214bc667-99a8-465b-90d3-d30169bcecb7.png)
-
-> **Tela de cadastro de vendedor**
-
-![Tela_Cadastro_VEndedor](https://user-images.githubusercontent.com/102214439/226492513-cf491cf8-9b23-4b65-a314-109e09f590a3.png)
-
-> **Tela de cadastro da carteira**
-
-![Tela_Cadastro_Carteira](https://user-images.githubusercontent.com/102214439/226492638-408c6ef3-ca2b-49c4-aad9-348ab80a0bf1.png)
-
-## Burndown
-
-=======
-![Burndown](https://user-images.githubusercontent.com/102214439/229376019-01b8fbf5-572d-4a9a-baf3-67651ab18678.png)
-
-## Jornada do Usuário 
-
-![jornada](https://user-images.githubusercontent.com/102214439/229376060-647e5844-e2d0-4f95-a564-55fa64628e5f.png)
-
-# Backlog 2ª Sprint
-
-<table align="center">
-  <tr>
-   <td>Tasks</td>
-   <td>Importância</td>
-  </tr>
-
-  <tr>
-   <td>Visualização de informações do cliente</td>
-   <td>Imprescindível</td>
-  </tr>
-
-  <tr>
-   <td>Sistema de cadastro de novos clientes e seus produtos</td>
-   <td>Imprescindível</td>
-  </tr>
-
-  <tr>
-   <td>Gráfico de visualização da quantidade de vendas</td>
-   <td>Importante</td>
-  </tr>
-  
-  <tr>
-   <td>Gerenciamento da carteira do cliente</td>
-   <td>Importante</td>
+   <td>Terceira Sprint</td>
+   <td>Visualização do histórico de vendas, gráficos comparativos, implementação de filtors de busca e edição das vendas, importação das bases de dados para o banco </td>
+   <td>14/05/2023</td>
+   <td><a href="">Sprint03</a></td>
   </tr>
  
-
-    
-</table>
-
-## User stories
-
-<table align="center">
-  <tr>
-   <td>User stories</td>
-   <td>Importância</td>
+   <tr>
+   <td>Quarta Sprint</td>
+   <td>Implementação de notificações no sistema quando metas são atingidas pelos vendedores, gráficos histórico e predição de vendas, melhorias na interface</td>
+   <td>13/06/2023</td>
+   <td><a href="">Sprint04</a></td>
   </tr>
+  </table>
+</div>
 
-  <tr>
-   <td>Como administrador quero visualizar as informações do cliente</td>
-   <td>01</td>
-  </tr>
+<div>
 
-  <tr>
-   <td>Como administrador quero cadastrar novos clientes e produtos para ser incluidos nas carteiras de vendedores</td>
-   <td>01</td>
-  </tr>
-  
-  <tr>
-    <td>Como administrador e vendedor quero visualizar por meio de gráficos a quantidade de vendas para que seja feito um planejamento de vendas</td>
-    <td>02</td>
-  
-  <tr>
-  
-  <tr>
-    <td>Como vendedor quero administrar minha carteira de clientes inserir minhas previsões de vendas</td>
-    <td>02</td>
-  
-  <tr>
-  
-  
-</table>
+<h1 align="center">📋 Documentação da Sprint 3</h1></details>
+  <h2 align="center">Product Backlog</h2>
+    <p align="center"><img src="doc/Backlog/product-backlog.png"></p>
 
-## Burndown 2° Sprint
+  <h2 align="center">Backlog</h2>
+  <h3 align="center">Tasks</h3>
+    <p align="center"><img src="doc/Backlog/sprint3-backlog.png"></p>
+  <h2 align="center">User Stories</h2>
+    <p align="center"><img src="doc/Backlog/user-stories-3.png"></p>
 
-![Burndown](https://user-images.githubusercontent.com/108765052/233890630-b1804266-d104-4522-8315-0864c3e408c4.jpg)
+
+  <h1 align="center">📉 Burndown</h1>
+       <p align="center"><img src="doc/Burndown/Burndown3.jpeg"></p>
+  
+  <h1 align="center"> Backlog Sprint 4</h1>
+        <p align="center"><img src="doc/Backlog/sprint4-backlog.png"></p>
+  
+  <h3 align="center">
+    <a href="doc/Diagramas">• Diagramas 
+    <a href="https://trello.com/b/JinZ6ETv/thunder">• Cards (Trello)
+    <a href="doc/README.md">• Documentação Completa
+  </h3>
+
+
+
+<br>
+
+<div text align= "left">
+    <h1 align="left">👩‍💻 Equipe</h1>
+        • <a href="https://www.linkedin.com/in/thiago-lopes-chaves-5ba22b209">Thiago Chaves </a>(<i>Product Owner</i>)<br>
+        • <a href="https://www.linkedin.com/in/bewtrice/">Beatrice Lopes </a>(<i>Scrum Master</i>)<br>
+        • <a href="https://www.linkedin.com/in/ariane-sousa77">Ariane Cristine Alves de Sousa </a>(<i>Dev Team</i>)<br>
+        • <a href="https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a">Elizabeth Cristina Alves Leite </a>(<i>Dev Team</i>)<br>
+        • <a href="https://www.linkedin.com/in/ludmila-mariana-chagas-273548187/">Ludmila Mariana Chagas </a>(<i>Dev Team</i>)<br>
+        • <a href="https://www.linkedin.com/in/murilo-jos%C3%A9-de-brito-junior-32403b157">Murilo Junior </a>(<i>Dev Team</i>)<br>
+        • <a href="https://www.linkedin.com/in/tobias-sousa-23bba822a">Tobias Fernandes Bezerra Sousa </a>(<i>Dev Team</i>)<br>
+</div>
+
+
+

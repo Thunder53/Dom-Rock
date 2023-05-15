@@ -37,7 +37,6 @@ public class Usuario {
         this.acesso = data.acesso();
     }
 }
-//
 //    public boolean validarNome(){
 //        Matcher matcher = Regex.NOME_REGEX.matcher(this.nome);
 //        return matcher.matches();

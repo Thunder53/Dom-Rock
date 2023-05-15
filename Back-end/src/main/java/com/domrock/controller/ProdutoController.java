@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping()
+@RequestMapping("/produto")
 public class ProdutoController {
 
     @Autowired
@@ -34,14 +34,32 @@ public class ProdutoController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/topProdutos")
+    public List<Map<String, Object>> getTopProdutos() {
+        List<Map<String, Object>> topProdutos = new ArrayList<>();
+        String sql = "SELECT p.nome_produto, " +
+                "SUM(v.quant_vendida) AS total_vendido " +
+                "FROM produto p " +
+                "JOIN venda v ON p.cod_produto = v.fk_produto_cod_produto " +
+                "GROUP BY nome_produto, v.fk_produto_cod_produto " +
+                "ORDER BY total_vendido DESC " +
+                "LIMIT 10";
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
+        for (Map<String, Object> row : rows) {
+            Map<String, Object> produto = new HashMap<>();
+            produto.put("nome_produto", row.get("nome_produto"));
+            produto.put("total_vendido", row.get("total_vendido"));
+            topProdutos.add(produto);
+        }
+        return topProdutos;
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/produto")
     public void saveProduto(@RequestBody ProdutoRequestDTO data){
         Produto produtodata = new Produto(data);
         repository.save(produtodata);
-        return;
     }
-
-
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/produto-com-cliente")

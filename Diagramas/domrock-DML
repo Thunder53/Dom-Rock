@@ -12,6 +12,15 @@ insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_ve
 insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(4270417261123657.0, 10778427030291100.0, '2023-04-22', '2023-04-22', 2, 2, 2, 2);
 insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(465562962962963.0, 5277031421661370.0, '2023-04-18', '2023-04-18', 2, 1, 1, 1); 
 
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(4, '255.429.450-07', '(12)98257-8188', '123456789', 'ludmila', 'ludmila@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(5, '164.707.260-38', '(12)98257-8189', '12345678910', 'rafael', 'rafael@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(6, '485.659.420-66', '(12)98257-8190', '12345678911', 'adriano', 'adriano@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(7, '299.272.220-09', '(12)98257-8191', '12345678912', 'margarete', 'margarete@gmail.com', 'vendedor');
+
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(247862962962227.0, 307031421661366.0, '2023-05-12', '2023-05-14', 4, 4, 2, 1); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(115562963964946.0, 1069031421661328.0, '2023-05-01', '2023-05-08', 5, 5, 1, 2); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(305562962962963.0, 32771137661961370.0, '2023-05-08', '2023-05-10', 6, 6, 2, 2); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(565562962962783.0, 55771134163761470.0, '2023-05-09', '2023-05-12', 7, 7, 1, 1); 
 
 
 

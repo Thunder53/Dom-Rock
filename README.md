@@ -20,7 +20,23 @@
 <br>
 <h1 align="center">📂 Sobre a Dom Rock </h1>
 
-Dom Rock é uma empresa que oferece soluções utilizando tecnologia de dados para ampliar resultados em marketing, vendas, distribuição, logística, operações, engenharia e finanças.
+> _Product Owner_ - [Thiago Chaves]()
+
+> _Scrum Master_ - [Ariane Cristine Alves de Sousa](https://www.linkedin.com/in/ariane-sousa77)
+
+> _Dev. Team_ - [Ludmila Mariana Chagas](https://www.linkedin.com/in/ludmila-mariana-chagas-273548187/)
+
+> _Dev. Team_ - [Elizabeth Cristina Alves Leite](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
+
+> _Dev. Team_ - [Tobias Fernandes Bezerra Sousa](https://www.linkedin.com/in/tobias-sousa-23bba822a)
+
+> _Dev. Team_ - [Beatrice Lopes Correa]()
+
+> _Dev. Team_ - [Murilo Junior]()
+
+## Empresa parceira
+
+A Dom Rock é uma empresa que oferece soluções utilizando tecnologia de dados para ampliar resultados em marketing, vendas, distribuição, logística, operações, engenharia e finanças.
 Utilizando modelos matemáticos e algoritmos baseados em aprendizado de máquina que endereçam duas soluções sendo Nxt.Demand com quatro produtos – Vox, Sales&Distribution, Marketing&Planning, Pricing – e Nxt.Operations com dois produtos – Matching&Risk e Optimization.
 
 <h1 align="center">💻 Nossa proposta </h1>

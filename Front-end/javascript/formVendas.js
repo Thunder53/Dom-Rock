@@ -17,7 +17,7 @@ async function cadastrar() {
       const clienteResponse = await fetch(`http://localhost:8080/cliente/id-por-nome?nome_cliente=${clienteNome}`);
       const cliente = await clienteResponse.json();
   
-      const produtoResponse = await fetch(`http://localhost:8080/id-por-nome?nome_produto=${produtoNome}`);
+      const produtoResponse = await fetch(`http://localhost:8080/produto/id-por-nome?nome_produto=${produtoNome}`);
       const produto = await produtoResponse.json();
 
       const id_usuario = localStorage.getItem('id');
@@ -61,7 +61,7 @@ async function cadastrar() {
   .catch(error => console.error(error));
 
 
-    fetch("http://localhost:8080/produto")
+    fetch("http://localhost:8080/produto/produto")
     .then(response => response.json())
     .then(data => {
         data.forEach(produto => {
@@ -71,6 +71,3 @@ async function cadastrar() {
         });
     })
     .catch(error => console.error(error));
-
-  
-

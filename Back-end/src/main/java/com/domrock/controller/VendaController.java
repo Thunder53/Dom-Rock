@@ -9,16 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.time.YearMonth;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -69,26 +62,6 @@ public class VendaController {
         }
         return topVendedores;
     }
-
-    // @CrossOrigin(origins = "*", allowedHeaders = "*")
-    // @GetMapping("/{mes}")
-    // public List<Venda> listarVendasPorMes(@PathVariable String mes) {
-    // // Cria um DateTimeFormatter para o formato "dd/MM/yyyy"
-    // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    // // Converte o mês em string para um objeto LocalDate
-    // LocalDate data = LocalDate.parse("01/" + mes, formatter);
-    // // Obtém a data de início do mês
-    // LocalDate inicio = data.withDayOfMonth(1);
-    // // Obtém a data de fim do mês
-    // LocalDate fim = data.withDayOfMonth(data.lengthOfMonth());
-    //
-    // // Chama o método findByCriadaEmBetween do repositório para buscar as vendas
-    // criadas no mês
-    // return repository.findByCriadaEmBetween(
-    // Date.from(inicio.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()),
-    // Date.from(fim.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant())
-    // );
-    // }
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

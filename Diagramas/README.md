@@ -1,1 +1,0 @@
-Pasta destinada a locação dos diagramas realizados pela equipe.

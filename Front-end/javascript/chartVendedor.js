@@ -60,7 +60,6 @@ fetch("http://localhost:8080/produto/topProdutos")
     console.log(error);
   });
 
-<<<<<<< HEAD
   fetch(`http://localhost:8080/venda/verificar-quantidades/${localStorage.getItem('id')}`)
   .then(function (response) {
     return response.json();
@@ -81,7 +80,3 @@ fetch("http://localhost:8080/produto/topProdutos")
   .catch(function (error) {
     console.log(error);
   });
-=======
-  
-
->>>>>>> 5412b2ae74f4c15199bfa391fe24c1cdc5a319af

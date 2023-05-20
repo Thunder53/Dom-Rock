@@ -62,6 +62,10 @@ public class VendaController {
         }
         return topVendedores;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5412b2ae74f4c15199bfa391fe24c1cdc5a319af
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/verificar-quantidades/{fk_usuario_id}")
     public boolean verificarQuantidades(@PathVariable Long fk_usuario_id) {

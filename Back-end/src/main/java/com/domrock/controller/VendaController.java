@@ -63,6 +63,7 @@ public class VendaController {
         return topVendedores;
     }
 
+    @CrossOrigin(origins = "http://localhost:5500")
     @GetMapping("/verificar-quantidades/{fk_usuario_id}")
     public boolean verificarQuantidades(@PathVariable Long fk_usuario_id) {
         List<Venda> vendas = repository.findByUsuario(fk_usuario_id);

@@ -23,6 +23,7 @@ public class Venda {
     private Float quant_estimada;
     private Date atualizada_em;
     private Date criada_em;
+    @Column(name = "fk_usuario_id")
     private Long fk_usuario_id;
     private Long fk_cliente_cod_cliente;
     private Long fk_produto_cod_produto;

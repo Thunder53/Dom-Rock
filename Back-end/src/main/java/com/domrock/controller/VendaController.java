@@ -63,6 +63,23 @@ public class VendaController {
         return topVendedores;
     }
 
+    @GetMapping("/verificar-quantidades/{fk_usuario_id}")
+    public boolean verificarQuantidades(@PathVariable Long fk_usuario_id) {
+        List<Venda> vendas = repository.findByUsuario(fk_usuario_id);
+        int quantVendidaMaior = 0;
+        int quantVendidaMenor = 0;
+
+        for (Venda venda : vendas) {
+            if (venda.getQuant_vendida() > venda.getQuant_estimada()) {
+                quantVendidaMaior++;
+            } else if (venda.getQuant_vendida() < venda.getQuant_estimada()) {
+                quantVendidaMenor++;
+            }
+        }
+
+        return quantVendidaMaior > quantVendidaMenor;
+    }
+
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)
     public void preflightResponse(HttpServletResponse response) {

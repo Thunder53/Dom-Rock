@@ -81,6 +81,14 @@ public class VendaController {
         return quantVendidaMaior > quantVendidaMenor;
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/filtro-produto/{fk_produto_cod_produto}")
+    public List<VendaResponseDTO> filtroProduto(@PathVariable Long fk_produto_cod_produto) {
+        List<Venda> vendas = repository.findByProduto(fk_produto_cod_produto);
+        return vendas.stream().map(VendaResponseDTO::new).toList();
+    }
+
+
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)
     public void preflightResponse(HttpServletResponse response) {

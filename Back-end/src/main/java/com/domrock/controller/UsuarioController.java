@@ -45,12 +45,12 @@ public class UsuarioController {
 
      @GetMapping("/usuario-por-nome")
      public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome) {
-     Usuario usuario = repository.findByNome(nome);
-     if (usuario != null) {
-     return ResponseEntity.ok(usuario.getId());
-     } else {
-     return ResponseEntity.notFound().build();
-     }
+         Usuario usuario = repository.findByNome(nome);
+         if (usuario != null) {
+         return ResponseEntity.ok(usuario.getId());
+         } else {
+         return ResponseEntity.notFound().build();
+         }
      }
 
 

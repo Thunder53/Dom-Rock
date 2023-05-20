@@ -27,7 +27,6 @@ public class VendaController {
     @GetMapping
     public List<VendaResponseDTO> getAll() {
         List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();
-        ;
         return vendaList;
     }
 

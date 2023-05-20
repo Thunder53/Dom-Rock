@@ -60,3 +60,23 @@ fetch("http://localhost:8080/produto/topProdutos")
     console.log(error);
   });
 
+  fetch(`http://localhost:8080/venda/verificar-quantidades/${localStorage.getItem('id')}`)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    var item = data;
+    var successAlert = document.getElementById("sucess");
+    var dangerAlert = document.getElementById("danger");
+
+    if (item === true) {
+      successAlert.classList.add("hidden");
+      dangerAlert.classList.remove("hidden");
+    } else {
+      successAlert.classList.remove("hidden");
+      dangerAlert.classList.add("hidden");
+    }
+  })
+  .catch(function (error) {
+    console.log(error);
+  });

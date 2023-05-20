@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lato&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 :root{
     --cor-primaria: #000000;
     --cor-secundaria: #D6D8FA;
@@ -68,3 +68,45 @@
 #pie-chart{
   min-height: 250px;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h3 {
+    font-family: Quicksand;
+  }
+  
+  .success-alert,
+  .danger-alert {
+    width: 200px;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  
+  .success-alert {
+    color: #1a1919;
+    background-color: #a8f0c6;
+  }
+  
+  .danger-alert {
+    color: #1a1919;
+    background-color: #f7a7a3;
+  }
+  .hidden {
+    display: none;
+  }
+
+ 

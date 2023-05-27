@@ -138,7 +138,6 @@ function initPage() {
 }
 
 initPage();
-
 async function filtro() {
   const produtoNome = select.value;
 
@@ -153,23 +152,63 @@ async function filtro() {
   fetch(`http://localhost:8080/venda/filtro-produto/${produto}`)
     .then(response => response.json())
     .then(data => {
-      const labels = data.map(item => item.criada_em);
+      const labels = data.map(item => {
+        const date = new Date(item.criada_em);
+        const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+        return formattedDate;
+      });
+
       const totalEstimado = data.map(item => item.quant_estimada);
       const totalVendido = data.map(item => item.quant_vendida);
 
-      vendaChart.data.labels = labels;
-      vendaChart.data.datasets[0].data = totalEstimado;
-      vendaChart.data.datasets[1].data = totalVendido;
-      vendaChart.update();
+      const config = {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Total Estimado",
+              data: totalEstimado,
+              backgroundColor: "rgba(0, 0, 255, 0.6)",
+              borderColor: "black",
+              borderWidth: 1,
+            },
+            {
+              label: "Total Vendido",
+              data: totalVendido,
+              backgroundColor: "rgba(255, 0, 0, 0.6)",
+              borderColor: "black",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              grid: {
+                display: false,
+              },
+            },
+            y: {
+              grid: {
+                display: true,
+              },
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+
+      const barChartCanvas = document.getElementById("bar-chart");
+      if (vendaChart) {
+        vendaChart.destroy(); // Destruir o gráfico existente, se houver
+      }
+      vendaChart = new Chart(barChartCanvas, config);
     })
     .catch(error => console.log(error));
-
-  const barChartCanvas = document.getElementById("bar-chart");
-  barChartCanvas.innerHTML = "";
-  vendaChart.destroy();
-  const ctx = barChartCanvas.getContext("2d");
-  vendaChart = new Chart(ctx, { type: "bar" });
 }
+
 
 fetch("http://localhost:8080/produto/produto")
   .then(response => response.json())

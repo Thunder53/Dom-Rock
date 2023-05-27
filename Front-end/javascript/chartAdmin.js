@@ -12,6 +12,7 @@ let produtosChart;
 
 filtroProduto.addEventListener("click", filtro_produto);
 filtroVendedor.addEventListener("click", filtro_vendedor);
+filtroData.addEventListener("click", filtro_data);
 
 function generateVendedoresChart() {
   fetch("http://localhost:8080/venda/topVendedores")
@@ -34,7 +35,7 @@ function generateVendedoresChart() {
         resize: true,
         pointFillColors: ["#ffffff"],
         pointStrokeColors: ["black"],
-        lineColors: ["blue"],
+        lineColors: ["#005eff"],
         xLabelAngle: 45,
       };
 
@@ -69,7 +70,7 @@ function generateProdutosChart() {
         resize: true,
         pointFillColors: ["#ffffff"],
         pointStrokeColors: ["black"],
-        lineColors: ["blue"],
+        lineColors: ["#005eff"],
         xLabelAngle: 45,
       };
 
@@ -102,14 +103,14 @@ function generateVendaChart() {
           datasets: [{
             label: "Total Estimado",
             data: totalEstimado,
-            backgroundColor: "rgba(0, 0, 255, 0.6)",
+            backgroundColor: "#005eff",
             borderColor: "black",
             borderWidth: 1,
           },
           {
             label: "Total Vendido",
             data: totalVendido,
-            backgroundColor: "rgba(255, 0, 0, 0.6)",
+            backgroundColor: "#a52a2a",
             borderColor: "black",
             borderWidth: 1,
           }],
@@ -148,7 +149,7 @@ initPage();
 async function filtro_produto() {
   const produtoNome = selectProduto.value;
 
-  if (produtoNome === "Todos os produtos") {
+  if (produtoNome === "Todos") {
     initPage();
     return;
   }
@@ -176,14 +177,14 @@ async function filtro_produto() {
             {
               label: "Total Estimado",
               data: totalEstimado,
-              backgroundColor: "rgba(0, 0, 255, 0.6)",
+              backgroundColor: "#005eff",
               borderColor: "black",
               borderWidth: 1,
             },
             {
               label: "Total Vendido",
               data: totalVendido,
-              backgroundColor: "rgba(255, 0, 0, 0.6)",
+              backgroundColor: "#a52a2a",
               borderColor: "black",
               borderWidth: 1,
             },
@@ -247,14 +248,82 @@ async function filtro_vendedor() {
             {
               label: "Total Estimado",
               data: totalEstimado,
-              backgroundColor: "rgba(0, 0, 255, 0.6)",
+              backgroundColor: "#005eff",
               borderColor: "black",
               borderWidth: 1,
             },
             {
               label: "Total Vendido",
               data: totalVendido,
-              backgroundColor: "rgba(255, 0, 0, 0.6)",
+              backgroundColor: "#a52a2a",
+              borderColor: "black",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              grid: {
+                display: false,
+              },
+            },
+            y: {
+              grid: {
+                display: true,
+              },
+              beginAtZero: true,
+            },
+          },
+        },
+      };
+
+      const barChartCanvas = document.getElementById("bar-chart");
+      if (vendaChart) {
+        vendaChart.destroy(); // Destruir o gráfico existente, se houver
+      }
+      vendaChart = new Chart(barChartCanvas, config);
+    })
+    .catch(error => console.log(error));
+}
+
+async function filtro_data() {
+  const data = selectData.value;
+
+  if (selectData.value === "Todos") {
+    initPage();
+    return;
+  }
+
+  fetch(`http://localhost:8080/venda/filtro-data/${data}`)
+    .then(response => response.json())
+    .then(data => {
+      const labels = data.map(item => {
+        const date = new Date(item.criada_em);
+        const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+        return formattedDate;
+      });
+
+      const totalEstimado = data.map(item => item.quant_estimada);
+      const totalVendido = data.map(item => item.quant_vendida);
+
+      const config = {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Total Estimado",
+              data: totalEstimado,
+              backgroundColor: "#005eff",
+              borderColor: "black",
+              borderWidth: 1,
+            },
+            {
+              label: "Total Vendido",
+              data: totalVendido,
+              backgroundColor: "#a52a2a",
               borderColor: "black",
               borderWidth: 1,
             },

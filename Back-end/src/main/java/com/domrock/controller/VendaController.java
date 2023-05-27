@@ -87,6 +87,7 @@ public class VendaController {
         return vendas.stream().map(VendaResponseDTO::new).toList();
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/filtro-vendedor/{fk_usuario_id}")
     public List<VendaResponseDTO> filtroVendedor(@PathVariable Long fk_usuario_id) {
         List<Venda> vendas = repository.findByVendedor(fk_usuario_id);

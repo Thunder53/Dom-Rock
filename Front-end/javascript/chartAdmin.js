@@ -86,6 +86,9 @@ function generateVendaChart() {
   fetch("http://localhost:8080/venda")
     .then(response => response.json())
     .then(data => {
+
+      data.sort((a, b) => new Date(a.criada_em) - new Date(b.criada_em));
+
       const labels = data.map(item => {
         const date = new Date(item.criada_em);
         const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
@@ -133,7 +136,10 @@ function generateVendaChart() {
       };
 
       const ctx = document.getElementById("bar-chart").getContext("2d");
-      vendaChart = new Chart(ctx, config);
+      if (vendaChart) {
+        vendaChart.destroy(); // Destruir o gráfico existente, se houver
+      }
+      vendaChart = new Chart(ctx, config)
     })
     .catch(error => console.log(error));
 }
@@ -149,8 +155,8 @@ initPage();
 async function filtro_produto() {
   const produtoNome = selectProduto.value;
 
-  if (produtoNome === "Todos os produtos") {
-    initPage();
+  if (selectProduto.value === "Todos") {
+    generateVendaChart();
     return;
   }
 
@@ -160,6 +166,9 @@ async function filtro_produto() {
   fetch(`http://localhost:8080/venda/filtro-produto/${produto}`)
     .then(response => response.json())
     .then(data => {
+
+      data.sort((a, b) => new Date(a.criada_em) - new Date(b.criada_em));
+
       const labels = data.map(item => {
         const date = new Date(item.criada_em);
         const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
@@ -220,9 +229,9 @@ async function filtro_produto() {
 async function filtro_vendedor() {
   const vendedorNome = selectVendedor.value;
 
-  if (vendedorNome === "Todos os vendedores") {
-    initPage();
-    return;
+  if (selectVendedor.value === "Todos") {
+    generateVendaChart();
+    return
   }
 
   const vendedorResponse = await fetch(`http://localhost:8080/usuario/usuario-por-nome?nome=${vendedorNome}`);
@@ -231,6 +240,9 @@ async function filtro_vendedor() {
   fetch(`http://localhost:8080/venda/filtro-vendedor/${vendedor}`)
     .then(response => response.json())
     .then(data => {
+
+      data.sort((a, b) => new Date(a.criada_em) - new Date(b.criada_em));
+      
       const labels = data.map(item => {
         const date = new Date(item.criada_em);
         const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();

@@ -228,6 +228,7 @@ async function filtro_produto() {
 }
 
 async function filtro_vendedor() {
+  
   const vendedorNome = selectVendedor.value;
 
   if (selectVendedor.value === "Todos") {

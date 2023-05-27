@@ -19,4 +19,8 @@ public interface VendaRepository extends JpaRepository<Venda, Long> {
 
     @Query("SELECT v FROM venda v WHERE v.fk_usuario_id = ?1")
     List<Venda> findByVendedor(Long id);
+
+    @Query("SELECT v FROM venda v WHERE MONTH(v.criada_em) = :mes")
+    List<Venda> findByCriadaEmMonth(int mes);
+
 }

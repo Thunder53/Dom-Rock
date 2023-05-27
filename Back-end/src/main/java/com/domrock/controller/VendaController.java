@@ -94,6 +94,14 @@ public class VendaController {
         return vendas.stream().map(VendaResponseDTO::new).toList();
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/filtro-data/{mes}")
+    public List<VendaResponseDTO> buscarVendasPorMes(@PathVariable int mes) {
+        List<Venda> vendas = repository.findByCriadaEmMonth(mes);
+        return vendas.stream().map(VendaResponseDTO::new).toList();
+    }
+
+
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)
     public void preflightResponse(HttpServletResponse response) {

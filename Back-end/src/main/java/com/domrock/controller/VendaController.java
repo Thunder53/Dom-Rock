@@ -3,6 +3,7 @@ package com.domrock.controller;
 import com.domrock.dto.venda.VendaResponseDTO;
 import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,9 @@ public class VendaController {
     private VendaRepository repository;
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private HttpServletRequest request;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
@@ -101,6 +105,23 @@ public class VendaController {
         return vendas.stream().map(VendaResponseDTO::new).toList();
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/metas")
+    public String verificaMetasAtingidas(@PathVariable Long fk_usuario_id){
+        List<Venda> vendas = repository.findByUsuario(fk_usuario_id);
+
+        for (Venda venda: vendas) {
+            Float quantidadeDeVendas = venda.getQuant_vendida();
+            Float meta = venda.getQuant_estimada();
+
+            if (venda.getQuant_vendida() >= venda.getQuant_estimada())
+                request.getSession().setAttribute("mensagem", "Sua meta foi atingida!");
+            else
+                request.getSession().setAttribute("mensagem", "Ainda faltam vendas para atingir a meta!");
+        }
+
+        return "metas";
+    }
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)
@@ -109,5 +130,7 @@ public class VendaController {
         response.setHeader("Access-Control-Allow-Headers", "Content-Type");
         response.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     }
+
+
 
 }

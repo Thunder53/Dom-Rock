@@ -106,21 +106,34 @@ public class VendaController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/metas")
-    public String verificaMetasAtingidas(@PathVariable Long fk_usuario_id){
+    @GetMapping("/metas/{fk_usuario_id}")
+    public ResponseEntity<Map<String, String>> verificaMetasAtingidas(@PathVariable Long fk_usuario_id) {
         List<Venda> vendas = repository.findByUsuario(fk_usuario_id);
 
-        for (Venda venda: vendas) {
-            Float quantidadeDeVendas = venda.getQuant_vendida();
-            Float meta = venda.getQuant_estimada();
-
-            if (venda.getQuant_vendida() >= venda.getQuant_estimada())
-                request.getSession().setAttribute("mensagem", "Sua meta foi atingida!");
-            else
-                request.getSession().setAttribute("mensagem", "Ainda faltam vendas para atingir a meta!");
+        if (vendas.isEmpty()) {
+            // Usuário não possui vendas
+            Map<String, String> response = new HashMap<>();
+            response.put("mensagem", "Usuário sem vendas registradas.");
+            return ResponseEntity.ok(response);
         }
 
-        return "metas";
+        boolean metaAtingida = true;
+
+        for (Venda venda : vendas) {
+            if (venda.getQuant_vendida() < venda.getQuant_estimada()) {
+                metaAtingida = false;
+                break;
+            }
+        }
+
+        Map<String, String> response = new HashMap<>();
+        if (metaAtingida) {
+            response.put("mensagem", "Parabéns! Todas as metas foram atingidas!");
+        } else {
+            response.put("mensagem", "Ainda faltam vendas para atingir as metas!");
+        }
+
+        return ResponseEntity.ok(response);
     }
 
     @CrossOrigin(origins = "http://localhost:5500")

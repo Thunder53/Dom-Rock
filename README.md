@@ -87,7 +87,7 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 
 <div>
 
-<h1 align="center">📋 Documentação da Sprint 3</h1></details>
+<h1 align="center">📋 Documentação da Sprint 4</h1></details>
   <h2 align="center">Product Backlog</h2>
     <p align="center"><img src="doc/Backlog/product-backlog.png"></p>
 
@@ -99,9 +99,9 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 
 
   <h1 align="center">📉 Burndown</h1>
-       <p align="center"><img src="doc/Burndown/Burndown3.jpeg"></p>
+       <p align="center"><img src="doc/Burndown/Burndown4.jpeg"></p>
   
-  <h1 align="center"> Backlog Sprint 4</h1>
+  <h1 align="center"> Critério de aceite Sprint 4</h1>
         <p align="center"><img src="doc/Backlog/sprint4-backlog.png"></p>
   
   <h3 align="center">
@@ -113,17 +113,6 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 
 
 <br>
-
-<div text align= "left">
-    <h1 align="left">👩‍💻 Equipe</h1>
-        • <a href="https://www.linkedin.com/in/thiago-lopes-chaves-5ba22b209">Thiago Chaves </a>(<i>Product Owner</i>)<br>
-        • <a href="https://www.linkedin.com/in/bewtrice/">Beatrice Lopes </a>(<i>Scrum Master</i>)<br>
-        • <a href="https://www.linkedin.com/in/ariane-sousa77">Ariane Cristine Alves de Sousa </a>(<i>Dev Team</i>)<br>
-        • <a href="https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a">Elizabeth Cristina Alves Leite </a>(<i>Dev Team</i>)<br>
-        • <a href="https://www.linkedin.com/in/ludmila-mariana-chagas-273548187/">Ludmila Mariana Chagas </a>(<i>Dev Team</i>)<br>
-        • <a href="https://www.linkedin.com/in/murilo-jos%C3%A9-de-brito-junior-32403b157">Murilo Junior </a>(<i>Dev Team</i>)<br>
-        • <a href="https://www.linkedin.com/in/tobias-sousa-23bba822a">Tobias Fernandes Bezerra Sousa </a>(<i>Dev Team</i>)<br>
-</div>
 
 
 

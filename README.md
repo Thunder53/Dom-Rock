@@ -89,20 +89,20 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 
 <h1 align="center">📋 Documentação da Sprint 4</h1></details>
   <h2 align="center">Product Backlog</h2>
-    <p align="center"><img src="doc/Backlog/product-backlog.png"></p>
+    <p align="center"><img src="doc/Backlog/product-backlogf.png"></p>
 
   <h2 align="center">Backlog</h2>
   <h3 align="center">Tasks</h3>
-    <p align="center"><img src="doc/Backlog/sprint3-backlog.png"></p>
+    <p align="center"><img src="doc/Backlog/sprint4-backlog.png"></p>
   <h2 align="center">User Stories</h2>
-    <p align="center"><img src="doc/Backlog/user-stories-3.png"></p>
+    <p align="center"><img src="doc/Backlog/user-stories-4.png"></p>
 
 
   <h1 align="center">📉 Burndown</h1>
        <p align="center"><img src="doc/Burndown/Burndown4.jpeg"></p>
   
   <h1 align="center"> Critério de aceite Sprint 4</h1>
-        <p align="center"><img src="doc/Backlog/sprint4-backlog.png"></p>
+        <p align="center"><img src="doc/Backlog/Aceite4.png"></p>
   
   <h3 align="center">
     <a href="doc/Diagramas">• Diagramas 

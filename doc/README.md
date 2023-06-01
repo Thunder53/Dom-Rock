@@ -27,7 +27,7 @@
 <br>
 <h1 align="center">Backlog </h1>
     <h2 align="left">1.1 Product Backlog</h2>
-    <p align="center"><img src="Backlog/product-backlog.png"></p>
+    <p align="center"><img src="Backlog/product-backlogf.png"></p>
     <h2 align="left">1.2 Trello Cards e Tasks</h2>
     <p align="center">Você pode visualizar nosso quadro Trello >> <a href="https://trello.com/b/JinZ6ETv/thunder">aqui</a> <<
     <p align="center"><img src="Assets/trello-print.png"></p>
@@ -58,7 +58,7 @@
     <h2 align="left">4.2 User Stories</h2>
         <p align="left"><img src="Backlog/user-stories-3.png"></p>
     <h2 align="left">4.3 Burndown</h2>
-        <p align="left"><img src="doc/Burndown/Burndown4.jpeg"></p>
+        <p align="left"><img src="Burndown/Burndown3.jpeg"></p>
 
 
 <h1 align="center">5.Sprint 4</h1>

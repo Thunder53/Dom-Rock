@@ -58,14 +58,14 @@
     <h2 align="left">4.2 User Stories</h2>
         <p align="left"><img src="Backlog/user-stories-3.png"></p>
     <h2 align="left">4.3 Burndown</h2>
-        <p align="left"><img src="Backlog/burndown-3.png"></p>
+        <p align="left"><img src="doc/Burndown/Burndown4.jpeg"></p>
 
 
 <h1 align="center">5.Sprint 4</h1>
         <h2 align="left">5.1 Backlog</h2>
         <p align="left"><img src="Backlog/sprint4-backlog.png"></p>
     <h2 align="left">5.2 User Stories</h2>
-        <p align="left"><img src=""></p>
+        <p align="left"><img src="Backlog/user-stories-4.png"></p>
 
 
 <h1 align="center">6.Diagramas</h1>

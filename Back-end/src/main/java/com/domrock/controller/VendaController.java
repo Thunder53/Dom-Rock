@@ -113,26 +113,27 @@ public class VendaController {
         Venda venda = repository.findById(id_venda).orElse(null);
 
         if (venda != null) {
-            Date dataAtual = new Date();
-            Date dataCriacao = venda.getCriada_em();
-            long diff = dataAtual.getTime() - dataCriacao.getTime();
-            long diffDays = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+            if (venda.getAtualizada_em() == null) {
+                Date dataAtual = new Date();
+                Date dataCriacao = venda.getCriada_em();
+                long diff = dataAtual.getTime() - dataCriacao.getTime();
+                long diffDays = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 
-            if (diffDays <= 7) {
-                venda.setQuant_vendida(quant_vendida);
-                venda.setAtualizada_em(new Date());
-                repository.save(venda);
-                return ResponseEntity.ok("Venda atualizada com sucesso!");
+                if (diffDays <= 7) {
+                    venda.setQuant_vendida(quant_vendida);
+                    venda.setAtualizada_em(new Date());
+                    repository.save(venda);
+                    return ResponseEntity.ok("Venda atualizada com sucesso!");
+                } else {
+                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Fora do prazo");
+                }
             } else {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Fora do prazo");
+                return ResponseEntity.ok("Venda já atualizada");
             }
         }
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venda não encontrada");
     }
-
-
-
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

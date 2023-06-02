@@ -20,7 +20,7 @@
 <br>
 <h1 align="center">📂 Sobre a Dom Rock </h1>
 
-> _Product Owner_ - [Thiago Chaves]()
+> _Product Owner_ - [Thiago Chaves](https://www.linkedin.com/in/thiago-lopes-chaves-5ba22b209/)
 
 > _Scrum Master_ - [Ariane Cristine Alves de Sousa](https://www.linkedin.com/in/ariane-sousa77)
 
@@ -30,9 +30,9 @@
 
 > _Dev. Team_ - [Tobias Fernandes Bezerra Sousa](https://www.linkedin.com/in/tobias-sousa-23bba822a)
 
-> _Dev. Team_ - [Beatrice Lopes Correa]()
+> _Dev. Team_ - [Beatrice Lopes Correa](https://www.linkedin.com/in/bewtrice)
 
-> _Dev. Team_ - [Murilo Junior]()
+> _Dev. Team_ - [Murilo Junior](https://www.linkedin.com/in/murilo-jos%C3%A9-de-brito-junior-32403b157/)
 
 ## Empresa parceira
 
@@ -88,27 +88,208 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
 <div>
 
 <h1 align="center">📋 Documentação da Sprint 4</h1></details>
-  <h2 align="center">Product Backlog</h2>
-    <p align="center"><img src="doc/Backlog/product-backlogf.png"></p>
+</div>
 
-  <h2 align="center">Backlog</h2>
-  <h3 align="center">Tasks</h3>
-    <p align="center"><img src="doc/Backlog/sprint4-backlog.png"></p>
-  <h2 align="center">User Stories</h2>
-    <p align="center"><img src="doc/Backlog/user-stories-4.png"></p>
+<h3 align="center">Backlog</h3>
+<div>
+<table align="center">
+<tr>
+ <th><b>Backlog</b></th>
+<th><b>Importância</b></th>
 
+</tr>
 
-  <h1 align="center">📉 Burndown</h1>
-       <p align="center"><img src="doc/Burndown/Burndown4.jpeg"></p>
+<tr>
+<td>Cadastro de clientes</td>
+<td>Imprescíndivel</td>
+</tr>
+
+<tr>
+<td>Visualizar histórico de vendas</td>
+<td>Imprescíndivel</td>
+</tr>
+
+<tr>
+<td>Acompanhamento do desempenho dos vendedores</td>
+<td>Imprescíndivel</td>
+</tr>
+
+<tr>
+<td>Gráfico comparativo da previsão com as vendas reais</td>
+<td>Imprescíndivel</td>
+</tr>
+
+<tr>
+<td>Notificação de metas atingidas e não atingidas</td>
+<td>Imprescíndivel</td>
+</tr>
   
-  <h1 align="center"> Critério de aceite Sprint 4</h1>
-        <p align="center"><img src="doc/Backlog/Aceite4.png"></p>
+<tr>
+<td>Cadastro dos vendedores</td>
+<td>Importante</td>
+</tr>
   
-  <h3 align="center">
-    <a href="doc/Diagramas">• Diagramas 
-    <a href="https://trello.com/b/JinZ6ETv/thunder">• Cards (Trello)
-    <a href="doc/README.md">• Documentação Completa
-  </h3>
+<tr>
+<td>Visualização das informações dos clientes, produtos e vendedores</td>
+<td>Importante</td>
+</tr>
+  
+<tr>
+<td>Gerenciamento da carteira de clientes</td>
+<td>Importante</td>
+</tr>
+    
+<tr>
+<td>Gráfico previsão e histórico de vendas</td>
+<td>Importante</td>
+</tr>
+    
+<tr>
+<td>Autenticação e autorização do sistema</td>
+<td>Desejável</td>
+</tr>
+
+<tr>
+<td>Filtros no gráfico de check de vendedores e produtos</td>
+<td>Desejável</td>
+</tr>
+  
+<tr>
+<td>Edição das vendas</td>
+<td>Desejável</td>
+</tr>
+  
+<tr>
+<td>Gerenciamento da carteira de clientes</td>
+<td>Desejável</td>
+</tr>
+</table>
+</div>
+
+<h3 align="center">Tasks</h3>
+<div>
+<table align="center">
+<tr>
+<th><b>Tasks</b></th>
+<th><b>Importância</b></th>
+</tr>
+ 
+<tr>
+<td>Filtros de busca</td>
+<td>Desejável</td>
+</tr>
+  
+<tr>
+<td>Edição das vendas</td>
+<td>Desejável</td>
+</tr>
+   
+<tr>
+<td>Filtros no gráfico de check de vendedores e produtos</td>
+<td>Imprescíndivel</td>
+</tr>
+    
+<tr>
+<td>Notificação de metas atingidas</td>
+<td>Imprescíndivel</td>
+</tr>
+    
+<tr>
+<td>Grafico historico e predição de vendas</td>
+<td>Imprescíndivel</td>
+</tr>
+      
+</table>
+</div>
+
+<h2 align="center">User Stories</h2>
+<div>
+<table align="center">
+<tr>
+<th><b>Numeração</b></th>
+<th><b>User stories</b></th>
+</tr>
+     
+<tr>
+<th>1</th>
+<td>Como administrador gostaria de ter filtros de busca para encontrar vendas específicas com base em critérios como data, vendedor e/ou produto</td>
+</tr>
+     
+<tr>
+<th>2</th>
+<td>Como vendedor gostaria de poder editar as vendas para de corrigir erros ou fazer ajustes necessários</td>
+</tr>
+       
+<tr>
+<th>3</th>
+<td>Como administrador desejo filtros no gráfico de check de vendedores e produtos para comparar o desempenho de diferentes vendedores e produtos ao longo do tempo</td>
+</tr>
+        
+<tr>
+<th>4</th>
+<td>Como vendedor gostaria de ser alertado quando a minha meta de vendas foi atingidas</td>
+</tr>
+        
+<tr>
+<th>5</th>
+<td>Como vendedor gostaria de visualizar graficos de predição e historicos de vendas, para avaliar minhas meu desempenho</td>
+</tr>
+          
+</table>
+</div>
+
+<h1 align="center"> Critério de Aceite</h1>
+
+<div>
+<table align="center">
+<tr>
+<th><b>Numeração</b></th>
+<th><b>Critérios de Aceite</b></th>
+</tr>
+         
+<tr>
+<th>1</th>
+<td>- O sistema deve permitir que o administrador utilize filtros de busca para encontrar vendas específicas;
+<br>- Os filtros devem incluir critérios como data, vendedor e/ou produto;
+<br>- O resultado da busca deve ser preciso e exibir apenas as vendas que correspondam aos critérios selecionado.</td>
+</tr>
+         
+<tr>
+<th>2</th>
+<td>-Os vendedores devem ter acesso a um sistema ou plataforma que permita a edição das vendas;
+    <br>-Após a edição de uma venda, todas as informações atualizadas devem ser refletidas corretamente nos relatórios, registros financeiros e quaisquer outros sistemas relacionados.
+    <br>-Os vendedores devem ter permissões adequadas para editar apenas as vendas que realizaram.</td>
+</tr>
+           
+<tr>
+<th>3</th>
+<td>- gráfico de desempenho de vendedores e produtos deve incluir filtros que permitam ao administrador selecionar vendedores específicos e produtos específicos para visualizar seu desempenho ao longo do tempo.
+<br>-O gráfico deve fornecer uma representação visual clara e comparativa do desempenho de diferentes vendedores e produtos ao longo do tempo. </td>
+</tr>
+            
+<tr>
+<th>4</th>
+<td>-O sistema deve fornecer um alerta ao vendedor quando sua meta de vendas for atingida.;
+    <br>-Isso pode ser feito por meio de uma notificação visual, como um pop-up ou um ícone de destaque na interface do usuário, garantindo que o vendedor seja prontamente informado sobre o alcance da meta.</td>
+</tr>
+            
+<tr>
+<th>5</th>
+<td>-O sistema deve fornecer gráficos de predição de vendas precisos e confiáveis, permitindo que o vendedor avalie seu desempenho e planeje suas estratégias futuras.</td>
+</tr>
+              
+</table>
+</div>
+  
+<h1 align="center">📉 Burndown</h1>
+<p align="center"><img src="doc/Burndown/Burndown4.jpeg"></p>
+  
+  
+<h3 align="center">
+<a href="doc/Diagramas">• Diagramas 
+<a href="https://trello.com/b/JinZ6ETv/thunder">• Cards (Trello)
+<a href="doc/README.md">• Documentação Completa
+</h3>
 
 
 

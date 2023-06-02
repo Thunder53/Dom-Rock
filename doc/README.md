@@ -114,31 +114,319 @@
 
 <h1 align="center">2.Sprint 1</h1>
     <h2 align="left">2.1 Backlog</h2>
-        <p align="left"><img src="Backlog/sprint1-backlog.png"></p>
+<div>
+<table align="center">
+<tr>
+<th><b>Tasks</th>
+<th>Importância</th>
+</tr>
+ 
+<tr>
+<td>Sistema de cadastro da carteira de clientes</td>
+<td>Imprescindível</td>
+</tr>
+  
+<tr>
+<td>Sistema para cadastro dos vendedores</td>
+<td>Importante</td>
+</tr>
+   
+<tr>
+<td>Visão administrativa dos cadastro de clientes, produtos e vendedor</td>
+<td>Importante</td>
+</tr>
+ 
+<tr>
+<td>Mecânismo de autenticação e autorização do sistema</td>
+<td>Desejável</td>
+</tr>
+
+</table>
+</div>
     <h2 align="left">2.2 User Stories</h2>
-        <p align="left"><img src="Backlog/sprint1-userstories.png"></p>
+<div>
+<table align="center">
+<tr>
+<th><b>Numeração</b></th>
+<th><b>User stories</b></th>
+</tr>
+     
+<tr>
+<th>1</th>
+<td>Como administrador quero cadastrar os vendedores para cirar seu acesso ao sistema</td>
+</tr>
+     
+<tr>
+<th>2</th>
+<td>Como administrador quero cadastrar as carteiras de clientes para o vendedor ter acesso ao seus clientes e produtos</td>
+</tr>
+       
+<tr>
+<th>3</th>
+<td>Como administrador quero ter acesso ao sistema pelo método de login</td>
+</tr>
+           
+</table>
+</div>
     <h2 align="left">2.3 Critérios de Aceite</h2>
-        <p align="left"><img src=""></p>
+<div>
+<table align="center">
+<tr>
+<th><b>Numeração</b></th>
+<th><b>Critérios de Aceite</b></th>
+</tr>
+         
+<tr>
+<th>1</th>
+<td>-O cadastro de vendedores deve incluir a criação de credenciais de acesso;
+    <br>-O sistema deve permitir que o administrador cadastre novos vendedores, fornecendo informações como nome e outras informações relevantes;
+    <br>-O administrador deve poder editar as informações dos vendedores cadastrados, caso seja necessário atualizar ou corrigir dados específicos.</td>
+</tr>
+         
+<tr>
+<th>2</th>
+<td>-O sistema deve permitir que o administrador cadastre as carteiras de clientes para cada vendedor, de forma fácil e intuitiva;
+    <br>-O cadastro das carteiras de clientes deve ser associado a cada vendedor, garantindo que cada vendedor tenha acesso apenas à sua própria carteira;</td>
+</tr>
+           
+<tr>
+<th>3</th>
+<td>-O sistema deve fornecer um método de login para que o administrador possa acessar as funcionalidades do sistema de forma segura;
+    <br>-Caso as credenciais de login sejam inválidas, o sistema deve fornecer uma mensagem de erro adequada para informar o administrador sobre o problema.</td>
+</tr>
+            
+              
+</table>
+</div>
     <h2 align="left">2.4 Burndown</h2>
         <p align="left"><img src="Backlog/burndown-1.png"></p>
 
 <h1 align="center">3.Sprint 2</h1>
         <h2 align="left">3.1 Backlog</h2>
-        <p align="left"><img src="Backlog/sprint2-backlog.png"></p>
-    <h2 align="left">3.2 User Stories</h2>
-        <p align="left"><img src="Backlog/sprint2-userstories.png"></p>
-   <h2 align="left">3.3 Critérios de Aceite</h2>
-        <p align="left"><img src=""></p>
+<div>
+<table align="center">
+<tr>
+<th><b>Tasks</th>
+<th>Importância</th>
+</tr>
+ 
+<tr>
+<td>Visualização de informações do cliente</td>
+<td>Imprescindível</td>
+</tr>
+  
+<tr>
+<td>Sistema de cadastro de novos clientes e seus produtos</td>
+<td>Imprescindível</td>
+</tr>
+
+<tr>
+<td>Gráfico de visualização da quantidade de vendas</td>
+<td>Importante</td>
+</tr>
+
+<tr>
+<td>Gerenciamento da carteira do cliente</td>
+<td>Importante</td>
+</tr>
+    
+<tr>
+<td></td>
+<td></td>
+</tr>
+    
+
+      
+</table>
+</div>
+
+<h2 align="left">3.2 User Stories</h2>
+
+<div>
+<table align="center">
+<tr>
+<th><b>Numeração</b></th>
+<th><b>User stories</b></th>
+</tr>
+     
+<tr>
+<th>1</th>
+<td>Como administrador quero visualizar as informações do cliente</td>
+</tr>
+     
+<tr>
+<th>2</th>
+<td>Como administrador quero cadastrar novos clientes e produtos para ser incluidos nas carteiras de vendedores</td>
+</tr>
+       
+<tr>
+<th>3</th>
+<td>Como administrador e vendedor quero visualizar por meio de gráficos a quantidade de vendas para que seja feito um planejamento de vendas</td>
+</tr>
+        
+<tr>
+<th>4</th>
+<td>Como vendedor quero administrar minha carteira de clientes inserir minhas previsões de vendas</td>
+</tr>
+          
+</table>
+</div>
+
+<h2 align="left">3.3 Critérios de Aceite</h2>
+<div>
+<table align="center">
+<tr>
+<th><b>Numeração</b></th>
+<th><b>Critérios de Aceite</b></th>
+</tr>
+         
+<tr>
+<th>1</th>
+<td>-O sistema deve permitir que o administrador acesse e visualize as informações do cliente de forma fácil e intuitiva;
+    <br>-O sistema deve apresentar as informações do cliente de forma organizada e legível, utilizando uma interface amigável.</td>
+</tr>
+         
+<tr>
+<th>2</th>
+<td>-O sistema deve permitir que o administrador cadastre novos clientes a serem incluídos nas carteiras de vendedores;
+    <br>-O sistema deve fornecer um formulário intuitivo para o preenchimento dos dados do cliente;
+    <br>-Após o cadastro, o sistema deve associar o cliente à carteira de um vendedor específico, permitindo o acompanhamento e gerenciamento adequado das vendas.</td>
+</tr>
+           
+<tr>
+<th>3</th>
+<td>-O sistema deve fornecer gráficos que apresentem a quantidade de vendas ao longo do tempo, permitindo uma visualização clara e compreensível;
+    <br>-Os gráficos devem ser atualizados em tempo real ou em intervalos regulares, garantindo que as informações estejam sempre atualizadas para auxiliar no planejamento de vendas.</td>
+</tr>
+            
+<tr>
+<th>4</th>
+<td>-O sistema deve permitir que o vendedor acesse sua carteira de clientes de forma fácil e intuitiva;
+    <br>-O vendedor deve poder inserir as previsões de vendas em um período específico.</td>
+</tr>
+                 
+</table>
+</div>
     <h2 align="left">3.4 Burndown</h2>
         <p align="left"><img src="Backlog/burndown-2.png"></p>
 
 
 <h1 align="center">4.Sprint 3</h1>
         <h2 align="left">4.1 Backlog</h2>
-        <p align="left"><img src="Backlog/sprint3-backlog.png"></p>
+  <div>
+<table align="center">
+<tr>
+<th><b>Tasks</th>
+<th>Importância</th>
+</tr>
+ 
+<tr>
+<td>Visualizar histórico de vendas</td>
+<td>Imprescíndivel</td>
+</tr>
+  
+<tr>
+<td>Gráfico comparativo da previsão com as vendas reais</td>
+<td>Imprescíndivel</td>
+</tr>
+   
+<tr>
+<td>Filtros no gráfico de check de vendedores e produtos</td>
+<td>Imprescíndivel</td>
+</tr>
+    
+<tr>
+<td>Filtros de busca</td>
+<td>Desejável</td>
+</tr>
+    
+<tr>
+<td>Edição das vendas</td>
+<td>Desejável</td>
+</tr>
+      
+</table>
+</div>
     <h2 align="left">4.2 User Stories</h2>
-        <p align="left"><img src="Backlog/user-stories-3.png"></p>
-    <h2 align="left">4.3 Burndown</h2>
+<div>
+<table align="center">
+<tr>
+<th><b>Numeração</b></th>
+<th><b>User stories</b></th>
+</tr>
+     
+<tr>
+<th>1</th>
+<td>Como administrador ou vendedor desejo visualizar o histórico de vendas para ter uma visão geral das vendas da minha empresa ao longo do tempo</td>
+</tr>
+     
+<tr>
+<th>2</th>
+<td>Como administrador desejo visualizar um gráfico comparativo da previsão com as vendas reais para avaliar o desempenho da minha empresa em relação às metas estabelecidas</td>
+</tr>
+       
+<tr>
+<th>3</th>
+<td>Como administrador desejo filtros no gráfico de check de vendedores e produtos para comparar o desempenho de diferentes vendedores e produtos ao longo do tempo</td>
+</tr>
+        
+<tr>
+<th>4</th>
+<td>Como administrador gostaria de ter filtros de busca para encontrar vendas específicas com base em critérios como data, vendedor e/ou produto</td>
+</tr>
+        
+<tr>
+<th>5</th>
+<td>Como vendedor gostaria de poder editar as vendas para de corrigir erros ou fazer ajustes necessários</td>
+</tr>
+          
+</table>
+</div>
+   
+   <h2 align="left">4.3 Critérios de Aceite</h2>
+<div>
+<table align="center">
+<tr>
+<th><b>Numeração</b></th>
+<th><b>Critérios de Aceite</b></th>
+</tr>
+         
+<tr>
+<th>1</th>
+<td>-O sistema deve permitir que administradores e vendedores visualizem o histórico completo de vendas da empresa;
+<br>-Deve ser possível filtrar o histórico de vendas por produto; </td>
+</tr>
+         
+<tr>
+<th>2</th>
+<td>-O sistema deve permitir que o administrador visualize um gráfico comparativo entre a previsão de vendas e as vendas reais da empresa;
+<br>-A interface para visualização do gráfico comparativo deve ser intuitiva e de fácil utilização.</td>
+</tr>
+           
+<tr>
+<th>3</th>
+<td>-O sistema deve fornecer um gráfico de desempenho que apresente dados de vendas de vendedores e produtos ao longo do tempo;
+<br>-O gráfico deve apresentar os dados filtrados de forma clara e visualmente compreensível.</td>
+</tr>
+            
+<tr>
+<th>4</th>
+<td>- O sistema deve permitir que o administrador utilize filtros de busca para encontrar vendas específicas.
+<br>- Os filtros devem incluir critérios como data, vendedor e/ou produto. 
+<br>- O resultado da busca deve ser preciso e exibir apenas as vendas que correspondam aos critérios selecionado</td>
+</tr>
+            
+<tr>
+<th>5</th>
+<td>-Os vendedores devem ter acesso a um sistema ou plataforma que permita a edição das vendas;
+<br>-Após a edição de uma venda, todas as informações atualizadas devem ser refletidas corretamente nos relatórios, registros financeiros e quaisquer outros sistemas relacionados.
+<br>-Os vendedores devem ter permissões adequadas para editar apenas as vendas que realizaram."</td>
+</tr>
+              
+</table>
+</div>
+   
+   <h2 align="left">4.4 Burndown</h2>
         <p align="left"><img src="Burndown/Burndown3.jpeg"></p>
 
 
@@ -256,6 +544,7 @@
 </div>
     
    <h2 align="left">5.4 Burndown</h2>
+  <p align="left"><img src="Burndown/Burndown4.jpeg"></p>
 
 <h1 align="center">6.Diagramas</h1>
     <h2 align="left">6.1 Modelo Lógico</h2>

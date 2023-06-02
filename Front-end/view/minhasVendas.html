@@ -41,7 +41,8 @@
                             <th>Cliente</th>
                             <th>Produto</th>
                             <th style="width: 120px;">Data</th>
-                            <th>Quantidade estimada</th>														
+                            <th>Quantidade estimada</th>		
+                            <th>Quantidade vendida</th>													
                         </tr>
                     </thead>
                     <tbody class="info_cliente">
@@ -50,6 +51,7 @@
                             <td th:text="${clienteList.nome_produto}"></td>
                             <td th:text="${clienteList.criada_em}"></td>
                             <td th:text="${clienteList.quant_estimada}"></td>
+                            <td th:text="${clienteList.quant_vendida}"></td>
                         </tr>
                     </tbody>
                 </table>

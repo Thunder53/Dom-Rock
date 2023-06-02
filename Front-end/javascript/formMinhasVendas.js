@@ -15,11 +15,13 @@ function buscar() {
           row.insertCell().textContent = cliente.nome_produto;
           row.insertCell().textContent = cliente.criada_em;
           row.insertCell().textContent = cliente.quant_estimada;
+          row.insertCell().textContent = cliente.quant_vendida;
   
           row.cells[0].classList.add("nome_cliente");
           row.cells[1].classList.add("nome_produto");
           row.cells[2].classList.add("criada_em");
           row.cells[3].classList.add("quant_estimada");
+          row.cells[4].classList.add("quant_vendida");
          });
   
         // Exibe a boxview

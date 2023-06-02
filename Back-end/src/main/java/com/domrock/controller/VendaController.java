@@ -1,6 +1,8 @@
 package com.domrock.controller;
 
+import com.domrock.dto.usuario.UsuarioResponseDTO;
 import com.domrock.dto.venda.VendaResponseDTO;
+import com.domrock.model.Usuario;
 import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletResponse;
@@ -99,6 +101,13 @@ public class VendaController {
     public List<VendaResponseDTO> buscarVendasPorMes(@PathVariable int mes) {
         List<Venda> vendas = repository.findByCriadaEmMonth(mes);
         return vendas.stream().map(VendaResponseDTO::new).toList();
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/vendedorHistorico/{fk_usuario_id}")
+    public List<VendaResponseDTO> vendedorHistorico(@PathVariable Long fk_usuario_id) {
+        List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();
+        return vendaList;
     }
 
 

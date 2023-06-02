@@ -38,5 +38,6 @@ public class Venda {
         this.fk_usuario_id = data.fk_usuario_id();
         this.fk_cliente_cod_cliente = data.fk_cliente_cod_cliente();
         this.fk_produto_cod_produto = data.fk_produto_cod_produto();
+
     }
 }

@@ -108,16 +108,17 @@ public class VendaController {
             long diffEmDias = TimeUnit.DAYS.convert(diffEmMilissegundos, TimeUnit.MILLISECONDS);
 
             if (diffEmDias > 7) {
-                return ResponseEntity.badRequest().body("A venda só pode ser atualizada dentro de 7 dias após a criação.");
+                return ResponseEntity.badRequest().body("A quantidade estimada só pode ser atualizada dentro de 7 dias após a criação da venda.");
             }
 
             Float quantEstimada = requestDTO.getQuant_estimada();
+            Date atualizada_em = new Date();
 
             Venda vendaAtualizada = new Venda(
                     vendaExistente.getId_venda(),
                     vendaExistente.getQuant_vendida(),
                     quantEstimada,
-                    vendaExistente.getAtualizada_em(),
+                    atualizada_em,
                     vendaExistente.getCriada_em(),
                     vendaExistente.getFk_usuario_id(),
                     vendaExistente.getFk_cliente_cod_cliente(),
@@ -125,6 +126,8 @@ public class VendaController {
             );
 
             Venda vendaSalva = repository.save(vendaAtualizada);
+            vendaSalva.setAtualizada_em(atualizada_em);
+            repository.save(vendaSalva);
 
             VendaResponseDTO vendaResponseDTO = new VendaResponseDTO(vendaSalva);
 
@@ -133,8 +136,6 @@ public class VendaController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
-
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

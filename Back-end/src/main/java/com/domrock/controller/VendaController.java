@@ -135,6 +135,27 @@ public class VendaController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venda não encontrada");
     }
 
+    @CrossOrigin(origins = "x", allowedHeaders = "x")
+    @Transactional
+    @Modifying
+    @PutMapping("/cadastrar_quantidade/{id_venda}/{quant_vendida}")
+    public ResponseEntity<String> cadastrarQuantidade(@PathVariable Long id_venda, @PathVariable Float quant_vendida) {
+        Venda venda = repository.findById(id_venda).orElse(null);
+
+        if (venda != null) {
+            if (venda.getQuant_vendida() == null) {
+                venda.setQuant_vendida(quant_vendida);
+                repository.save(venda);
+                return ResponseEntity.ok("Quantidade vendida cadastrada com sucesso!");
+            } else {
+                return ResponseEntity.ok("Quantidade vendida já cadastrada");
+            }
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venda não encontrada");
+    }
+
+
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)
     public void preflightResponse(HttpServletResponse response) {

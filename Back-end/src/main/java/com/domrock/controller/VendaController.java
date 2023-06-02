@@ -4,7 +4,9 @@ import com.domrock.dto.venda.VendaResponseDTO;
 import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,6 +15,7 @@ import java.util.*;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/venda")
@@ -100,6 +103,35 @@ public class VendaController {
         List<Venda> vendas = repository.findByCriadaEmMonth(mes);
         return vendas.stream().map(VendaResponseDTO::new).toList();
     }
+
+
+    @CrossOrigin(origins = "x", allowedHeaders = "x")
+    @Transactional
+    @Modifying
+    @PutMapping("/atualizar_venda/{id_venda}/{quant_vendida}")
+    public ResponseEntity<String> atualizarVenda(@PathVariable Long id_venda, @PathVariable Float quant_vendida) {
+        Venda venda = repository.findById(id_venda).orElse(null);
+
+        if (venda != null) {
+            Date dataAtual = new Date();
+            Date dataCriacao = venda.getCriada_em();
+            long diff = dataAtual.getTime() - dataCriacao.getTime();
+            long diffDays = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+
+            if (diffDays <= 7) {
+                venda.setQuant_vendida(quant_vendida);
+                venda.setAtualizada_em(new Date());
+                repository.save(venda);
+                return ResponseEntity.ok("Venda atualizada com sucesso!");
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Fora do prazo");
+            }
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venda não encontrada");
+    }
+
+
 
 
     @CrossOrigin(origins = "http://localhost:5500")

@@ -7,4 +7,5 @@ import java.util.Date;
 import java.util.List;
 
 public interface VendaRepository extends JpaRepository<Venda, Long> {
+//    List<Venda> findByCriadaEmBetween(Date inicio, Date fim);
 }

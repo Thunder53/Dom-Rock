@@ -1,5 +1,6 @@
 package com.domrock.controller;
 
+import com.domrock.dto.venda.AtualizarVendaRequestDTO;
 import com.domrock.dto.venda.VendaResponseDTO;
 import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
@@ -9,10 +10,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/venda")
@@ -62,6 +71,70 @@ public class VendaController {
         }
         return topVendedores;
     }
+
+    // @CrossOrigin(origins = "*", allowedHeaders = "*")
+    // @GetMapping("/{mes}")
+    // public List<Venda> listarVendasPorMes(@PathVariable String mes) {
+    // // Cria um DateTimeFormatter para o formato "dd/MM/yyyy"
+    // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    // // Converte o mês em string para um objeto LocalDate
+    // LocalDate data = LocalDate.parse("01/" + mes, formatter);
+    // // Obtém a data de início do mês
+    // LocalDate inicio = data.withDayOfMonth(1);
+    // // Obtém a data de fim do mês
+    // LocalDate fim = data.withDayOfMonth(data.lengthOfMonth());
+    //
+    // // Chama o método findByCriadaEmBetween do repositório para buscar as vendas
+    // criadas no mês
+    // return repository.findByCriadaEmBetween(
+    // Date.from(inicio.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()),
+    // Date.from(fim.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant())
+    // );
+    // }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> atualizarVenda(@PathVariable("id") Long id, @RequestBody AtualizarVendaRequestDTO requestDTO) {
+        try {
+            Venda vendaExistente = repository.findById(id).orElse(null);
+
+            if (vendaExistente == null) {
+                return ResponseEntity.notFound().build();
+            }
+
+            Date dataAtual = new Date();
+            Date dataCriacao = vendaExistente.getCriada_em();
+            long diffEmMilissegundos = dataAtual.getTime() - dataCriacao.getTime();
+            long diffEmDias = TimeUnit.DAYS.convert(diffEmMilissegundos, TimeUnit.MILLISECONDS);
+
+            if (diffEmDias > 7) {
+                return ResponseEntity.badRequest().body("A venda só pode ser atualizada dentro de 7 dias após a criação.");
+            }
+
+            Float quantEstimada = requestDTO.getQuant_estimada();
+
+            Venda vendaAtualizada = new Venda(
+                    vendaExistente.getId_venda(),
+                    vendaExistente.getQuant_vendida(),
+                    quantEstimada,
+                    vendaExistente.getAtualizada_em(),
+                    vendaExistente.getCriada_em(),
+                    vendaExistente.getFk_usuario_id(),
+                    vendaExistente.getFk_cliente_cod_cliente(),
+                    vendaExistente.getFk_produto_cod_produto()
+            );
+
+            Venda vendaSalva = repository.save(vendaAtualizada);
+
+            VendaResponseDTO vendaResponseDTO = new VendaResponseDTO(vendaSalva);
+
+            return ResponseEntity.ok(vendaResponseDTO);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

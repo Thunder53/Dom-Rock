@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='https://cdn.oesmith.co.uk/morris-0.5.1.css'>
     <link rel="stylesheet" href="../styles css/adminCharts.css">
 
-    <title>Dom Rock </title>
+    <title>Dom Rock</title>
 </head>
 <body>
     <header class="cabecalho">
@@ -24,12 +24,12 @@
     <div class="row">
         <div class="col-sm-6 text-center">
             <label class="label label-success">TOP 10 Vendedores</label>
-           <div id="stackedVendedores" ></div>
-         </div>
+            <div id="stackedVendedores"></div>
+        </div>
         <div class="col-sm-6 text-center">
-           <label class="label label-success">TOP 10 Produtos</label>
-          <div id="stackedProdutos"></div>
-            </div>
+            <label class="label label-success">TOP 10 Produtos</label>
+            <div id="stackedProdutos"></div>
+        </div>
     </div>
     <br>
     <div class="row">
@@ -37,45 +37,51 @@
             <label class="label label-success" style="font-size: 15px;">Comparativo das vendas</label>
             <hr>
             <div class="input-group">
-                <select class="form-control" id="filtro-mes" style="width: 30%;">
-                    <option value="">Todos os meses</option>
-                    <option value="1">Janeiro</option>
-                    <option value="2">Fevereiro</option>
-                    <option value="3">Março</option>
-                    <option value="4">Abril</option>
-                    <option value="5">Maio</option>
-                    <option value="6">Junho</option>
-                    <option value="7">Julho</option>
-                    <option value="8">Agosto</option>
-                    <option value="9">Setembro</option>
-                    <option value="10">Outubro</option>
-                    <option value="11">Novembro</option>
-                    <option value="12">Dezembro</option>
-                </select>
-                <select class="form-control" id="filtro-mes" style="width: 30%;">
-                    <option value="">Todos os vendedores</option>
-                </select>
-                <select class="form-control" id="filtro-mes" style="width: 30%;">
-                    <option value="">Todos os produtos</option>
-                </select>
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" onclick="filtrarDados()">Filtrar</button>
-                </span>
+                <div class="input-group-btn">
+                    <select id="filtro-data" class="form-control" id="filtro-mes" style="width: 60%;">
+                        <option value="Todos">Todos</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                    <button  id="filtro-button-data" class="btn btn-default" type="button"><i class="glyphicon glyphicon-triangle-bottom"></i>Meses</button>
+                </div>
+                <div class="input-group-btn">
+                    <select id="filtro-vendedor" class="form-control" id="filtro-vendedor" style="width: 60%;">
+                        <option value="Todos">Todos</option>
+                    </select>
+                    <button  id="filtro-button-vendedor" class="btn btn-default" type="button"><i class="glyphicon glyphicon-triangle-bottom"></i>Vendedores</button>
+                </div>
+                <div class="input-group-btn">
+                    <select class="form-control" id="filtro-produto" style="width: 65%;">
+                        <option id="filtro-produto" value="Todos">Todos</option>
+                    </select>
+                    <button id="filtro-button-produto" class="btn btn-default" type="button"><i class="glyphicon glyphicon-triangle-bottom"></i>Produtos</button>
+                </div>
             </div>
-            <div id="bar-chart"></div>
+            <canvas id="bar-chart"></canvas>
         </div>
-        
+
         <div class="col-sm-6 text-center">
             <label class="label label-success" style="font-size: 15px;">Area Chart</label>
-            <div id="area-chart" ></div>
-          </div>
+            <div id="area-chart"></div>
+        </div>
     </div>
-</body>
 
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js'></script>
-<script src="../javascript/chartAdmin.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</html> 
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js'></script>
+    <script src="../javascript/chartAdmin.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

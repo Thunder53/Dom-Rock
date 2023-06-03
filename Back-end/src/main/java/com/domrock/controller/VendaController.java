@@ -4,6 +4,7 @@ import com.domrock.dto.venda.VendaRequestDTO;
 import com.domrock.dto.venda.VendaResponseDTO;
 import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.aspectj.apache.bcel.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,9 @@ public class VendaController {
     private VendaRepository repository;
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private HttpServletRequest request;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
@@ -118,6 +122,36 @@ public class VendaController {
         return vendas.stream().map(VendaResponseDTO::new).toList();
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/metas/{fk_usuario_id}")
+    public ResponseEntity<Map<String, String>> verificaMetasAtingidas(@PathVariable Long fk_usuario_id) {
+        List<Venda> vendas = repository.findByUsuario(fk_usuario_id);
+
+        if (vendas.isEmpty()) {
+            // Usuário não possui vendas
+            Map<String, String> response = new HashMap<>();
+            response.put("mensagem", "Usuário sem vendas registradas.");
+            return ResponseEntity.ok(response);
+        }
+
+        boolean metaAtingida = true;
+
+        for (Venda venda : vendas) {
+            if (venda.getQuant_vendida() < venda.getQuant_estimada()) {
+                metaAtingida = false;
+                break;
+            }
+        }
+
+        Map<String, String> response = new HashMap<>();
+        if (metaAtingida) {
+            response.put("mensagem", "Parabéns! Todas as metas foram atingidas!");
+        } else {
+            response.put("mensagem", "Ainda faltam vendas para atingir as metas!");
+        }
+
+        return ResponseEntity.ok(response);
+    }
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

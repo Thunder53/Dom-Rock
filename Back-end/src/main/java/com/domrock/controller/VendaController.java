@@ -1,6 +1,5 @@
 package com.domrock.controller;
 
-import com.domrock.dto.venda.AtualizarVendaRequestDTO;
 import com.domrock.dto.venda.VendaResponseDTO;
 import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;

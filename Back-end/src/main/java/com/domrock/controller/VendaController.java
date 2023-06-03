@@ -1,9 +1,11 @@
 package com.domrock.controller;
 
+import com.domrock.dto.venda.VendaRequestDTO;
 import com.domrock.dto.venda.VendaResponseDTO;
 import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletResponse;
+import org.aspectj.apache.bcel.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -88,6 +90,15 @@ public class VendaController {
 
         return quantVendidaMaior > quantVendidaMenor;
     }
+
+        @CrossOrigin(origins = "*", allowedHeaders = "*")
+        @GetMapping("/acima-meta")
+        public ResponseEntity<?> getVendedoresAcimaMeta() {
+            List<Venda> vendedoresAcimaMeta = repository.findVendedoresAcimaMeta();
+
+            return ResponseEntity.ok(vendedoresAcimaMeta);
+        }
+
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

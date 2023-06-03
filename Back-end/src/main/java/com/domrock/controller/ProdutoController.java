@@ -1,12 +1,8 @@
 package com.domrock.controller;
 
-import com.domrock.dto.cliente.ClienteResponseDTO;
 import com.domrock.dto.produto.ProdutoRequestDTO;
 import com.domrock.dto.produto.ProdutoResponseDTO;
-import com.domrock.dto.usuario.UsuarioRequestDTO;
-import com.domrock.model.Cliente;
 import com.domrock.model.Produto;
-import com.domrock.model.Usuario;
 import com.domrock.repository.ProdutoRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -37,7 +37,6 @@ public class VendaController {
     @GetMapping
     public List<VendaResponseDTO> getAll() {
         List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();
-        ;
         return vendaList;
     }
 
@@ -94,14 +93,20 @@ public class VendaController {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/acima-meta")
     public ResponseEntity<?> getVendedoresAcimaMeta() {
-            List<Venda> vendedoresAcimaMeta = repository.findVendedoresAcimaMeta();
-
-            return ResponseEntity.ok(vendedoresAcimaMeta);
+        List<Venda> vendedoresAcimaMeta = repository.findVendedoresAcimaMeta();
+        return ResponseEntity.ok(vendedoresAcimaMeta);
     }
     
     @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/filtro-produto/{fk_produto_cod_produto}")
+    public List<VendaResponseDTO> filtroProduto(@PathVariable Long fk_produto_cod_produto) {
+        List<Venda> vendas = repository.findByProduto(fk_produto_cod_produto);
+        return vendas.stream().map(VendaResponseDTO::new).toList();
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/filtro-vendedor/{fk_usuario_id}")
-    public List<VendaResponseDTO> filtroProduto(@PathVariable Long fk_usuario_id) {
+    public List<VendaResponseDTO> filtroVendedor(@PathVariable Long fk_usuario_id) {
         List<Venda> vendas = repository.findByVendedor(fk_usuario_id);
         return vendas.stream().map(VendaResponseDTO::new).toList();
     }

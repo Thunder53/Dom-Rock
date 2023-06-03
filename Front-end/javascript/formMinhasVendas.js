@@ -1,39 +1,99 @@
+const formulario = document.querySelector("form");
+const cadastro_vendida = document.getElementById("botao_cadastrar");
+const edicao_vendida = document.getElementById("botao_editar");
+let selectedRow = null;
+
+cadastro_vendida.addEventListener("click", cadastrar_vendas);
+edicao_vendida.addEventListener("click", editar_vendas);
+
 function buscar() {
-    const url = (`http://localhost:8080/produto/produto-com-cliente/${localStorage.getItem('id')}`)
-  
-    fetch(url)
+  const url = `http://localhost:8080/produto/produto-com-cliente/${localStorage.getItem('id')}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const infoCliente = document.querySelector(".info_cliente");
+
+      data.forEach(cliente => {
+        const row = infoCliente.insertRow();
+        row.insertCell().textContent = cliente.id_venda;
+        row.insertCell().textContent = cliente.nome_cliente;
+        row.insertCell().textContent = cliente.nome_produto;
+        row.insertCell().textContent = cliente.criada_em;
+        row.insertCell().textContent = cliente.quant_estimada;
+        row.insertCell().textContent = cliente.quant_vendida;
+
+        row.cells[0].classList.add("id_venda");
+        row.cells[1].classList.add("cliente-nome");
+        row.cells[2].classList.add("produto-nome");
+        row.cells[3].classList.add("data-criacao");
+        row.cells[4].classList.add("quant-estimada");
+        row.cells[5].classList.add("quant-vendida");
+
+        row.addEventListener("click", () => {
+          if (selectedRow) {
+            selectedRow.classList.remove('selected');
+          }
+          row.classList.add('selected');
+          selectedRow = row;
+        });
+      });
+    })
+    .catch(error => console.error(error));
+}
+
+document.addEventListener('DOMContentLoaded', buscar);
+
+function cadastrar_vendas() {
+  if (selectedRow) {
+    const selectedId = selectedRow.getAttribute('data-id');
+    console.log('Cadastro de Vendas - Linha selecionada. ID:', selectedId);
+    const id_venda = selectedRow.querySelector(".id_venda").textContent;
+
+    const quantidadeVendida = prompt('Informe a quantidade vendida:');
+
+    const url = `http://localhost:8080/venda/cadastrar_quantidade/${id_venda}/${quantidadeVendida}`;
+
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        // Aqui você pode adicionar quaisquer outros headers necessários
+      },
+    })
       .then(response => response.json())
       .then(data => {
-        const boxview = document.querySelector(".boxview");
-        const infoCliente = document.querySelector(".info_cliente");
-  
-    
-        // Adiciona cada cliente como uma nova linha na tabela
-        data.forEach(cliente => {
-          const row = infoCliente.insertRow();
-          row.insertCell().textContent = cliente.nome_cliente;
-          row.insertCell().textContent = cliente.nome_produto;
-          row.insertCell().textContent = cliente.criada_em;
-          row.insertCell().textContent = cliente.quant_estimada;
-          row.insertCell().textContent = cliente.quant_vendida;
-  
-          row.cells[0].classList.add("nome_cliente");
-          row.cells[1].classList.add("nome_produto");
-          row.cells[2].classList.add("criada_em");
-          row.cells[3].classList.add("quant_estimada");
-          row.cells[4].classList.add("quant_vendida");
-         });
-  
-        // Exibe a boxview
+        console.log(data); // Aqui você pode fazer o tratamento da resposta da API
       })
-      .catch(error => console.error(error));
-  };
-  
-  // Executa a função buscar
-  
-  
-  // Executa a função buscar assim que o documento HTML é completamente carregado
-  document.addEventListener('DOMContentLoaded', buscar);
-  
-  
- 
+      .catch(error => {
+        console.error('Erro na requisição:', error);
+      });
+    
+    selectedRow.classList.remove('selected');
+    selectedRow = null;
+  } else {
+    alert('Clique na linha que você deseja alterar.');
+  }
+}
+
+function editar_vendas() {
+  if (selectedRow) {
+    const selectedId = selectedRow.getAttribute('data-id');
+    console.log('Edição de Vendas - Linha selecionada. ID:', selectedId);
+
+    const colunaInfo = selectedRow.insertCell();
+    const id_venda = selectedRow.querySelector(".id_venda").textContent;
+    const clienteNome = selectedRow.querySelector(".cliente-nome").textContent;
+    const produtoNome = selectedRow.querySelector(".produto-nome").textContent;
+    const dataCriacao = selectedRow.querySelector(".data-criacao").textContent;
+    const quantEstimada = selectedRow.querySelector(".quant-estimada").textContent;
+    const quantVendida = selectedRow.querySelector(".quant-vendida").textContent;
+
+    const quantidadeVendida = prompt('Informe a nova quantidade vendida: ');
+
+    selectedRow.classList.remove('selected');
+    selectedRow = null;
+  } else {
+    alert('Clique na linha que você deseja alterar.');
+  }
+}

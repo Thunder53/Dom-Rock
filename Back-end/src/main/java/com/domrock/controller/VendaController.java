@@ -105,7 +105,7 @@ public class VendaController {
     }
 
 
-    @CrossOrigin(origins = "x", allowedHeaders = "x")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @Transactional
     @Modifying
     @PutMapping("/atualizar_venda/{id_venda}/{quant_vendida}")
@@ -134,26 +134,26 @@ public class VendaController {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venda não encontrada");
     }
-
-    @CrossOrigin(origins = "x", allowedHeaders = "x")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @Transactional
     @Modifying
     @PutMapping("/cadastrar_quantidade/{id_venda}/{quant_vendida}")
-    public ResponseEntity<String> cadastrarQuantidade(@PathVariable Long id_venda, @PathVariable Float quant_vendida) {
+    public ResponseEntity<Object> cadastrarQuantidade(@PathVariable Long id_venda, @PathVariable Float quant_vendida) {
         Venda venda = repository.findById(id_venda).orElse(null);
 
         if (venda != null) {
             if (venda.getQuant_vendida() == null) {
                 venda.setQuant_vendida(quant_vendida);
                 repository.save(venda);
-                return ResponseEntity.ok("Quantidade vendida cadastrada com sucesso!");
+                return ResponseEntity.ok().body("{\"message\": \"Quantidade vendida cadastrada com sucesso!\"}");
             } else {
-                return ResponseEntity.ok("Quantidade vendida já cadastrada");
+                return ResponseEntity.ok().body("{\"message\": \"Quantidade vendida já cadastrada\"}");
             }
         }
 
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venda não encontrada");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"message\": \"Venda não encontrada\"}");
     }
+
 
 
     @CrossOrigin(origins = "http://localhost:5500")

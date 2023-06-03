@@ -1,10 +1,7 @@
 package com.domrock.controller;
 
-<<<<<<< HEAD
-import com.domrock.dto.venda.VendaRequestDTO;
-=======
+
 import com.domrock.dto.usuario.UsuarioResponseDTO;
->>>>>>> controller-endpoint-vendedor-historico
 import com.domrock.dto.venda.VendaResponseDTO;
 import com.domrock.model.Usuario;
 import com.domrock.model.Venda;

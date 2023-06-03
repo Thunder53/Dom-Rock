@@ -69,7 +69,7 @@ public class ProdutoController {
     public List<Map<String, Object>> findByUsuario(@PathVariable Long id) {
         List<Map<String, Object>> produtos_cliente = new ArrayList<>();
         String sql = "select p.nome_produto, p.cod_produto, c.nome_cliente, c.cod_cliente, v.criada_em, v.quant_estimada,\n" +
-                "v.fk_cliente_cod_cliente, v.fk_produto_cod_produto, v.fk_usuario_id, u.id\n" +
+                "v.id_venda, v.quant_vendida, v.fk_cliente_cod_cliente, v.fk_produto_cod_produto, v.fk_usuario_id, u.id\n" +
                 "from produto p, cliente c, venda v, usuario u \n" +
                 "where v.fk_cliente_cod_cliente = c.cod_cliente and v.fk_produto_cod_produto = p.cod_produto and v.fk_usuario_id = u.id and u.id = ?";
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql, id);
@@ -81,6 +81,8 @@ public class ProdutoController {
             produto_cliente.put("cod_cliente", row.get("cod_cliente"));
             produto_cliente.put("criada_em", row.get("criada_em"));
             produto_cliente.put("quant_estimada", row.get("quant_estimada"));
+            produto_cliente.put("quant_vendida", row.get("quant_vendida"));
+            produto_cliente.put("id_venda", row.get("id_venda"));
             produto_cliente.put("fk_cliente_cod_cliente", row.get("fk_cliente_cod_cliente"));
             produto_cliente.put("fk_produto_cod_produto", row.get("fk_produto_cod_produto"));
             produtos_cliente.add(produto_cliente);

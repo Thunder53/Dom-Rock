@@ -13,4 +13,5 @@ public interface VendaRepository extends JpaRepository<Venda, Long> {
 
     @Query("SELECT v FROM venda v WHERE v.fk_usuario_id = ?1")
     List<Venda> findByUsuario(Long fk_usuario_id);
+
 }

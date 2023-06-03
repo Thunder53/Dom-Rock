@@ -38,22 +38,19 @@
                 <table align="center" class="table table-bordered">
                     <thead class="table-active">
                         <tr class="boxview">
+                            <th>ID Venda</th>
                             <th>Cliente</th>
                             <th>Produto</th>
-                            <th style="width: 120px;">Data</th>
-                            <th>Quantidade estimada</th>														
+                            <th>Data de criação</th>
+                            <th>Quantidade estimada</th>
                         </tr>
                     </thead>
                     <tbody class="info_cliente">
-                        <tr>
-                            <td th:text="${clienteList.nome_cliente}"></td>
-                            <td th:text="${clienteList.nome_produto}"></td>
-                            <td th:text="${clienteList.criada_em}"></td>
-                            <td th:text="${clienteList.quant_estimada}"></td>
-                        </tr>
+                        <!-- Os dados da tabela serão preenchidos dinamicamente com JavaScript -->
                     </tbody>
                 </table>
             </div>
-            
         </section>
-</main>
+    </main>
+</body>
+</html>

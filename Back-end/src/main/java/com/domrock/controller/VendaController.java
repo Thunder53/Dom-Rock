@@ -1,7 +1,12 @@
 package com.domrock.controller;
 
+<<<<<<< HEAD
 import com.domrock.dto.venda.VendaRequestDTO;
+=======
+import com.domrock.dto.usuario.UsuarioResponseDTO;
+>>>>>>> controller-endpoint-vendedor-historico
 import com.domrock.dto.venda.VendaResponseDTO;
+import com.domrock.model.Usuario;
 import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletRequest;
@@ -152,6 +157,14 @@ public class VendaController {
 
         return ResponseEntity.ok(response);
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/vendedorHistorico/{fk_usuario_id}")
+    public List<VendaResponseDTO> vendedorHistorico(@PathVariable Long fk_usuario_id) {
+        List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();
+        return vendaList;
+    }
+
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

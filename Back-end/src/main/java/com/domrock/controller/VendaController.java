@@ -91,13 +91,13 @@ public class VendaController {
         return quantVendidaMaior > quantVendidaMenor;
     }
 
-        @CrossOrigin(origins = "*", allowedHeaders = "*")
-        @GetMapping("/acima-meta")
-        public ResponseEntity<?> getVendedoresAcimaMeta() {
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/acima-meta")
+    public ResponseEntity<?> getVendedoresAcimaMeta() {
             List<Venda> vendedoresAcimaMeta = repository.findVendedoresAcimaMeta();
 
             return ResponseEntity.ok(vendedoresAcimaMeta);
-        }
+    }
     
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/filtro-vendedor/{fk_usuario_id}")

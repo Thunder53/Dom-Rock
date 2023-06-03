@@ -306,7 +306,7 @@ async function filtro_data() {
   const data = selectData.value;
 
   if (selectData.value === "Todos") {
-    initPage();
+    generateVendaChart();
     return;
   }
 

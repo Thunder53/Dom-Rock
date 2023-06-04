@@ -13,6 +13,7 @@ function buscar() {
     .then(response => response.json())
     .then(data => {
       const infoCliente = document.querySelector(".info_cliente");
+      infoCliente.innerHTML = '';
 
       data.forEach(cliente => {
         const row = infoCliente.insertRow();
@@ -58,12 +59,12 @@ function cadastrar_vendas() {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        // Aqui você pode adicionar quaisquer outros headers necessários
       },
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data); // Aqui você pode fazer o tratamento da resposta da API
+        console.log(data);
+        buscar();
       })
       .catch(error => {
         console.error('Erro na requisição:', error);
@@ -79,18 +80,28 @@ function cadastrar_vendas() {
 function editar_vendas() {
   if (selectedRow) {
     const selectedId = selectedRow.getAttribute('data-id');
-    console.log('Edição de Vendas - Linha selecionada. ID:', selectedId);
-
-    const colunaInfo = selectedRow.insertCell();
+    console.log('Cadastro de Vendas - Linha selecionada. ID:', selectedId);
     const id_venda = selectedRow.querySelector(".id_venda").textContent;
-    const clienteNome = selectedRow.querySelector(".cliente-nome").textContent;
-    const produtoNome = selectedRow.querySelector(".produto-nome").textContent;
-    const dataCriacao = selectedRow.querySelector(".data-criacao").textContent;
-    const quantEstimada = selectedRow.querySelector(".quant-estimada").textContent;
-    const quantVendida = selectedRow.querySelector(".quant-vendida").textContent;
 
-    const quantidadeVendida = prompt('Informe a nova quantidade vendida: ');
+    const quantidadeVendida = prompt('Informe a quantidade vendida:');
 
+    const url = `http://localhost:8080/venda/atualizar_venda/${id_venda}/${quantidadeVendida}`;
+
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        buscar(); // Chama a função buscar para atualizar os dados na página
+      })
+      .catch(error => {
+        console.error('Erro na requisição:', error);
+      });
+    
     selectedRow.classList.remove('selected');
     selectedRow = null;
   } else {

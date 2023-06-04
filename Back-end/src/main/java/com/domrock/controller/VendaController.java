@@ -109,7 +109,7 @@ public class VendaController {
     @Transactional
     @Modifying
     @PutMapping("/atualizar_venda/{id_venda}/{quant_vendida}")
-    public ResponseEntity<String> atualizarVenda(@PathVariable Long id_venda, @PathVariable Float quant_vendida) {
+    public ResponseEntity<Object> atualizarVenda(@PathVariable Long id_venda, @PathVariable Float quant_vendida) {
         Venda venda = repository.findById(id_venda).orElse(null);
 
         if (venda != null) {
@@ -123,17 +123,18 @@ public class VendaController {
                     venda.setQuant_vendida(quant_vendida);
                     venda.setAtualizada_em(new Date());
                     repository.save(venda);
-                    return ResponseEntity.ok("Venda atualizada com sucesso!");
+                    return ResponseEntity.ok().body("{\"message\": \"Venda atualizada com sucesso!\"}");
                 } else {
-                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Fora do prazo");
+                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Fora do prazo\"}");
                 }
             } else {
-                return ResponseEntity.ok("Venda já atualizada");
+                return ResponseEntity.ok().body("{\"message\": \"Venda já atualizada\"}");
             }
         }
 
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venda não encontrada");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"message\": \"Venda não encontrada\"}");
     }
+
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @Transactional
     @Modifying

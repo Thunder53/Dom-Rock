@@ -80,3 +80,36 @@ fetch("http://localhost:8080/produto/topProdutos")
   .catch(function (error) {
     console.log(error);
   });
+  
+
+  fetch(`http://localhost:8080/venda/vendedorHistorico/${localStorage.getItem('id')}`)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data)
+    var dados = data.map(function (item) {
+      return { y: item.quant_estimada, a: item.quant_vendida };
+    });
+
+    var config = {
+      data: dados,
+      xkey: "y",
+      ykeys: "a",
+      labels: ["Quantidade estimada","Quantidade vendida"],
+      fillOpacity: 0.6,
+      hideHover: "auto",
+      behaveLikeLine: true,
+      resize: true,
+      pointFillColors: ["#ffffff"],
+      pointStrokeColors: ["black"],
+      lineColors: ["blue"],
+    };
+
+    config.element = "historico";
+    config.stacked = true;
+    Morris.Bar(config);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });

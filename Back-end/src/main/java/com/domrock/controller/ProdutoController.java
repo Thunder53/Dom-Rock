@@ -39,18 +39,20 @@ public class ProdutoController {
                 "SUM(v.quant_vendida) AS total_vendido " +
                 "FROM produto p " +
                 "JOIN venda v ON p.cod_produto = v.fk_produto_cod_produto " +
-                "GROUP BY nome_produto, v.fk_produto_cod_produto " +
+                "GROUP BY p.nome_produto, v.fk_produto_cod_produto " +
                 "ORDER BY total_vendido DESC " +
                 "LIMIT 10";
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
         for (Map<String, Object> row : rows) {
             Map<String, Object> produto = new HashMap<>();
-            produto.put("nome_produto", row.get("nome_produto"));
+            produto.put("nome_produto", ((String) row.get("nome_produto")).trim());
             produto.put("total_vendido", row.get("total_vendido"));
             topProdutos.add(produto);
         }
         return topProdutos;
     }
+
+
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/produto")

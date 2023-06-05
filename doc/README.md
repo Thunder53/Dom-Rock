@@ -544,7 +544,8 @@
 </div>
     
    <h2 align="left">5.4 Burndown</h2>
-  <p align="left"><img src="Burndown/Burndown4.jpeg"></p>
+  <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/1c8f54f9-7b24-42a1-b1f9-ef3a994c9fba"></p>
+
 
 <h1 align="center">6.Diagramas</h1>
     <h2 align="left">6.1 Modelo Lógico</h2>
@@ -554,14 +555,19 @@
 
 <h1 align="center">7.Wireframes</h1>
     <h2 align="left"></h2>
-        <p align="left"><img src="Wireframes/TELA 1.jpg"></p>
+        <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/29931d00-5ec0-4553-a6a9-5f222aded47e"></p>
     <h2 align="left"></h2>
-        <p align="left"><img src="Wireframes/TELA 2.jpg"></p>
+        <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/385424ea-54ef-4c05-9355-36a59d7c63cc"></p>
             <h2 align="left"></h2>
-        <p align="left"><img src="Wireframes/TELA 3.jpg"></p>
+        <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/f88ff1ab-8e40-4338-8ca9-428d02e73f58"></p>
     <h2 align="left"></h2>
-        <p align="left"><img src="Wireframes/TELA 4.jpg"></p>
+        <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/671339db-8b4e-4285-aa2a-3e4e84fab316"></p>
             <h2 align="left"></h2>
-        <p align="left"><img src="Wireframes/TELA 5.jpg"></p>
+        <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/6e9a31c1-7135-47a1-b14b-106f406b33a7"></p>
     <h2 align="left"></h2>
-        <p align="left"><img src="Wireframes/TELA Login.2.jpg"></p>
+        <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/f96e2f49-b863-4c4a-9adc-0d300f735b35"></p>
+    <h2 align="left"></h2>
+        <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/fa399fe4-6ee3-4048-b9fd-ba7d4c552329"></p>
+    <h2 align="left"></h2>
+        <p align="left"><img src="https://github.com/Thunder53/Dom-Rock/assets/100934496/1c643b9f-e5eb-48b3-ba16-be437a76696b"></p>
+      

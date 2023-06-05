@@ -173,3 +173,18 @@ button:hover{
     background-color: var(--cor-hover);
     cursor: pointer;
 }
+
+.botao_editar_cadastrar{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.selected {
+    background-color: #ccc;
+  }
+
+  .table-row.selected {
+    background-color: #f2f2f2; /* Altere para a cor desejada */
+  }
+  

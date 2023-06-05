@@ -8,8 +8,9 @@ import com.domrock.model.Venda;
 import com.domrock.repository.VendaRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.aspectj.apache.bcel.Repository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -161,6 +162,58 @@ public class VendaController {
         List<VendaResponseDTO> vendaList = repository.findAll().stream().map(VendaResponseDTO::new).toList();
         return vendaList;
     }
+
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @Transactional
+    @Modifying
+    @PutMapping("/atualizar_venda/{id_venda}/{quant_vendida}")
+    public ResponseEntity<Object> atualizarVenda(@PathVariable Long id_venda, @PathVariable Float quant_vendida) {
+        Venda venda = repository.findById(id_venda).orElse(null);
+
+        if (venda != null) {
+            if (venda.getAtualizada_em() == null) {
+                Date dataAtual = new Date();
+                Date dataCriacao = venda.getCriada_em();
+                long diff = dataAtual.getTime() - dataCriacao.getTime();
+                long diffDays = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+
+                if (diffDays <= 7) {
+                    venda.setQuant_vendida(quant_vendida);
+                    venda.setAtualizada_em(new Date());
+                    repository.save(venda);
+                    return ResponseEntity.ok().body("{\"message\": \"Venda atualizada com sucesso!\"}");
+                } else {
+                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Fora do prazo\"}");
+                }
+            } else {
+                return ResponseEntity.ok().body("{\"message\": \"Venda já atualizada\"}");
+            }
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"message\": \"Venda não encontrada\"}");
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @Transactional
+    @Modifying
+    @PutMapping("/cadastrar_quantidade/{id_venda}/{quant_vendida}")
+    public ResponseEntity<Object> cadastrarQuantidade(@PathVariable Long id_venda, @PathVariable Float quant_vendida) {
+        Venda venda = repository.findById(id_venda).orElse(null);
+
+        if (venda != null) {
+            if (venda.getQuant_vendida() == null) {
+                venda.setQuant_vendida(quant_vendida);
+                repository.save(venda);
+                return ResponseEntity.ok().body("{\"message\": \"Quantidade vendida cadastrada com sucesso!\"}");
+            } else {
+                return ResponseEntity.ok().body("{\"message\": \"Quantidade vendida já cadastrada\"}");
+            }
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"message\": \"Venda não encontrada\"}");
+    }
+
 
 
     @CrossOrigin(origins = "http://localhost:5500")

@@ -35,18 +35,30 @@
             </ul>
 
             <div style="max-height: 400px; overflow-y: scroll;">
+                <div class="botao_editar_cadastrar">
+                    <button id="botao_cadastrar" style="width: 100px; height: 30px;">Cadastrar</button>
+                    <button id="botao_editar" style="width: 100px; height: 30px;">Editar</button>
+                </div>
                 <table align="center" class="table table-bordered">
                     <thead class="table-active">
                         <tr class="boxview">
-                            <th>ID Venda</th>
+                            <th>Id</th>
                             <th>Cliente</th>
                             <th>Produto</th>
-                            <th>Data de criação</th>
-                            <th>Quantidade estimada</th>
+                            <th style="width: 120px;">Data</th>
+                            <th>Quantidade estimada</th>		
+                            <th>Quantidade vendida</th>											
                         </tr>
                     </thead>
                     <tbody class="info_cliente">
-                        <!-- Os dados da tabela serão preenchidos dinamicamente com JavaScript -->
+                        <tr class="boxview table-row">
+                            <td class="id_venda" th:text="${clienteList.id_venda}"></td>
+                            <td class="cliente-nome" th:text="${clienteList.nome_cliente}"></td>
+                            <td class="produto-nome" th:text="${clienteList.nome_produto}"></td>
+                            <td class="data-criacao" th:text="${clienteList.criada_em}"></td>
+                            <td class="quant-estimada" th:text="${clienteList.quant_estimada}"></td>
+                            <td class="quant-vendida" th:text="${clienteList.quant_vendida}"></td>
+                        </tr>                        
                     </tbody>
                 </table>
             </div>

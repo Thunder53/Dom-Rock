@@ -1,12 +1,8 @@
 package com.domrock.controller;
 
-import com.domrock.dto.cliente.ClienteResponseDTO;
 import com.domrock.dto.produto.ProdutoRequestDTO;
 import com.domrock.dto.produto.ProdutoResponseDTO;
-import com.domrock.dto.usuario.UsuarioRequestDTO;
-import com.domrock.model.Cliente;
 import com.domrock.model.Produto;
-import com.domrock.model.Usuario;
 import com.domrock.repository.ProdutoRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,8 +64,8 @@ public class ProdutoController {
     @GetMapping("/produto-com-cliente/{id}")
     public List<Map<String, Object>> findByUsuario(@PathVariable Long id) {
         List<Map<String, Object>> produtos_cliente = new ArrayList<>();
-        String sql = "select p.nome_produto, p.cod_produto, c.nome_cliente, c.cod_cliente, v.criada_em, v.quant_estimada,\n" +
-                "v.fk_cliente_cod_cliente, v.fk_produto_cod_produto, v.fk_usuario_id, u.id\n" +
+        String sql = "select p.nome_produto, p.cod_produto, c.nome_cliente, c.cod_cliente, v.criada_em, v.quant_vendida, v.quant_estimada,\n" +
+                "v.fk_cliente_cod_cliente, v.id_venda, v.fk_produto_cod_produto, v.fk_usuario_id, u.id\n" +
                 "from produto p, cliente c, venda v, usuario u \n" +
                 "where v.fk_cliente_cod_cliente = c.cod_cliente and v.fk_produto_cod_produto = p.cod_produto and v.fk_usuario_id = u.id and u.id = ?";
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql, id);
@@ -81,8 +77,10 @@ public class ProdutoController {
             produto_cliente.put("cod_cliente", row.get("cod_cliente"));
             produto_cliente.put("criada_em", row.get("criada_em"));
             produto_cliente.put("quant_estimada", row.get("quant_estimada"));
+            produto_cliente.put("quant_vendida", row.get("quant_vendida"));
             produto_cliente.put("fk_cliente_cod_cliente", row.get("fk_cliente_cod_cliente"));
             produto_cliente.put("fk_produto_cod_produto", row.get("fk_produto_cod_produto"));
+            produto_cliente.put("id_venda", row.get("id_venda"));
             produtos_cliente.add(produto_cliente);
         }
         return produtos_cliente;

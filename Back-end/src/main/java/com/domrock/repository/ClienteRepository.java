@@ -15,4 +15,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     @Query("SELECT p FROM cliente p WHERE p.nome_cliente = ?1")
     Cliente findByNome(String nomeCliente);
+
+
 }

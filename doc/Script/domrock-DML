@@ -1,0 +1,64 @@
+/* Insert Produto: */
+insert into produto(cod_produto, nome_produto) values(1, 'Aço');
+insert into produto(cod_produto, nome_produto) values(2, 'Ferro');
+insert into produto(cod_produto, nome_produto) values(3, 'Zinco');
+insert into produto(cod_produto, nome_produto) values(4, 'Prata');
+insert into produto(cod_produto, nome_produto) values(5, 'Ouro');
+insert into produto(cod_produto, nome_produto) values(6, 'Cobre');
+insert into produto(cod_produto, nome_produto) values(7, 'Aluminio');
+insert into produto(cod_produto, nome_produto) values(8, 'Niquel');
+insert into produto(cod_produto, nome_produto) values(9, 'Titanio');
+insert into produto(cod_produto, nome_produto) values(10, 'Calcio');
+
+/* Insert Usuario: */
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(1, '555.989.888-00', '(12)95252-1222', '123456789','Ariane', 'ariane@domrock.com', 'administrador');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(2, '293.989.888-00', '(12)98822-1222', '123456789','Vitoria', 'vitoria@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(3, '555.989.888-00', '(12)98922-1222', '123456789','Anderson', 'anderson@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(4, '255.429.450-07', '(12)98257-8188', '123456789', 'Ludmila', 'ludmila@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(5, '164.707.260-38', '(12)98257-8189', '12345678910', 'Rafael', 'rafael@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(6, '485.659.420-66', '(12)98257-8190', '12345678911', 'Adriano', 'adriano@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(7, '299.272.220-09', '(12)98257-8191', '12345678912', 'Margarete', 'margarete@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(8, '255.429.450-07', '(12)98257-8188', '123456789', 'Luana', 'luana@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(9, '164.707.260-38', '(12)98257-8189', '12345678910', 'Bruno', 'bruno@gmail.com', 'vendedor');
+insert into usuario(id, cpf, contato, senha, nome, email, acesso) values(10, '485.659.420-66', '(12)98257-8190', '12345678911', 'Renan', 'renan@gmail.com', 'vendedor');
+
+/* Insert Cliente: */
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(1, 'Elevadores Atlas', 'Industria São Paulo', 2);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(2, 'MTS Chapa', 'Gmat', 3);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(3, 'Down Quimica', 'Jacarei', 4);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(4, 'Compass', 'Santo Amaro', 10);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(5, 'Niquelton', 'Itu', 9);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(6, 'Petrobras', 'Campos', 5);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(7, 'Metalbras', 'Cunha', 7);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(8, 'Ligathigas', 'São Luiz', 6);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(9, 'AçoBras', 'Brotas', 8);
+insert into cliente(cod_cliente, nome_cliente, nome_gerencia, fk_usuario_id) values(10, 'EuroUni', 'Caragua', 2);
+
+/* Insert Venda: */
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(465.0, 527.0, null, '2023-01-18', 1, 2, 1, 10); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(427.0, 107.0, null, '2023-02-22', 2, 2, 2, 9);
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(465.0, 550.0, null, '2023-03-18', 3, 2, 3, 8); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(247.0, 307.0, null, '2023-01-14', 4, 3, 4, 7); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(115.0, 106.0, null, '2023-02-08', 5, 3, 5, 6); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(305.0, 327.0, null, '2023-03-10', 6, 3, 6, 5); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(565.0, 557.0, null, '2023-01-12', 7, 4, 7, 4); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(700.0, 657.0, null, '2023-02-12', 8, 4, 8, 3); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(165.0, 357.0, null, '2023-03-12', 9, 4, 9, 2); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(565.0, 957.0, null, '2023-01-12', 10, 5, 10, 1); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(465.0, 527.0, null, '2023-02-18', 11, 5, 1, 10); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(345.0, 192.0, null, '2023-03-22', 12, 5, 2, 9);
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(485.0, 450.0, null, '2023-01-18', 13, 6, 3, 8); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(345.0, 370.0, null, '2023-02-14', 14, 6, 4, 7); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(120.0, 110.0, null, '2023-03-08', 15, 6, 5, 6); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(400.0, 327.0, null, '2023-01-10', 16, 7, 6, 5); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(570.0, 520.0, null, '2023-02-12', 17, 7, 7, 4); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(750.0, 740.0, null, '2023-03-12', 18, 7, 8, 3); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(180.0, 173.0, null, '2023-01-12', 19, 8, 9, 2); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(565.0, 957.0, null, '2023-02-12', 20, 8, 10, 1); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(465.0, 527.0, null, '2023-03-18', 21, 8, 1, 10); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(427.0, 107.0, null, '2023-01-22', 22, 9, 2, 9);
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(465.0, 550.0, null, '2023-02-18', 23, 9, 3, 8);
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(247.0, 307.0, null, '2023-03-14', 24, 9, 4, 7); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(115.0, 106.0, null, '2023-01-08', 25, 10, 5, 6); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(305.0, 327.0, null, '2023-02-10', 26, 10, 6, 5); 
+insert into venda(quant_vendida, quant_estimada, atualizada_em, criada_em, id_venda, fk_usuario_id, fk_cliente_cod_cliente, fk_produto_cod_produto) values(565.0, 557.0, null, '2023-03-12', 27, 10, 7, 4); 

@@ -15,9 +15,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
     List<Usuario> findAllByAcesso(String acesso);
 
-//    @Query(value = "select u from usuario u where u.nome like %?1%")
-//    Usuario findByNome(String nome);
-
     @Query(value = "select u from usuario u where u.nome like %?1%")
     List<Usuario> getByNome(String nome);
 

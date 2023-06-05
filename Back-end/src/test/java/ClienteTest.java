@@ -1,6 +1,4 @@
-//package com.domrock.testes;//package com.domrock;
-//
-//import com.domrock.dto.vendedor.cliente.ClienteRequestDTO;
+//import com.domrock.dto.cliente.ClienteRequestDTO;
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
 //import com.domrock.model.Cliente;
@@ -12,7 +10,7 @@
 //
 //    @Test
 //    public void testCreateClienteFromDTO() {
-//        ClienteRequestDTO dto = new ClienteRequestDTO("Cliente 1", "Gerente 1");
+//        ClienteRequestDTO dto = new ClienteRequestDTO("Cliente 1", "Gerente 1", 2, 2, 2);
 //
 //        Cliente cliente = new Cliente(dto);
 //

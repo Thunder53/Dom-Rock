@@ -25,18 +25,39 @@
     <div class="row">
         <div class="col-sm-6 text-center">
             <label class="label label-success">Ranking vendedores</label>
-           <div id="stacked" ></div>
+            <div id="stacked" ></div>
          </div>
         <div class="col-sm-6 text-center">
            <label class="label label-success">Ranking produtos</label>
-          <div id="produtosrank"></div>
+           <div id="produtosrank"></div>
         </div>
+        <div id="sucess" class="success-alert">
+            <h3>Você esta acima da quantidade vendida</h3>
+        </div>
+          
+        <div id="danger" class="danger-alert">
+            <h3>Você esta abaixo da quantidade vendida</h3>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-sm-6 text-center">
+            <label class="label label-success">Vendedores Acima da Meta</label>
+           <div id="vendedoresAcimaMeta"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <label class="label label-success">Histórico de Vendas</label>
+               <div id="historico"></div>
+            </div>
     </div>
+        
     <br>
 </body>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js'></script>
-<script src="../javascript/chartVendedor.js"></script>
+<script src="../javascript/chartVendedor.js"></script>!
+<script src="../javascript/chart-acima-meta.js"></script>
 </html> 

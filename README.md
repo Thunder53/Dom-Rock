@@ -73,7 +73,7 @@ Nesse semestre o grupo está propondo uma solução para a empresa. O desafio co
    <td>Terceira Sprint</td>
    <td>Visualização do histórico de vendas, gráficos comparativos, implementação de filtors de busca e edição das vendas, importação das bases de dados para o banco </td>
    <td>14/05/2023</td>
-   <td><a href="">Sprint03</a></td>
+   <td><a href="https://github.com/Thunder53/Dom-Rock/releases/tag/Sprint03">Sprint03</a></td>
   </tr>
  
    <tr>

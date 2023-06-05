@@ -145,6 +145,21 @@ input::placeholder{
     border-radius: 10px;
 }
 
+.editar-button {
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    display: block; 
+    margin: auto; 
+  }
+
+.quantidade-estimada-cell {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+  
+
 button{
     width: 225px;
     height: 55px;
@@ -158,3 +173,18 @@ button:hover{
     background-color: var(--cor-hover);
     cursor: pointer;
 }
+
+.botao_editar_cadastrar{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.selected {
+    background-color: #ccc;
+  }
+
+  .table-row.selected {
+    background-color: #f2f2f2; /* Altere para a cor desejada */
+  }
+  

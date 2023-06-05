@@ -2,7 +2,7 @@ const formulario = document.querySelector("form");
 const Inome_produto = document.getElementById("nome_produto");
 
 function cadastrar() {
-        fetch("http://localhost:8080/produto", {
+        fetch("http://localhost:8080/produto/produto", {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

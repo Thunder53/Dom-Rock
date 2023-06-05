@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lato&display=swap');
 
-:root{
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+:root {
+    --margin-left: 1rem;
+
     --cor-primaria: #000000;
     --cor-secundaria: #D6D8FA;
     --cor-terciaria: #000000;
@@ -8,17 +15,10 @@
     --cor-shadow: rgba(0, 0, 0, 0.25);
     --cor-borda: #00B1ED;
     
-    --fonte-primaria: 'Lato', sans-serif;
+    --font: 'Lato', sans-serif;
     --cor-hover: #9b9cab;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    font-family: var(--fonte-primaria);
-    
-}
-
+  }
+  
 .cabecalho{
     display: flex;
     align-items: center;
@@ -61,10 +61,151 @@
     color: var(--cor-borda);
 }
 
-#area-chart,
-#line-chart,
-#bar-chart,
-#stacked,
-#pie-chart{
-  min-height: 250px;
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  background: #e5e5e5;
+  padding: 1rem 0 1rem 1.2rem;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1.5rem;
+  grid-template-areas:
+    'main-chart main-chart'
+}
+  
+select{
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #017efa;
+  padding-right: 0.5rem;
+  white-space: nowrap;
+}
+  
+#main-chart {
+  grid-area: main-chart;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 10px rgba(241, 242, 250, 1);
+}
+  
+#main-chart header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+#main-chart .wrapper-reach {
+  display: flex;
+}
+  
+#main-chart .card-reach {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 2.5rem 0.75rem 0;
+}
+  
+#main-chart .card-reach:nth-child(1) {
+  padding-left: 1rem;
+  padding-right: 3.5rem;
+}
+  
+#main-chart .box-image {
+  display: flex;
+  padding: 0.85rem 0.5rem;
+  border-radius: 0.5rem;
+}
+  
+#main-chart .box-image img {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+  
+#main-chart .box-image.total-reach {
+  background: #e6f2fe;
+}
+  
+#main-chart .box-image.total-paid {
+  background: rgba(48, 218, 136, 0.1);
+}
+  
+#main-chart .box-image.total-organic {
+  background: rgba(253, 31, 155, 0.1);
+}
+  
+#main-chart .text-reach {
+  padding-left: 0.7rem;
+}
+  
+#main-char .chart{
+  display: flex;
+  justify-content: center;
+}
+  
+#main-chart .wrapper-filter {
+  padding: 1rem 0.5rem 0.5rem 0rem;
+}
+  
+#main-chart .filters {
+  display: flex;
+  align-items: center;
+  background: #f5f7fb;
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+}
+  
+#main-chart .filters .filter {
+  padding: 0.375rem 0.3rem;
+  border-radius: 0.5rem;
+}
+  
+#main-chart .filters .filter:nth-child(2) {
+  margin: 0.25rem;
+}
+  
+#main-chart .filters .filter select {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #a9abb0;
+  cursor: pointer;
+}
+  
+  
+.botao{
+  background-color: transparent;
+  font: var(--font);
+  border-color: transparent;
+  border-radius: 10px;
+  height: 30px;
+  width: 210px;
+  cursor: pointer;
+  font-family: var(--font);
+  font-weight: bold 700;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+.botao:hover, .botao-filtrar:hover{
+  background-color: var(--cor-shadow);
+}
+
+select, option{
+  color: var(--cor-primaria);
+  border-color: var(--cor-borda);
+  border-radius: 0.5rem;
+}
+
+.botao-filtrar{
+  background-color: transparent;
+  cursor: pointer;
+  height: 30px;
+  width: 50px;
+  border-color: var(--cor-borda);
+  border-radius: 10px;
 }

@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioRepository repository;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/vendedores")
@@ -37,19 +40,17 @@ public class UsuarioController {
         return;
     }
 
-    /*
-     * @CrossOrigin(origins = "*", allowedHeaders = "*")
-     * 
-     * @GetMapping("/usuario-por-nome")
-     * public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome) {
-     * Usuario usuario = repository.findByNome(nome);
-     * if (usuario != null) {
-     * return ResponseEntity.ok(usuario.getId());
-     * } else {
-     * return ResponseEntity.notFound().build();
-     * }
-     * }
-     */
+     @CrossOrigin(origins = "*", allowedHeaders = "*")
+     @GetMapping("/usuario-por-nome")
+     public ResponseEntity<Long> buscarIdPorNome(@RequestParam String nome) {
+         Usuario usuario = repository.findByNome(nome);
+         if (usuario != null) {
+         return ResponseEntity.ok(usuario.getId());
+         } else {
+         return ResponseEntity.notFound().build();
+         }
+     }
+
 
     @GetMapping(value = "getByNome")
     @ResponseBody
@@ -59,18 +60,6 @@ public class UsuarioController {
 
         return new ResponseEntity<List<Usuario>>(usuario, HttpStatus.OK);
     }
-
-    // @PostMapping("/usuarios")
-    // public ResponseEntity<?> criarUsuario(@Valid @RequestBody UsuarioRequestDTO
-    // data, BindingResult result) {
-    // ErrorResponse errorResponse = usuario.validarCampos(data);
-    // if (errorResponse != null) {
-    // return ResponseEntity.status(errorResponse.getStatus()).body(errorResponse);
-    // }
-    // Usuario usuarioData = new Usuario(data);
-    // repository.save(usuarioData);
-    // return ResponseEntity.ok(new UsuarioResponseDTO(usuarioData));
-    // }
 
     @CrossOrigin(origins = "http://localhost:5500")
     @RequestMapping(method = RequestMethod.OPTIONS)

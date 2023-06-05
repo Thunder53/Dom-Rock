@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://cdn.oesmith.co.uk/morris-0.5.1.css'>
-    <link rel="stylesheet" href="../styles css/adminCharts.css">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles css/adminCharts.css" />
 
-    <title>Dom Rock </title>
-</head>
-<body>
-    <header class="cabecalho">
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="cabecalho">
         <img class="cabecalho__logo" src="../assets/logo-domrock.png" alt="Logo Dom Rock">
         <nav class="cabecalho__nav">
             <a class="cabecalho__home" href="../view/homeAdministrador.html">Home</a>
@@ -21,24 +20,45 @@
         </nav>
         <a class="cabecalho__sair" href="../view/index.html">Sair</a>
     </header>
-    <div class="row">
-        <div class="col-sm-6 text-center">
-            <label class="label label-success">TOP 10 Vendedores</label>
-           <div id="stackedVendedores" ></div>
-         </div>
-        <div class="col-sm-6 text-center">
-           <label class="label label-success">TOP 10 Produtos</label>
-          <div id="stackedProdutos"></div>
+      <main>
+        <section id="main-chart">
+          <header>
+            <div class="wrapper-reach">
+              <div class="card-reach">
+                <div class="box-image total-reach">
+                  <img src="/assets/icons/rectangle.svg" alt="" />
+                  <img src="/assets/icons/polygon.svg" alt="" />
+                </div>
+                <div class="text-reach">
+                  <button class="botao" id="botao-venda">Total Metas x Vendas</button>
+                </div>
+              </div>
+              <div class="card-reach">
+                <div class="box-image total-paid">
+                  <img src="/assets/icons/rectangle_green.svg" alt="" />
+                  <div></div>
+                  <img src="/assets/icons/polygon_green.svg" alt="" />
+                </div>
+                <div class="text-reach">
+                  <button class="botao" id="botao-vendedor">Ranking Vendedores</button>
+                </div>
+              </div>
+              <div class="card-reach">
+                <div class="box-image total-organic">
+                  <img src="/assets/icons/rectangle-rose.svg" alt="" />
+                  <img src="/assets/icons/polygon-rose.svg"" alt="" />
+                </div>
+                <div class="text-reach">
+                  <button class="botao" id="botao-produto">Ranking produtos</button>
+                </div>
+              </div>
             </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-6 text-center">
-            <label class="label label-success" style="font-size: 15px;">Comparativo das vendas</label>
-            <hr>
-            <div class="input-group">
-                <select class="form-control" id="filtro-mes" style="width: 30%;">
-                    <option value="">Todos os meses</option>
+
+            <div class="wrapper-filter">
+              <div class="filters">
+                <div class="filter selected">
+                  <select id="filtro-data" class="filter selected">
+                    <option value="Todos">Meses</option>
                     <option value="1">Janeiro</option>
                     <option value="2">Fevereiro</option>
                     <option value="3">Março</option>
@@ -51,31 +71,37 @@
                     <option value="10">Outubro</option>
                     <option value="11">Novembro</option>
                     <option value="12">Dezembro</option>
-                </select>
-                <select class="form-control" id="filtro-mes" style="width: 30%;">
-                    <option value="">Todos os vendedores</option>
-                </select>
-                <select class="form-control" id="filtro-mes" style="width: 30%;">
-                    <option value="">Todos os produtos</option>
-                </select>
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" onclick="filtrarDados()">Filtrar</button>
-                </span>
+                  </select>
+                </div>
+                <div class="filter">
+                  <button id="filtro-button-data" class="botao-filtrar">Filtrar</button>
+                </div>
+                <div class="filter">
+                  <select id="filtro-vendedor" class="filter selected">
+                    <option value="Todos">Vendedores</option>
+                  </select>
+                </div>
+                <div class="filter">
+                  <button id="filtro-button-vendedor" class="botao-filtrar">Filtrar</button>
+                </div>
+                <div class="filter">
+                  <select id="filtro-produto" class="filter selected">
+                    <option value="Produtos">Produtos</option>
+                  </select>
+                </div>
+                <div class="filter">
+                  <button id="filtro-button-produto" class="botao-filtrar">Filtrar</button>
+                </div>
+              </div>
             </div>
-            <div id="bar-chart"></div>
-        </div>
-        
-        <div class="col-sm-6 text-center">
-            <label class="label label-success" style="font-size: 15px;">Area Chart</label>
-            <div id="area-chart" ></div>
+          </header>
+          <div class="chart">
+            <canvas id="bar-chart" width="700" height="200"> </canvas>
           </div>
+        </section>
+      </main>
     </div>
-</body>
-
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js'></script>
-<script src="../javascript/chartAdmin.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</html> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+    <script src="../javascript/adminCharts.js"></script>
+  </body>
+</html>

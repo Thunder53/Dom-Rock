@@ -62,17 +62,17 @@ public class VendaController {
     @GetMapping("/topVendedores")
     public List<Map<String, Object>> getTopVendedores() {
         List<Map<String, Object>> topVendedores = new ArrayList<>();
-        String sql = "SELECT u.nome, v.fk_usuario_id, SUM(v.quant_vendida) AS total_vendido \n" +
-                "FROM venda v \n" +
-                "JOIN usuario u ON v.fk_usuario_id = u.id \n" +
-                "GROUP BY u.nome, v.fk_usuario_id \n" +
-                "ORDER BY total_vendido DESC \n" +
+        String sql = "SELECT u.id, u.nome, SUM(v.quant_vendida) AS total_vendido " +
+                "FROM venda v " +
+                "JOIN usuario u ON v.fk_usuario_id = u.id " +
+                "GROUP BY u.id, u.nome " +
+                "ORDER BY total_vendido DESC " +
                 "LIMIT 10";
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
         for (Map<String, Object> row : rows) {
             Map<String, Object> vendedor = new HashMap<>();
-            vendedor.put("fk_usuario_id", row.get("fk_usuario_id"));
-            vendedor.put("nome_usuario", row.get("nome"));
+            vendedor.put("id_vendedor", row.get("id"));
+            vendedor.put("nome_vendedor", ((String) row.get("nome")).trim());
             vendedor.put("total_vendido", row.get("total_vendido"));
             topVendedores.add(vendedor);
         }

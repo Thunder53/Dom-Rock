@@ -96,7 +96,7 @@ function editar_vendas() {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        buscar(); // Chama a função buscar para atualizar os dados na página
+        buscar(); 
       })
       .catch(error => {
         console.error('Erro na requisição:', error);

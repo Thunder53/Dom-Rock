@@ -35,6 +35,7 @@ fetch("http://localhost:8080/venda/acima-meta")
         pointFillColors: ["#ffffff"],
         pointStrokeColors: ["black"],
         lineColors: ["blue"],
+         xLabelAngle: 45, // Ângulo de rotação da legenda no eixo x
       };
   
       config.element = "vendedoresAcimaMeta";

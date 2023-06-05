@@ -19,6 +19,7 @@ fetch("http://localhost:8080/venda/topVendedores")
       pointFillColors: ["#ffffff"],
       pointStrokeColors: ["black"],
       lineColors: ["blue"],
+      xLabelAngle: 45, // Ângulo de rotação da legenda no eixo x
     };
 
     config.element = "stacked";
@@ -50,6 +51,7 @@ fetch("http://localhost:8080/produto/topProdutos")
       pointFillColors: ["#ffffff"],
       pointStrokeColors: ["black"],
       lineColors: ["blue"],
+      xLabelAngle: 45, // Ângulo de rotação da legenda no eixo x
     };
 
     config.element = "produtosrank";
@@ -104,6 +106,7 @@ fetch("http://localhost:8080/produto/topProdutos")
       pointFillColors: ["#ffffff"],
       pointStrokeColors: ["black"],
       lineColors: ["blue"],
+      xLabelAngle: 45, // Ângulo de rotação da legenda no eixo x
     };
 
     config.element = "historico";
@@ -113,3 +116,5 @@ fetch("http://localhost:8080/produto/topProdutos")
   .catch(function (error) {
     console.log(error);
   });
+
+  

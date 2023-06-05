@@ -84,8 +84,9 @@
     width: 200px;
     text-align: center;
     position: fixed;
-    bottom: 20px;
-    left: 850px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 40%;
     margin: 20px auto;
     padding: 30px;
@@ -93,6 +94,8 @@
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  
+
   
  
   

@@ -12,7 +12,6 @@ import java.util.Date;
 @Table(name = "venda")
 @Entity(name = "venda")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id_venda")
